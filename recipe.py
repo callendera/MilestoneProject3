@@ -1,15 +1,23 @@
 import os
-from flask import Flask
-#sets up application for use with flask functionality
+from flask import Flask, render_template, redirect, request, url_for
+from flask_pymongo import PyMongo
+from bson.objectid import ObjectId 
+#sets up application for use with PyMongo, Flask
 
 app = Flask(__name__)
+app.config["MONGO_DBNAME"] = 'from_scratch'
+#creates link between Database and application
+app.config["MONGO_URI"] = os.getenv("MONGO_URI")
 #creates application to be tested
 
+mongo = PyMongo(app)
 
 @app.route('/')
+@app.route('/get_recipes')
 #Display text as proof of concept
-def fromscratch():
-    return "FROM Scratch test"
+def get_recipes():
+    return render_template("recipes.html", recipes=mongo.db.resipes.find())
+
 
 
 if __name__ == '__main__':
