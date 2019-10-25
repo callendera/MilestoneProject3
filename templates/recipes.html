@@ -1,10 +1,10 @@
 {% extends 'base.html' %} 
 {% block content %} 
 
-
+{% for recipes in from_scratch %}
 <div class="row">
-    
-    <div class="col s12 m6 l3">
+   <!---FROM TUTOR CONVERSTAION PASTED TO WORD!!!! adjust column size to have the 3x2 layout-->
+    <div class="col-4 s12 m6 l4">
         
         <div class="featured-recipe1">
 
@@ -16,7 +16,7 @@
             
         </h2>
         <ul class="collapsible">
-            {% for recipes in from_scratch %}
+            
             <li>
                 <div class="collapsible-header"><i class="material-icons">local_dining</i>Ingredients</div>
                 <div class="collapsible-body"><span>
@@ -35,146 +35,14 @@
                     {{recipes.nutrition0}}
                 </span></div>
             </li>
-            {% endfor %}
+            
         </ul>
         
     </div>
 
-    <div class="col s12 m6 l3">
-        <div class="featured-recipe2">
-
-        </div>
-        <h1>
-
-        </h1>
-        <h2>
-
-        </h2>
-        <ul class="collapsible">
-            <li>
-                <div class="collapsible-header"><i class="material-icons">local_dining</i>Ingredients</div>
-                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-            </li>
-            <li>
-                <div class="collapsible-header"><i class="material-icons">list</i>Directions</div>
-                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-            </li>
-            <li>
-                <div class="collapsible-header"><i class="material-icons">fitness_center</i>Nutrition</div>
-                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-            </li>
-        </ul>
-    </div>
-
-    <div class="col s12 m6 l3">
-        <div class="featured-recipe3">
-
-        </div>
-        <h1>
-
-        </h1>
-        <h2>
-
-        </h2>
-        <ul class="collapsible">
-            <li>
-                <div class="collapsible-header"><i class="material-icons">local_dining</i>Ingredients</div>
-                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-            </li>
-            <li>
-                <div class="collapsible-header"><i class="material-icons">list</i>Directions</div>
-                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-            </li>
-            <li>
-                <div class="collapsible-header"><i class="material-icons">fitness_center</i>Nutrition</div>
-                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-            </li>
-        </ul>
-    </div>
-
-</div>
-<div class="row">
-    <div class="col s12 m6 l3">
-        <div class="featured-recipe4">
-
-        </div>
-        <h1>
-
-        </h1>
-        <h2>
-
-        </h2>
-        <ul class="collapsible">
-
-            <li>
-                <div class="collapsible-header"><i class="material-icons">local_dining</i>Ingredients</div>
-                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-            </li>
-            <li>
-                <div class="collapsible-header"><i class="material-icons">list</i>Directions</div>
-                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-            </li>
-            <li>
-                <div class="collapsible-header"><i class="material-icons">fitness_center</i>Nutrition</div>
-                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-            </li>
-        </ul>
-    </div>
-
-    <div class="col s12 m6 l3">
-        <div class="featured-recipe5">
-
-        </div>
-        <h1>
-
-        </h1>
-        <h2>
-
-        </h2>
-        <ul class="collapsible">
-            <li>
-                <div class="collapsible-header"><i class="material-icons">local_dining</i>Ingredients</div>
-                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-            </li>
-            <li>
-                <div class="collapsible-header"><i class="material-icons">list</i>Directions</div>
-                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-            </li>
-            <li>
-                <div class="collapsible-header"><i class="material-icons">fitness_center</i>Nutrition</div>
-                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-            </li>
-        </ul>
-    </div>
-
-    <div class="col s12 m6 l3">
-        <div class="featured-recipe6">
-
-        </div>
-        <h1>
-
-        </h1>
-        <h2>
-
-        </h2>
-        <ul class="collapsible">
-            <li>
-                <div class="collapsible-header"><i class="material-icons">local_dining</i>Ingredients</div>
-                <div class="collapsible-body"><span>Lorem ipsum dolor</span></div>
-            </li>
-            <li>
-                <div class="collapsible-header"><i class="material-icons">list</i>Directions</div>
-                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-            </li>
-            <li>
-                <div class="collapsible-header"><i class="material-icons">fitness_center</i>Nutrition</div>
-                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-            </li>
-        </ul>
-    </div>
     
 </div>
-
+{% endfor %}
 
 
 {% endblock %}
