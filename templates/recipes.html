@@ -1,0 +1,14 @@
+<html>
+    <head>
+        
+    </head>
+    <body>
+        {% for recipes in from_scratch %}
+            {{recipes.category_name}}
+            {{recipes.recipe_name}}
+            {{recipes.is_healthy}}
+            {{recipes.recipe_type}}
+            {{recipes.serves}}
+        {% endfor %}
+    </body>
+</html>

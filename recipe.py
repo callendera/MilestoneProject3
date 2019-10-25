@@ -8,6 +8,7 @@ app = Flask(__name__)
 app.config["MONGO_DBNAME"] = 'from_scratch'
 #creates link between Database and application
 app.config["MONGO_URI"] = os.getenv("MONGO_URI")
+
 #creates application to be tested
 
 mongo = PyMongo(app)
@@ -16,7 +17,8 @@ mongo = PyMongo(app)
 @app.route('/get_recipes')
 #Display text as proof of concept
 def get_recipes():
-    return render_template("recipes.html", recipes=mongo.db.resipes.find())
+    from_scratch = mongo.db.recipes.find()
+    return render_template( "recipes.html", from_scratch=from_scratch) 
 
 
 
