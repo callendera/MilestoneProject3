@@ -1,8 +1,5 @@
-<html>
-    <head>
-        
-    </head>
-    <body>
+{% extends 'base.html' %}
+{% block content %}
         {% for recipes in from_scratch %}
             {{recipes.category_name}}
             {{recipes.recipe_name}}
@@ -10,5 +7,4 @@
             {{recipes.recipe_type}}
             {{recipes.serves}}
         {% endfor %}
-    </body>
-</html>
+{% endblock %}   
