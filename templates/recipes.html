@@ -2,19 +2,20 @@
 {% block content %} 
 
 {% for recipes in from_scratch %}
-<div class="row">
+<div class="container row">
    <!---FROM TUTOR CONVERSTAION PASTED TO WORD!!!! adjust column size to have the 3x2 layout-->
-    <div class="col-4 s12 m6 l4">
+    <div class="col s4">
         
-        <div class="featured-recipe1">
+        <div class="featured-recipe">
 
         </div>
-        <h1>
-            
-        </h1>
-        <h2>
-            
-        </h2>
+        <p>
+            <strong>{{recipes.recipe_name}}</strong>
+        </p>
+        
+        <p>
+            Serves: {{recipes.serves}}
+        </p>
         <ul class="collapsible">
             
             <li>
