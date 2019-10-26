@@ -20,7 +20,10 @@ def get_recipes():
     from_scratch = mongo.db.recipes.find()
     return render_template( "recipes.html", from_scratch=from_scratch) 
 
-
+@app.route('/add_recipe')
+def add_recipe():
+    from_scratch = mongo.db.myRecipes.find()
+    return render_template('addrecipes.html')
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
