@@ -1,23 +1,21 @@
-{% extends 'base.html' %} 
-{% block content %} 
+{% extends 'base.html' %} {% block content %} {% for recipes in from_scratch %}
 
-{% for recipes in from_scratch %}
-<div class="container row">
-   <!---FROM TUTOR CONVERSTAION PASTED TO WORD!!!! adjust column size to have the 3x2 layout-->
+<!---FROM TUTOR CONVERSTAION PASTED TO WORD!!!! adjust column size to have the 3x2 layout-->
+<div class="row">
     <div class="col s4">
-        
+
         <div class="featured-recipe">
 
         </div>
         <p>
             <strong>{{recipes.recipe_name}}</strong>
         </p>
-        
+
         <p>
             Serves: {{recipes.serves}}
         </p>
         <ul class="collapsible">
-            
+
             <li>
                 <div class="collapsible-header"><i class="material-icons">local_dining</i>Ingredients</div>
                 <div class="collapsible-body"><span>
@@ -36,14 +34,11 @@
                     {{recipes.nutrition0}}
                 </span></div>
             </li>
-            
+
         </ul>
-        
+
     </div>
-
-    
 </div>
-{% endfor %}
 
 
-{% endblock %}
+{% endfor %} {% endblock %}
