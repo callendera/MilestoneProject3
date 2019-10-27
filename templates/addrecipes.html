@@ -4,38 +4,38 @@
     <form class="col s12">
         <div class="row">
             <div class="input-field col s6">
-                <input id="recipe_name" type="text" class="validate">
+                <input id="recipe_name" name="recipe_name" type="text" class="validate">
                 <label for="recipe_name">Recipe Name</label>
             </div>
 
             <div class="input-field col s6">
                 <select>
                   <option value="" disabled selected>Choose your option</option>
-                  <option value="1">Vegetarian</option>
-                  <option value="2">Chicken</option>
-                  <option value="3">Beef</option>
-                  <option value="3">Vegan</option>
-                  <option value="3">Fish</option>
-                  <option value="3">Pork</option>
+                  <option name="recipe_type" value="1">Vegetarian</option>
+                  <option  name="recipe_type" value="2">Chicken</option>
+                  <option  name="recipe_type" value="3">Beef</option>
+                  <option  name="recipe_type" value="3">Vegan</option>
+                  <option  name="recipe_type" value="3">Fish</option>
+                  <option  name="recipe_type" value="3">Pork</option>
                 </select>
                 <label>What is your recipe?</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
-                <input placeholder="List all Ingredients and Special Instructions" id="ingredients" type="text" class="validate">
+                <input placeholder="List all Ingredients and Special Instructions" name="ingredients0" id="ingredients" type="text" class="validate">
                 <label for="ingredients0">Ingredients</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
-                <input id="directions" type="text" class="validate">
+                <input id="directions" name="directions0" type="text" class="validate">
                 <label for="directions0">Directions</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
-                <input id="nutrition" type="text" class="validate">
+                <input id="nutrition" name="nutrition0" type="text" class="validate">
                 <label for="nutrition0">Nutrition Facts</label>
             </div>
         </div>
@@ -43,7 +43,7 @@
             <div class="col s12">
                 Serves:
                 <div class="input-field inline">
-                    <input id="serves" type="number" class="validate">
+                    <input id="serves" name="serves" type="number" class="validate">
                     <label for="serves">How Many People? </label>
 
                 </div>
