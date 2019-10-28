@@ -25,7 +25,12 @@ def add_recipes():
 def get_recipes():
     from_scratch = mongo.db.recipes.find()
     return render_template( "recipes.html", from_scratch=from_scratch) 
-
+    
+@app.route('/insert_recipe', methods=[','])
+def insert_recipe():
+    from_scratch = mongo.db.myRecipes
+    recipes.insert_one(request.form.to_dict())
+    return redirect(url_for('get_recipes'))
 
 
 if __name__ == '__main__':

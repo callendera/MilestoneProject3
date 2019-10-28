@@ -1,7 +1,7 @@
 {% extends 'base.html' %} {% block content %}
 <h3>Add Recipe</h3>
 <div class="row">
-    <form class="col s12">
+    <form class="col s12" action ="{{ url_for('insert_recipe') }} method=','>
         <div class="row">
             <div class="input-field col s6">
                 <input id="recipe_name" name="recipe_name" type="text" class="validate">
@@ -9,7 +9,7 @@
             </div>
 
             <div class="input-field col s6">
-                <select>
+                <select id="recipe_type" name="recipe_type">
                   <option value="" disabled selected>Choose your option</option>
                   <option name="recipe_type" value="1">Vegetarian</option>
                   <option  name="recipe_type" value="2">Chicken</option>
@@ -23,19 +23,19 @@
         </div>
         <div class="row">
             <div class="input-field col s12">
-                <input placeholder="List all Ingredients and Special Instructions" name="ingredients0" id="ingredients" type="text" class="validate">
+                <input placeholder="List all Ingredients and Special Instructions" name="ingredients0" id="ingredients0" type="text" class="validate">
                 <label for="ingredients0">Ingredients</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
-                <input id="directions" name="directions0" type="text" class="validate">
+                <input id="directions0" name="directions0" type="text" class="validate">
                 <label for="directions0">Directions</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
-                <input id="nutrition" name="nutrition0" type="text" class="validate">
+                <input id="nutrition0" name="nutrition0" type="text" class="validate">
                 <label for="nutrition0">Nutrition Facts</label>
             </div>
         </div>
