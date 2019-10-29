@@ -18,15 +18,18 @@
 
 
 <!---FROM TUTOR CONVERSTAION PASTED TO WORD!!!! adjust column size to have the 3x2 layout-->
+{% for recipes in from_scratch %}
 <div class="row">
-    {% for recipes in from_scratch %}
+    
 
-    <div class="col-sm-4  my-flow-text">
+    <div class="col sm12 m12 l12  my-flow-text">
 
         <div class="card card-height-width">
+            
             <div class="card-image">
                 <img src="static/images/food.jpg">
                 <span class="card-title"><p>
+                    
                             <strong>{{recipes.recipe_name}}</strong>
                         </p></span>
 
