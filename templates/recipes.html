@@ -1,6 +1,6 @@
 {% extends 'base.html' %} {% block content %}
 
-<div class="row">
+<div class="row recipe-padding">
     <div class="col s12 m6">
         <div class="card add-recipe-card-height-width">
             <div class="card-image">
@@ -15,31 +15,23 @@
     </div>
 </div>
 
-
-
 <!---FROM TUTOR CONVERSTAION PASTED TO WORD!!!! adjust column size to have the 3x2 layout-->
-{% for recipes in from_scratch %}
+
 <div class="row">
-    
-
-    <div class="col sm12 m12 l12  my-flow-text">
-
+    {% for recipes in from_scratch %}
+    <div class="col sm12 m12 l6  my-flow-text">
         <div class="card card-height-width">
-            
             <div class="card-image">
                 <img src="static/images/food.jpg">
                 <span class="card-title"><p>
-                    
                             <strong>{{recipes.recipe_name}}</strong>
                         </p></span>
-
             </div>
             <div class="card-content">
                 <p>
                     Serves: {{recipes.serves}}
                 </p>
                 <ul class="collapsible">
-
                     <li>
                         <div class="collapsible-header"><i class="material-icons">local_dining</i>Ingredients</div>
                         <div class="collapsible-body"><span>
@@ -65,10 +57,10 @@
         </div>
 
     </div>
+    {% endfor %}
 </div>
 
 
-{% endfor %}
 <h3>Add Recipe</h3>
 <div class="row">
     <form class="col s12" action="{{ url_for('get_recipes') }}" method=','>
@@ -123,6 +115,4 @@
             <i class="material-icons right">send</i>
          </button>
     </form>
-
-
     {% endblock %}
