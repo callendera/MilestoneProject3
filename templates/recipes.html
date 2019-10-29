@@ -18,48 +18,50 @@
 
 
 <!---FROM TUTOR CONVERSTAION PASTED TO WORD!!!! adjust column size to have the 3x2 layout-->
-{% for recipes in from_scratch %}
+<div class="row">
+    {% for recipes in from_scratch %}
 
-<div class="col4  my-flow-text">
+    <div class="col-sm-4  my-flow-text">
 
-    <div class="card card-height-width">
-        <div class="card-image">
-            <img src="static/images/food.jpg">
-            <span class="card-title"><p>
+        <div class="card card-height-width">
+            <div class="card-image">
+                <img src="static/images/food.jpg">
+                <span class="card-title"><p>
                             <strong>{{recipes.recipe_name}}</strong>
                         </p></span>
 
-        </div>
-        <div class="card-content">
-            <p>
-                Serves: {{recipes.serves}}
-            </p>
-            <ul class="collapsible">
+            </div>
+            <div class="card-content">
+                <p>
+                    Serves: {{recipes.serves}}
+                </p>
+                <ul class="collapsible">
 
-                <li>
-                    <div class="collapsible-header"><i class="material-icons">local_dining</i>Ingredients</div>
-                    <div class="collapsible-body"><span>
+                    <li>
+                        <div class="collapsible-header"><i class="material-icons">local_dining</i>Ingredients</div>
+                        <div class="collapsible-body"><span>
                      {{recipes.ingredients0}}
                 </span></div>
-                </li>
-                <li>
-                    <div class="collapsible-header"><i class="material-icons">list</i>Directions</div>
-                    <div class="collapsible-body"><span>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><i class="material-icons">list</i>Directions</div>
+                        <div class="collapsible-body"><span>
                         {{recipes.directions0}}
                 </span></div>
-                </li>
-                <li>
-                    <div class="collapsible-header"><i class="material-icons">fitness_center</i>Nutrition</div>
-                    <div class="collapsible-body"><span>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><i class="material-icons">fitness_center</i>Nutrition</div>
+                        <div class="collapsible-body"><span>
                     {{recipes.nutrition0}}
                 </span></div>
-                </li>
+                    </li>
 
-            </ul>
+                </ul>
+            </div>
+
         </div>
 
     </div>
-
 </div>
 
 
