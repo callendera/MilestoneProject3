@@ -1,66 +1,76 @@
-{% extends 'base.html' %} {% block content %} {% for recipes in from_scratch %}
+{% extends 'base.html' %} {% block content %}
+
+<div class="row">
+    <div class="col s12 m6">
+        <div class="card add-recipe-card-height-width">
+            <div class="card-image">
+                <img src="static/images/food.jpg">
+                <span class="card-title"><p><strong>Add Recipe</strong></p></span>
+                <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+            </div>
+            <div class="card-content">
+                <p>Add your own recipes and share with everyone! What is your holiday speciality? Add your family favorites!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% for recipes in from_scratch %}
 
 <!---FROM TUTOR CONVERSTAION PASTED TO WORD!!!! adjust column size to have the 3x2 layout-->
 <div class="row">
-    <div class="col s4">
-
-        <div class="featured-recipe">
-
-        </div>
-        
-
-        
-        
+    <div class="col-4  my-flow-text">
         <div class="row">
-    <div class="col s12 m6">
-      <div class="card">
-        <div class="card-image">
-          <img src="images/sample-1.jpg">
-          <span class="card-title"><p>
-            <strong>{{recipes.recipe_name}}</strong>
-        </p></span>
-          
-        </div>
-        <div class="card-content">
-            <p>
-            Serves: {{recipes.serves}}
-        </p>
-          <ul class="collapsible">
+            <div class="col s12 m6">
+                <div class="card card-height-width">
+                    <div class="card-image">
+                        <img src="static/images/food.jpg">
+                        <span class="card-title"><p>
+                            <strong>{{recipes.recipe_name}}</strong>
+                        </p></span>
 
-            <li>
-                <div class="collapsible-header"><i class="material-icons">local_dining</i>Ingredients</div>
-                <div class="collapsible-body"><span>
+                    </div>
+                    <div class="card-content">
+                        <p>
+                            Serves: {{recipes.serves}}
+                        </p>
+                        <ul class="collapsible">
+
+                            <li>
+                                <div class="collapsible-header"><i class="material-icons">local_dining</i>Ingredients</div>
+                                <div class="collapsible-body"><span>
                      {{recipes.ingredients0}}
                 </span></div>
-            </li>
-            <li>
-                <div class="collapsible-header"><i class="material-icons">list</i>Directions</div>
-                <div class="collapsible-body"><span>
+                            </li>
+                            <li>
+                                <div class="collapsible-header"><i class="material-icons">list</i>Directions</div>
+                                <div class="collapsible-body"><span>
                         {{recipes.directions0}}
                 </span></div>
-            </li>
-            <li>
-                <div class="collapsible-header"><i class="material-icons">fitness_center</i>Nutrition</div>
-                <div class="collapsible-body"><span>
+                            </li>
+                            <li>
+                                <div class="collapsible-header"><i class="material-icons">fitness_center</i>Nutrition</div>
+                                <div class="collapsible-body"><span>
                     {{recipes.nutrition0}}
                 </span></div>
-            </li>
+                            </li>
 
-        </ul>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
-        
-        
+
+
 
     </div>
-    
+
 </div>
 {% endfor %}
 <h3>Add Recipe</h3>
 <div class="row">
-    <form class="col s12" action ="{{ url_for('get_recipes') }}" method=','>
+    <form class="col s12" action="{{ url_for('get_recipes') }}" method=','>
         <div class="row">
             <div class="input-field col s6">
                 <input id="recipe_name" name="recipe_name" type="text" class="validate">
@@ -114,4 +124,4 @@
     </form>
 
 
-{% endblock %}
+    {% endblock %}
