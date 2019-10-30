@@ -1,3 +1,7 @@
 .card-height-width, .add-recipe-card-height-width {
     width: 500px;
 }
+
+.add-recipe-card-height-width {
+    height: 645px;
+}

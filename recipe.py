@@ -25,11 +25,12 @@ def get_recipes():
 def add_recipes():
     from_scratch = mongo.db.recipes.find()
     return render_template( "recipes.html")
-
- 
     
-
-
+@app.route('/insert_recipe', methods=['GET','POST'])
+def insert_recipe():
+    from_scratch = mongo.db.recipes
+    from_scratch.insert_one(request.form.to_dict())
+    return redirect(url_for('get_recipes'))
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
