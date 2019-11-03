@@ -1,0 +1,92 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="callout background-callout">
+    <div class="container callout-text-background-color">
+
+        <h1>Hello There</h1>
+        <h2>Join our From Scratch community</h2>
+        <h3>Share and Discover Recipes</h3>
+        <a class="waves-effect waves-light btn"><i class="material-icons left">person_add</i>Register</a>
+        <p>Already a Member? <a href=#>Log In</a></p>
+
+    </div>
+</div>
+<div class="container flow-text" id="all-recipes">
+
+    <div class="row">
+        {% for recipes in from_scratch %}
+        <div class="col s6">
+          <img class="materialboxed recipe-image" data-caption="{{recipes.recipe_name}}" src="{{recipes.recipe_image}}" >
+          <p class="recipe-name-margin">{{recipes.recipe_name}}</p><a href="/templates/recipe-details.html">Lets Make It!</a>
+        </div>
+        {% endfor %}
+    </div>
+
+
+    <h3>Add Recipe</h3>
+    <div class="row">
+        <form class="col s12" action="{{ url_for('insert_recipe') }}" method='POST'>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input id="recipe_name" name="recipe_name" type="text" class="validate">
+                    <label for="recipe_name">Recipe Name</label>
+                </div>
+
+                <div class="input-field col s6">
+                    <select id="recipe_type" name="recipe_type">
+                  <option value="" disabled selected>Choose your option</option>
+                  <option value="1">Vegetarian</option>
+                  <option value="2">Chicken</option>
+                  <option value="3">Beef</option>
+                  <option value="3">Vegan</option>
+                  <option value="3">Fish</option>
+                  <option value="3">Pork</option>
+                </select>
+                    <label>What is your recipe?</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input placeholder="List all Ingredients and Special Instructions" name="ingredients0" id="ingredients0" type="text" class="validate">
+                    <label for="ingredients0">Ingredients</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="directions0" name="directions0" type="text" class="validate">
+                    <label for="directions0">Directions</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="nutrition0" name="nutrition0" type="text" class="validate">
+                    <label for="nutrition0">Nutrition Facts</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s6">
+                    Serves:
+                    <div class="input-field inline">
+                        <input id="serves" name="serves" type="number" class="validate">
+                        <label for="serves">How Many People? </label>
+
+                    </div>
+                </div>
+                <div class="input-field col s6">
+                    <input placeholder="Your Name" id="recipe_name" name="recipe_name" type="text" class="validate">
+                    <label for="recipe_name">Recipe by:</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input placeholder="Please give the URL of your recipe image" id="recipe_image" name="recipe_image" type="text" class="validate required">
+                    <label for="recipe_image">Recipe Image</label>
+                </div>
+            </div>
+            <button class="btn waves-effect waves-light right" type="submit" name="action">Add Recipe
+            <i class="material-icons right">playlist_add</i>
+         </button>
+        </form>
+        {% endblock %}
+    </div>
+</div>
