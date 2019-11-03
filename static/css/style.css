@@ -37,3 +37,8 @@
     margin-top: 150px;
 
 }
+
+.view-recipe-image {
+    height: 500px;
+    width: 800px;
+}

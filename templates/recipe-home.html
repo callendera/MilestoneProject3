@@ -16,8 +16,8 @@
     <div class="row">
         {% for recipes in from_scratch %}
         <div class="col s6">
-          <img class="materialboxed recipe-image" data-caption="{{recipes.recipe_name}}" src="{{recipes.recipe_image}}" >
-          <p class="recipe-name-margin">{{recipes.recipe_name}}</p><a href="/templates/recipe-details.html">Lets Make It!</a>
+          <a href="#"> <img class="materialboxed recipe-image" data-caption="{{recipes.recipe_name}}" src="{{recipes.recipe_image}}" ></a>
+          <a href="#"><p class="recipe-name-margin"><strong>{{recipes.recipe_name}}</strong></p></a>
         </div>
         {% endfor %}
     </div>

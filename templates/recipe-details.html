@@ -1,6 +1,8 @@
 {% extends 'base.html' %} {% block content %}
 
+<div class="container">
 {% for recipes in from_scratch %}
+<img class="materialboxed view-recipe-image" data-caption="{{recipes.recipe_name}}" src="{{recipes.recipe_image}}" >
 <h2>{{recipes.recipe_name}}</h2>
 <div class="divider"></div>
   <div class="section">
@@ -18,5 +20,5 @@
     <p>{{recipes.nutrition0}}</p>
   </div>
 {% endfor %}
-
+</div>
 {% endblock %}
