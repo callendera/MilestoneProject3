@@ -1,0 +1,22 @@
+{% extends 'base.html' %} {% block content %}
+
+{% for recipes in from_scratch %}
+<h2>{{recipes.recipe_name}}</h2>
+<div class="divider"></div>
+  <div class="section">
+    <h5>Ingredients</h5>
+    <p>{{recipes.ingredients0}}</p>
+  </div>
+  <div class="divider"></div>
+  <div class="section">
+    <h5>Directions</h5>
+    <p>{{recipes.directions0}}</p>
+  </div>
+  <div class="divider"></div>
+  <div class="section">
+    <h5>Nutrition Facts</h5>
+    <p>{{recipes.nutrition0}}</p>
+  </div>
+{% endfor %}
+
+{% endblock %}

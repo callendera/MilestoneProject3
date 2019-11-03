@@ -1,4 +1,13 @@
-
+.recipe-image {
+    height: 300px;
+    width: 400px;
+    padding: 20px;
+    padding-bottom: 0px;
+    margin-top: 20px;
+}
+.recipe-name-margin {
+    margin-top: 0px;
+}
 .background-callout {
      /*--- FOR ALL BACKGROUND CONTAINERS sets background image for callout container. 
     it is set to not repeat, so the image doesnt stretch, and the image will be centered horizontally and 
@@ -25,5 +34,6 @@
     background-color: #05000059;
     color: white;
     height: 330px;
+    margin-top: 150px;
 
 }
