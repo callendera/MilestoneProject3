@@ -6,27 +6,31 @@
     <!--link for Icons in Materialize-->
 
     <!--JQuery needs to be active before Materialize can render its' data-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}" type="text/css" />
 </head>
 
 <body>
-    <nav>
-        <div class="nav-wrapper">
-            <a href="index.html" class="brand-logo">From Scratch</a>
-            <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-            <ul class="right hide-on-med-and-down">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#all-recipes">All Recipes</a></li>
-                <li><a href="collapsible.html">Login</a></li>
-                <li><a href="mobile.html">Register</a></li>
-            </ul>
-        </div>
-    </nav>
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper">
+                <a href="index.html" class="brand-logo">From Scratch</a>
+                <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="#top">Home</a></li>
+                    <li><a href="#all-recipes">All Recipes</a></li>
+                    <li><a href="collapsible.html">Login</a></li>
+                    <li><a href="mobile.html">Register</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
 
     <ul class="sidenav" id="mobile-nav">
-        <li><a href="sass.html">Home</a></li>
-        <li><a href="badges.html">All Recipes</a></li>
+        <li><a href="#top">Home</a></li>
+        <li><a href="#all-recipes">All Recipes</a></li>
         <li><a href="collapsible.html">Login</a></li>
         <li><a href="mobile.html">Register</a></li>
     </ul>
@@ -37,6 +41,9 @@
     <!--contains any content needed for each page, this give a template for such-->
     {% endblock %}
     
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <!-- Script to use Materialize functionality-->
