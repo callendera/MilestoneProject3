@@ -11,10 +11,11 @@
 
     </div>
 </div>
-<div class="container">
+<div class="container" id="all-recipes">
+    
     <div class="row">
         {% for recipes in from_scratch %}
-        <div class="col s12  my-flow-text flow-text">
+        <div class="col s6  my-flow-text flow-text">
             <div class="card card-height-width">
                 <div class="card-image card-image-height-width">
                     <img src="{{ recipes.recipe_image }}">
@@ -22,32 +23,32 @@
                             <strong>{{recipes.recipe_name}}</strong>
                         </p></span>
                 </div>
-                <div class="card-content">
-                    <p>
-                        Serves: {{recipes.serves}}
-                    </p>
-                    <ul class="collapsible">
-                        <li>
-                            <div class="collapsible-header"><i class="material-icons">local_dining</i>Ingredients</div>
-                            <div class="collapsible-body"><span>
-                     {{recipes.ingredients0}}
-                </span></div>
-                        </li>
-                        <li>
-                            <div class="collapsible-header"><i class="material-icons">list</i>Directions</div>
-                            <div class="collapsible-body"><span>
-                        {{recipes.directions0}}
-                </span></div>
-                        </li>
-                        <li>
-                            <div class="collapsible-header"><i class="material-icons">fitness_center</i>Nutrition</div>
-                            <div class="collapsible-body"><span>
-                    {{recipes.nutrition0}}
-                </span></div>
-                        </li>
+                <!--<div class="card-content">-->
+                <!--    <p>-->
+                <!--        Serves: {{recipes.serves}}-->
+                <!--    </p>-->
+                <!--    <ul class="collapsible">-->
+                <!--        <li>-->
+                <!--            <div class="collapsible-header"><i class="material-icons">local_dining</i>Ingredients</div>-->
+                <!--            <div class="collapsible-body"><span>-->
+                <!--     {{recipes.ingredients0}}-->
+                <!--</span></div>-->
+                <!--        </li>-->
+                <!--        <li>-->
+                <!--            <div class="collapsible-header"><i class="material-icons">list</i>Directions</div>-->
+                <!--            <div class="collapsible-body"><span>-->
+                <!--        {{recipes.directions0}}-->
+                <!--</span></div>-->
+                <!--        </li>-->
+                <!--        <li>-->
+                <!--            <div class="collapsible-header"><i class="material-icons">fitness_center</i>Nutrition</div>-->
+                <!--            <div class="collapsible-body"><span>-->
+                <!--    {{recipes.nutrition0}}-->
+                <!--</span></div>-->
+                <!--        </li>-->
 
-                    </ul>
-                </div>
+                <!--    </ul>-->
+                <!--</div>-->
 
             </div>
 
