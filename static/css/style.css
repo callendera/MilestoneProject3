@@ -1,7 +1,37 @@
 .card-height-width, .add-recipe-card-height-width {
     width: 500px;
+    
 }
 
 .add-recipe-card-height-width {
     height: 645px;
+}
+
+.background-callout {
+     /*--- FOR ALL BACKGROUND CONTAINERS sets background image for callout container. 
+    it is set to not repeat, so the image doesnt stretch, and the image will be centered horizontally and 
+    pushed to the top of the container. the background will also not scroll, but remained positioned so things will scroll past it---*/
+    background: url("../images/foods.jpg")no-repeat center center fixed;
+    /*--- adjusts background for different browsers ---*/
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    /*--- makes the background fit to the container ---*/
+    overflow: hidden;
+
+    /*--- aligns and justifies text in container ---*/
+    align-items: center;
+    justify-content: center;
+    /*--- the height that container will take up in the viewport ---*/
+    height: 91vh; 
+}
+
+.callout-text-background-color {
+    text-align: center;
+    background-color: #05000059;
+    color: white;
+    height: 330px;
+
 }

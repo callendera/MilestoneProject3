@@ -6,17 +6,37 @@
     <!--link for Icons in Materialize-->
 
     <!--JQuery needs to be active before Materialize can render its' data-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}" type="text/css" />
 </head>
 
 <body>
-    <div class="container">
-    <h1>Is this thing on?</h1>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="index.html" class="brand-logo">From Scratch</a>
+            <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="badges.html">All Recipes</a></li>
+                <li><a href="collapsible.html">Login</a></li>
+                <li><a href="mobile.html">Register</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <ul class="sidenav" id="mobile-nav">
+        <li><a href="sass.html">Home</a></li>
+        <li><a href="badges.html">All Recipes</a></li>
+        <li><a href="collapsible.html">Login</a></li>
+        <li><a href="mobile.html">Register</a></li>
+    </ul>
+
+
+
     {% block content %}
     <!--contains any content needed for each page, this give a template for such-->
     {% endblock %}
-    </div>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <!-- Script to use Materialize functionality-->
@@ -26,10 +46,16 @@
         });
     </script>
     <script type="text/javascript">
-        $(document).ready(function(){
+        $(document).ready(function() {
             $('.collapsible').collapsible();
         });
     </script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.sidenav').sidenav();
+        });
+    </script>
+
     <!-- script for the collapsibles-->
 </body>
 

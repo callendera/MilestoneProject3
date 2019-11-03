@@ -26,7 +26,7 @@ def add_recipes():
     from_scratch = mongo.db.recipes.find()
     return render_template( "recipes.html")
     
-@app.route('/insert_recipe', methods=['GET','POST'])
+@app.route('/insert_recipe', methods=['POST'])
 def insert_recipe():
     from_scratch = mongo.db.recipes
     from_scratch.insert_one(request.form.to_dict())
