@@ -16,8 +16,8 @@
     <div class="row">
         {% for recipes in from_scratch %}
         <div class="col s6">
-          <a href="{{ url_for('view_recipe') }}"> <img class="materialboxed recipe-image" data-caption="{{recipes.recipe_name}}" src="{{recipes.recipe_image}}" ></a>
-          <a href="{{ url_for('view_recipe') }}"><p class="recipe-name-margin"><strong>{{recipes.recipe_name}}</strong></p></a>
+          <a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}"><img class="materialboxed recipe-image" data-caption="{{recipes.recipe_name}}" src="{{recipes.recipe_image}}" ></a>
+          <a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}"><p class="recipe-name-margin"><strong>{{recipes.recipe_name}}</strong></p></a>
         </div>
         {% endfor %}
     </div>

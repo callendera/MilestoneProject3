@@ -19,7 +19,7 @@ mongo = PyMongo(app)
 #Display text as proof of concept
 def get_recipes():
     from_scratch = mongo.db.recipes.find()
-    return render_template( "recipe-details.html", from_scratch=from_scratch) 
+    return render_template( "recipe-home.html", from_scratch=from_scratch) 
 
 @app.route('/add_recipes')
 def add_recipes():
@@ -31,6 +31,16 @@ def insert_recipe():
     from_scratch = mongo.db.recipes
     from_scratch.insert_one(request.form.to_dict())
     return redirect(url_for('get_recipes'))
+    
+@app.route('/view_recipe/<recipe_id>')
+def view_recipe(recipe_id):
+    recipe = mongo.db.recipes
+    recipe.find_one_and_update(s
+        {'_id': ObjectId(recipe_id)},
+    )
+    recipe_db = mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
+    return render_template("recipe-details.html", recipe=recipe_db)
+
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
