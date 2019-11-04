@@ -12,70 +12,60 @@
 </head>
 
 <body>
-    <div class="callout background-callout">
-    <div class="navbar-fixed ">
-        <nav class="transparent">
-            <div class="nav-wrapper my-navbar-margin">
-                <a href="index.html" class="brand-logo">From Scratch</a>
-                <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-                <ul class="right hide-on-med-and-down">
-                    <li><a href="{{ url_for('get_recipes') }}">Home</a></li>
-                    <li><a href="#all-recipes">All Recipes</a></li>
-                    <li><a href="collapsible.html">Add Recipes</a></li>
-                    <li><a href="mobile.html">About</a></li>
-                </ul>
-            </div>
-        </nav>
-    </div>
-    
-    <div class="container callout-text-background-color">
+        <div class="navbar-fixed ">
+            <nav class="transparent">
+                <div class="nav-wrapper my-navbar-margin">
+                    <a href="index.html" class="brand-logo">From Scratch</a>
+                    <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="{{ url_for('get_recipes') }}">Home</a></li>
+                        <li><a href="#all-recipes">All Recipes</a></li>
+                        <li><a href="collapsible.html">Add Recipes</a></li>
+                        <li><a href="mobile.html">About</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
 
-        <h2>Family is everything</h2>
-        <h3>Welcome to the Callender's From Scratch recipe forum</h3>
-        <h4>Share and Discover our family recipes</h4>
-        <button class="btn waves-effect waves-light center my-btn-color" type="submit" name="action">Add Recipe
-        <i class="material-icons right">add</i>
 
-    </div>
-</div>
-    <ul class="sidenav" id="mobile-nav">
-        <li><a href="#top">Home</a></li>
-        <li><a href="#all-recipes">All Recipes</a></li>
-        <li><a href="collapsible.html">Login</a></li>
-        <li><a href="mobile.html">Register</a></li>
-    </ul>
+        <ul class="sidenav" id="mobile-nav">
+            <li><a href="#top">Home</a></li>
+            <li><a href="#all-recipes">All Recipes</a></li>
+            <li><a href="collapsible.html">Login</a></li>
+            <li><a href="mobile.html">Register</a></li>
+        </ul>
 
 
 
-    {% block content %}
-    <!--contains any content needed for each page, this give a template for such-->
-    {% endblock %}
-    
-    
+        {% block content %}
+        <!--contains any content needed for each page, this give a template for such-->
+        {% endblock %}
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    
-    <script src='http://code.jquery.com/jquery-3.3.1.min.js'></script>
-    <script src='/javascripts/register.js'></script>
-    <!-- Script to use Materialize functionality-->
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $('select').formSelect();
-        });
-    </script>
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $('.collapsible').collapsible();
-        });
-    </script>
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $('.sidenav').sidenav();
-        });
-    </script>
 
-    <!-- script for the collapsibles-->
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+        <script src='http://code.jquery.com/jquery-3.3.1.min.js'></script>
+        <script src='/javascripts/register.js'></script>
+        <!-- Script to use Materialize functionality-->
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('select').formSelect();
+            });
+        </script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('.collapsible').collapsible();
+            });
+        </script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('.sidenav').sidenav();
+            });
+        </script>
+
+        <!-- script for the collapsibles-->
 </body>
 
 </html>

@@ -1,4 +1,19 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+<div class="callout background-callout">
+    <div class="container callout-text-background-color">
+
+        <h2>Family is everything</h2>
+        <h3>Welcome to the Callender's From Scratch recipe forum</h3>
+        <h4>Share and Discover our family recipes</h4>
+        <a href="#add-recipes" class="font-color"><button class="btn waves-effect waves-light center my-btn-color">Add Recipe
+        <i class="material-icons right">add</i></a>
+
+    </div>
+</div>
 
 <div  id="all-recipes"></div>
 </br>
@@ -25,7 +40,7 @@
         {% endfor %}
     </div>
 
-
+    <div  id="add-recipes"></div>
     <h3>Add Recipe</h3>
     <div class="row">
         <form class="col s12" action="{{ url_for('insert_recipe') }}" method='POST'>

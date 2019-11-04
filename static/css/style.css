@@ -62,6 +62,10 @@
     color: #3384d8;
 }
 
+.font-color {
+    color: white;
+}
+
 .my-search-bar-margin {
     margin-top: 20px;
     width: 910px;
