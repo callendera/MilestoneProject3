@@ -13,11 +13,11 @@
 </div>
 <div class="container flow-text" id="all-recipes">
 
-    <div class="row">
+    <div class="row recipe-row-margin">
         {% for recipes in from_scratch %}
         <div class="col s6">
-          <a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}"><img class="materialboxed recipe-image" data-caption="{{recipes.recipe_name}}" src="{{recipes.recipe_image}}" ></a>
-          <a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}"><p class="recipe-name-margin"><strong>{{recipes.recipe_name}}</strong></p></a>
+          <img class="materialboxed recipe-image" data-caption="{{recipes.recipe_name}}" src="{{recipes.recipe_image}}" >
+          <p class="recipe-name-margin"><strong>{{recipes.recipe_name}}</strong></p>
         </div>
         {% endfor %}
     </div>

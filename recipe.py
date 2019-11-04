@@ -32,14 +32,14 @@ def insert_recipe():
     from_scratch.insert_one(request.form.to_dict())
     return redirect(url_for('get_recipes'))
     
-@app.route('/view_recipe/<recipe_id>')
-def view_recipe(recipe_id):
-    recipe = mongo.db.recipes
-    recipe.find_one_and_update(s
-        {'_id': ObjectId(recipe_id)},
-    )
-    recipe_db = mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
-    return render_template("recipe-details.html", recipe=recipe_db)
+# @app.route('/view_recipe/<recipe_id>')
+# def view_recipe(recipe_id):
+#     recipe = mongo.db.recipes
+#     recipe.find_one_and_update(s
+#         {'_id': ObjectId(recipe_id)},
+#     )
+#     recipe_db = mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
+#     return render_template("recipe-details.html", recipe=recipe_db)
 
 
 if __name__ == '__main__':
