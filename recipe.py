@@ -34,7 +34,7 @@ def insert_recipe():
     
 @app.route('/view_recipe/<recipe_id>')
 def view_recipe(recipe_id):
-    return render_template('recipedetails.html', recipes=mongo.db.recipes.find({'_id': ObjectId(recipe_id)}))
+    return render_template('recipedetails.html', from_scratch=mongo.db.recipes.find({'_id': ObjectId(recipe_id)}))
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
