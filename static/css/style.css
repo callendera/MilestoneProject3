@@ -8,6 +8,11 @@
 .recipe-name-margin {
     margin-top: 0px;
 }
+
+.view-recipe-container-margin {
+    margin-bottom: 60px;
+}
+
 .background-callout {
      /*--- FOR ALL BACKGROUND CONTAINERS sets background image for callout container. 
     it is set to not repeat, so the image doesnt stretch, and the image will be centered horizontally and 
@@ -57,8 +62,21 @@
 }
 
 .my-btn-color {
-    background-color: #3384d8;
+    background-color: #2870a8;
 }
+
+.my-btn-color:hover {
+    /*--- color of background: blue ---*/
+    background-color: #2870a8cf;
+    /*--- when mouse is hovered the button will transition for 
+    .40seconds to a darker green color. the color will gradually ease in and then ease out. ---*/
+    transition: all 0.40s ease-in-out;
+    -moz-transition: all 0.40s ease-in-out;
+    -webkit-transition: all 0.40s ease-in-out;
+    -o-transition: all 0.40s ease-in-out;
+    /*--- adjustments for each web browser ---*/
+}
+
 
 .my-link-color {
     color: #3384d8;
