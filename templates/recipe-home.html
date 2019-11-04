@@ -19,7 +19,7 @@
         </nav>
         {% for recipes in from_scratch %}
         <div class="col s6">
-            <a href="{{url_for('view_recipe', recipe_id=recipe._id)}}"<img class="materialboxed recipe-image" data-caption="{{recipes.recipe_name}}" src="{{recipes.recipe_image}}" alt="No Image Available">
+            <a href="{{url_for('view_recipe', recipe_id=recipe._id)}}"><img class="materialboxed recipe-image" data-caption="{{recipes.recipe_name}}" src="{{recipes.recipe_image}}" alt="No Image Available"></a>
             <p class="recipe-name-margin"><strong>{{recipes.recipe_name}}</strong></p>
         </div>
         {% endfor %}
