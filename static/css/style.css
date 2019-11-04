@@ -42,6 +42,8 @@
 .view-recipe-image {
     height: 500px;
     width: 800px;
+    margin-left: 125px;
+    margin-top: 30px;
 }
 
 .recipe-row-margin {
