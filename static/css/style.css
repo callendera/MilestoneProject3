@@ -26,12 +26,12 @@
     align-items: center;
     justify-content: center;
     /*--- the height that container will take up in the viewport ---*/
-    height: 91vh; 
+    height: 100vh; 
 }
 
 .callout-text-background-color {
     text-align: center;
-    background-color: #05000059;
+    background-color: #7c1a50a3;
     color: white;
     height: 330px;
     margin-top: 150px;
@@ -46,3 +46,20 @@
 .recipe-row-margin {
     margin-left: 80px;
 }
+
+.my-navbar-margin {
+    padding-left: 40px;
+    padding-right: 40px;
+    background-color: #7c1a50ed;
+}
+
+.my-btn-color {
+    background-color: #3384d8;
+}
+
+.my-link-color {
+    color: #3384d8;
+}
+
+
+
