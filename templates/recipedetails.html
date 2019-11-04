@@ -1,9 +1,11 @@
 {% extends 'base.html' %} {% block content %}
 
-<div class="container">
+<div class="container view-recipe-container-margin">
   {% for recipes in from_scratch %}
   <img class="materialboxed view-recipe-image" data-caption="{{recipes.recipe_name}}" src="{{recipes.recipe_image}}">
   <h2>{{recipes.recipe_name}}</h2>
+  <h6>{{recipes.recipe_type}}</h6>
+  <h6>Serves: {{recipes.serves}}</h6>
   <div class="divider"></div>
   <div class="section">
     <h5>Ingredients</h5>
@@ -19,6 +21,7 @@
     <h5>Nutrition Facts</h5>
     <p>{{recipes.nutrition0}}</p>
   </div>
+  <h6>Recipe By: {{recipes.recipe_by}}</h6>
   <div class="fixed-action-btn">
   <a class="btn-floating btn-large my-btn-color">
     <i class="large material-icons">mode_edit</i>
