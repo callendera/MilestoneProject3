@@ -19,10 +19,10 @@
                 <a href="index.html" class="brand-logo">From Scratch</a>
                 <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
-                    <li><a href="#top">Home</a></li>
+                    <li><a href="{{ url_for('get_recipes') }}">Home</a></li>
                     <li><a href="#all-recipes">All Recipes</a></li>
-                    <li><a href="collapsible.html">Login</a></li>
-                    <li><a href="mobile.html">Register</a></li>
+                    <li><a href="collapsible.html">Add Recipes</a></li>
+                    <li><a href="mobile.html">About</a></li>
                 </ul>
             </div>
         </nav>
@@ -30,11 +30,11 @@
     
     <div class="container callout-text-background-color">
 
-        <h1>Hello There,</h1>
-        <h2>Join our From Scratch community</h2>
-        <h3>Share and Discover Recipes</h3>
-        <a class="waves-effect waves-light btn my-btn-color"><i class="material-icons left">person_add</i>Register</a>
-        <p>Already a Member? <a href="#" class="my-link-color">Log In</a></p>
+        <h2>Family is everything</h2>
+        <h3>Welcome to the Callender's From Scratch recipe forum</h3>
+        <h4>Share and Discover our family recipes</h4>
+        <button class="btn waves-effect waves-light center my-btn-color" type="submit" name="action">Add Recipe
+        <i class="material-icons right">add</i>
 
     </div>
 </div>
