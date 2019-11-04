@@ -29,3 +29,6 @@ $(function(){
         }
     });
 });
+
+
+//Code above from: 'http://programmerblog.net/nodejs-user-registration-tutorial/'
