@@ -35,7 +35,7 @@
     background-color: #7c1a50a3;
     color: white;
     height: 300px;
-    margin-top: 150px;
+    margin-top: 400px;
 
 
 }
@@ -84,7 +84,7 @@
 
 .my-search-bar-margin {
     margin-top: 20px;
-    width: 910px;
+    width: 900px;
 }
 
 /*---Media Queries---*/
@@ -94,7 +94,8 @@
 
 @media (min-width: 576px) {
     .callout-text-background-color {
-        margin-top: 400px;
+        margin-top: 200px;
+        ;
     }
 
 }
@@ -118,6 +119,10 @@
         /*--- the height that container will take up in the viewport ---*/
         height: 60vh;
     }
+    .callout-text-background-color {
+        margin-top: 50px;
+        ;
+    }
 
 }
 
@@ -138,8 +143,19 @@
         align-items: center;
         justify-content: center;
         /*--- the height that container will take up in the viewport ---*/
-        height: 100vh;
+        height: 60vh;
     }
+    .callout-text-background-color {
+        margin-top: 90px;
+        ;
+    }
+    .my-search-bar-margin {
+    width: 850px;
+    }
+    .recipe-row-margin {
+    margin-left: 0px;
+}
+
 }
 
 @media (min-width: 1200px) {
@@ -159,6 +175,18 @@
         align-items: center;
         justify-content: center;
         /*--- the height that container will take up in the viewport ---*/
-        height: 100vh;
+        height: 70vh;
     }
+    .callout-text-background-color {
+        margin-top: 70px;
+        ;
+    }
+    
+    .my-search-bar-margin {
+    width: 900px;
+    }
+    .recipe-row-margin {
+    margin-left: 80px;
+}
+   
 }
