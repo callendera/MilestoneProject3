@@ -123,6 +123,14 @@
         margin-top: 50px;
         ;
     }
+    
+     .my-search-bar-margin {
+    width: 840px;
+    }
+    
+     .recipe-row-margin {
+    margin-left: 0px;
+    }
 
 }
 
@@ -154,7 +162,7 @@
     }
     .recipe-row-margin {
     margin-left: 0px;
-}
+    }
 
 }
 
