@@ -2,7 +2,9 @@
 
 <div class="container view-recipe-container-margin">
   {% for recipes in from_scratch %}
-  <img class="materialboxed responsive-img view-recipe-image" data-caption="{{recipes.recipe_name}}" src="{{recipes.recipe_image}}">
+  <div class="view-recipe-image">
+  <img class="materialboxed responsive-img" data-caption="{{recipes.recipe_name}}" src="{{recipes.recipe_image}}">
+  </div>
   <h2>{{recipes.recipe_name}}</h2>
   <h6>{{recipes.recipe_type}}</h6>
   <h6>Serves: {{recipes.serves}}</h6>
