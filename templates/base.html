@@ -40,7 +40,7 @@
     {% block content %}
     <!--contains any content needed for each page, this give a template for such-->
     {% endblock %}
-    <div id="modal1" class="modal">
+    <div id="modal1" class="modal scale-transition scale-out">
         <div class="modal-content">
             <h3>Add Recipe</h3>
             <div class="row">
@@ -102,7 +102,7 @@
                             <label for="recipe_image">Recipe Image</label>
                         </div>
                     </div>
-                    <button class="btn waves-effect waves-light right my-btn-color" type="submit" name="action">Add Recipe
+                    <button class="btn waves-effect waves-light right my-btn-color modal-close" type="submit" name="action">Add Recipe
             <i class="material-icons right">add</i>
          </button>
                 </form>
