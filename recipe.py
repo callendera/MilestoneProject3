@@ -36,6 +36,7 @@ def insert_recipe():
     from_scratch.insert_one(request.form.to_dict())
     return redirect('get_recipes')
 
+
 @app.route('/edit_recipe/<recipe_id>')
 def edit_recipe(recipe_id):
     the_recipe =  mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
