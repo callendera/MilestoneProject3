@@ -1,8 +1,4 @@
-{% extends 'base.html' %}
-
-
-
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 <div class="callout background-callout">
     <div class="container callout-text-background-color">
 
@@ -15,23 +11,23 @@
     </div>
 </div>
 
-<div  id="all-recipes"></div>
+<div id="all-recipes"></div>
 </br>
 </br>
 <div class="container flow-text">
     <h4 class="center">Browse Our Recipes</h4>
     <div class="row recipe-row-margin">
-        <nav class="my-search-bar-margin">
-            <div class="nav-wrapper my-btn-color">
-                <form>
-                    <div class="input-field">
-                        <input id="search" type="search" required>
-                        <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-                        <i class="material-icons">close</i>
-                    </div>
-                </form>
-            </div>
-        </nav>
+            <nav class="my-search-bar-margin center">
+                <div class="nav-wrapper my-btn-color">
+                    <form>
+                        <div class="input-field">
+                            <input id="search" type="search" required>
+                            <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                            <i class="material-icons">close</i>
+                        </div>
+                    </form>
+                </div>
+            </nav>
         {% for recipes in from_scratch %}
         <div class="col s6">
             <a href="{{url_for('view_recipe', recipe_id=recipes._id)}}"><img class="materialboxed recipe-image" data-caption="{{recipes.recipe_name}}" src="{{recipes.recipe_image}}" alt="No Image Available"></a>

@@ -163,6 +163,11 @@
     .recipe-row-margin {
     margin-left: 0px;
     }
+    
+    .view-recipe-image {
+    height: 400px;
+    width: 600px;
+    }
 
 }
 
