@@ -17,6 +17,7 @@
 <div class="container flow-text">
     <h4 class="center">Browse Our Recipes</h4>
     <div class="row recipe-row-margin">
+        <div class="col s12">
             <nav class="my-search-bar-margin center">
                 <div class="nav-wrapper my-btn-color">
                     <form>
@@ -28,6 +29,7 @@
                     </form>
                 </div>
             </nav>
+        </div>
         {% for recipes in from_scratch %}
         <div class="col s6">
             <a href="{{url_for('view_recipe', recipe_id=recipes._id)}}"><img class="materialboxed recipe-image" data-caption="{{recipes.recipe_name}}" src="{{recipes.recipe_image}}" alt="No Image Available"></a>

@@ -85,7 +85,6 @@
 
 .my-search-bar-margin {
     margin-top: 20px;
-    width: 900px;
 }
 
 /*---Media Queries---*/
@@ -165,11 +164,7 @@
     margin-left: 0px;
     }
     
-    /*.view-recipe-image {*/
-    /*height: 400px;*/
-    /*width: 600px;*/
-    /*}*/
-
+   
 }
 
 @media (min-width: 1200px) {
