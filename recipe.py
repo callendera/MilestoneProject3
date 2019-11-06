@@ -30,7 +30,7 @@ def add_recipes():
 def insert_recipe():
     from_scratch = mongo.db.recipes
     from_scratch.insert_one(request.form.to_dict())
-    return redirect(url_for('get_recipes'))
+    return render_template('view_recipe/<recipe_id>')
     
 @app.route('/view_recipe/<recipe_id>')
 def view_recipe(recipe_id):
@@ -41,3 +41,6 @@ if __name__ == '__main__':
             port=int(os.environ.get('PORT')),
             debug=True)
 #So they know how and where to run application
+
+
+#redirect(url_for('get_recipes'))

@@ -41,10 +41,10 @@
 }
 
 .view-recipe-image {
-    height: 500px;
+    height: 450px;
     width: 800px;
     margin-left: 125px;
-    margin-top: 30px;
+    padding-top: 50px;
 }
 
 .recipe-row-margin {
@@ -164,10 +164,10 @@
     margin-left: 0px;
     }
     
-    .view-recipe-image {
-    height: 400px;
-    width: 600px;
-    }
+    /*.view-recipe-image {*/
+    /*height: 400px;*/
+    /*width: 600px;*/
+    /*}*/
 
 }
 
