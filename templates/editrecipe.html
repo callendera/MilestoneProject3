@@ -1,0 +1,68 @@
+{% extends 'base.html' %} {% block content %}
+
+<h3>Add Recipe</h3>
+<div class="row">
+    <form class="col s12" action="{{ url_for('insert_recipe') }}" method='POST' onSubmit="alert('Thank You for Sharing your Recipe. View Below')">
+        <div class="row">
+            <div class="input-field col s6">
+                <input id="recipe_name" name="recipe_name" type="text" class="validate" required="" aria-required="true">
+                <label for="recipe_name">Recipe Name</label>
+            </div>
+
+            <div class="input-field col s6">
+                <select id="recipe_type" name="recipe_type" required="" aria-required="true">
+                  <option value="" disabled selected>Choose your option</option>
+                  <option value="Vegetarian">Vegetarian</option>
+                  <option value="Chicken">Chicken</option>
+                  <option value="Beef">Beef</option>
+                  <option value="Vegan">Vegan</option>
+                  <option value="Fish">Fish</option>
+                  <option value="Pork">Pork</option>
+                </select>
+                <label>What is your recipe?</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input placeholder="List all Ingredients and Special Instructions" name="ingredients0" id="ingredients0" type="text" class="validate" required="" aria-required="true">
+                <label for="ingredients0">Ingredients</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="directions0" name="directions0" type="text" class="validate" required="" aria-required="true">
+                <label for="directions0">Directions</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="nutrition0" name="nutrition0" type="text" class="validate" required="" aria-required="true">
+                <label for="nutrition0">Nutrition Facts</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s6">
+                Serves:
+                <div class="input-field inline">
+                    <input id="serves" name="serves" type="number" class="validate" required="" aria-required="true">
+                    <label for="serves">How Many People? </label>
+
+                </div>
+            </div>
+            <div class="input-field col s6">
+                <input placeholder="Your Name" id="recipe_by" name="recipe_by" type="text" class="validate" required="" aria-required="true">
+                <label for="recipe_by">Recipe by:</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input placeholder="Please give the URL of your recipe image" id="recipe_image" name="recipe_image" type="text" class="validate">
+                <label for="recipe_image">Recipe Image</label>
+            </div>
+        </div>
+        <button class="btn waves-effect waves-light modal-close right my-btn-color" type="submit" name="action">Add Recipe
+            <i class="material-icons right">add</i>
+         </button>
+    </form>
+
+    {% endblock %}
