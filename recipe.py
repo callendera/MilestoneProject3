@@ -25,16 +25,18 @@ def get_recipes():
 def add_recipes():
     from_scratch = mongo.db.recipes.find()
     return render_template("recipehome.html")
+
+@app.route('/view_recipe/<recipe_id>')
+def view_recipe(recipe_id):
+    return render_template('recipedetails.html', from_scratch=mongo.db.recipes.find({'_id': ObjectId(recipe_id)}))
     
 @app.route('/insert_recipe', methods=['POST'])
 def insert_recipe():
     from_scratch = mongo.db.recipes
     from_scratch.insert_one(request.form.to_dict())
-    return render_template('view_recipe/<recipe_id>')
+    return redirect('get_recipes')
     
-@app.route('/view_recipe/<recipe_id>')
-def view_recipe(recipe_id):
-    return render_template('recipedetails.html', from_scratch=mongo.db.recipes.find({'_id': ObjectId(recipe_id)}))
+
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),

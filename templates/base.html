@@ -44,7 +44,7 @@
         <div class="modal-content">
             <h3>Add Recipe</h3>
             <div class="row">
-                <form class="col s12" action="{{ url_for('insert_recipe') }}" method='POST'>
+                <form class="col s12" action="{{ url_for('insert_recipe') }}" method='POST' onSubmit="alert('Thank You for Sharing your Recipe.\nView Below')">
                     <div class="row">
                         <div class="input-field col s6">
                             <input id="recipe_name" name="recipe_name" type="text" class="validate" required="" aria-required="true">
@@ -54,12 +54,12 @@
                         <div class="input-field col s6">
                             <select id="recipe_type" name="recipe_type" required="" aria-required="true">
                   <option value="" disabled selected>Choose your option</option>
-                  <option value="1">Vegetarian</option>
-                  <option value="2">Chicken</option>
-                  <option value="3">Beef</option>
-                  <option value="3">Vegan</option>
-                  <option value="3">Fish</option>
-                  <option value="3">Pork</option>
+                  <option value="Vegetarian">Vegetarian</option>
+                  <option value="Chicken">Chicken</option>
+                  <option value="Beef">Beef</option>
+                  <option value="Vegan">Vegan</option>
+                  <option value="Fish">Fish</option>
+                  <option value="Pork">Pork</option>
                 </select>
                             <label>What is your recipe?</label>
                         </div>
@@ -92,8 +92,8 @@
                             </div>
                         </div>
                         <div class="input-field col s6">
-                            <input placeholder="Your Name" id="recipe_name" name="recipe_name" type="text" class="validate" required="" aria-required="true">
-                            <label for="recipe_name">Recipe by:</label>
+                            <input placeholder="Your Name" id="recipe_by" name="recipe_by" type="text" class="validate" required="" aria-required="true">
+                            <label for="recipe_by">Recipe by:</label>
                         </div>
                     </div>
                     <div class="row">

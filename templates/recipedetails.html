@@ -1,15 +1,15 @@
 {% extends 'base.html' %} {% block content %}
 
-<div class="container view-recipe-container-margin">
+<div class="container view-recipe-container-margin flow-text">
   {% for recipes in from_scratch %}
   <div class="row view-recipe-image">
-    <div class="col s6">
+    <div class="col s6 recipe-title-top-margin">
       <h2>{{recipes.recipe_name}}</h2>
       <h6>{{recipes.recipe_type}}</h6>
       <h6>Serves: {{recipes.serves}}</h6>
     </div>
     <div class="col s6">
-      <img class="materialboxed responsive-img" data-caption="{{recipes.recipe_name}}" src="{{recipes.recipe_image}}">
+      <img class="responsive-img" data-caption="{{recipes.recipe_name}}" src="{{recipes.recipe_image}}">
     </div>
   </div>
   <div class="divider"></div>
