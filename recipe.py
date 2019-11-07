@@ -42,6 +42,21 @@ def edit_recipe(recipe_id):
     the_recipe =  mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     return render_template('editrecipe.html', recipes=the_recipe)    
 
+@app.route('/update_recipe/<recipe_id>', methods=["POST"])
+def update_recipe(recipe_id):
+    from_scratch = mongo.db.recipes
+    recipes.update( {'_id': ObjectId(recipe_id)},
+    {
+        'recipe_name':request.form.get('recipe_name'),
+        'recipe_type':request.form.get('recipe_type'),
+        'ingredoents0': request.form.get('ingredients0'),
+        'directions0': request.form.get('directions0'),
+        'nutrition0':request.form.get('nutrition0'),
+        'serves':request.form.get('serves'),
+        'recipe_by':request.form.get('recipe_by'),
+        'recipe_image':request.form.get('recipe_image')
+    })
+    return redirect(url_for('get_tasks'))
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
