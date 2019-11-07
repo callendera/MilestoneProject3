@@ -33,14 +33,13 @@ def view_recipe(recipe_id):
 @app.route('/insert_recipe', methods=['POST'])
 def insert_recipe():
     from_scratch = mongo.db.recipes
-    from_scratch.insert_one(request.form.to_dict())
-    return redirect(url_for('view_recipe', recipe_id=recipes._id))
-
+    recipes = from_scratch.insert(request.form.to_dict())
+    return redirect(url_for('view_recipe', recipe_id=recipes))
 
 @app.route('/edit_recipe/<recipe_id>')
 def edit_recipe(recipe_id):
-    the_recipe =  mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-    return render_template('editrecipe.html', recipes=the_recipe)    
+    the_recipe =  mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
+    return render_template('editrecipe.html', recipes=the_recipe)     
 
 @app.route('/update_recipe/<recipe_id>', methods=["POST"])
 def update_recipe(recipe_id):
@@ -56,7 +55,7 @@ def update_recipe(recipe_id):
         'recipe_by':request.form.get('recipe_by'),
         'recipe_image':request.form.get('recipe_image')
     })
-    return redirect(url_for('get_recipes'))
+    return redirect('get_recipes')
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
