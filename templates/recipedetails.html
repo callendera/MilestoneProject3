@@ -33,7 +33,7 @@
     <i class="large material-icons">mode_edit</i>
   </a>
     <ul>
-      <li><a class="btn-floating red"><i class="material-icons">delete</i></a></li>
+      <li><a href="{{url_for('delete_recipe', recipe_id=recipes._id)}}" class="btn-floating red"><i class="material-icons">delete</i></a></li>
       <li><a href="{{url_for('edit_recipe', recipe_id=recipes._id)}}" class="btn-floating yellow darken-1"><i class="material-icons">edit</i></a></li>
       <li><a href="#modal1" class="modal-trigger btn-floating green"><i class="material-icons">add</i></a></li>
     </ul>

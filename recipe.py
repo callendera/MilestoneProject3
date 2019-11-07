@@ -34,7 +34,7 @@ def view_recipe(recipe_id):
 def insert_recipe():
     from_scratch = mongo.db.recipes
     from_scratch.insert_one(request.form.to_dict())
-    return redirect('get_recipes')
+    return redirect(url_for('view_recipe', recipe_id=recipes._id))
 
 
 @app.route('/edit_recipe/<recipe_id>')
@@ -45,18 +45,18 @@ def edit_recipe(recipe_id):
 @app.route('/update_recipe/<recipe_id>', methods=["POST"])
 def update_recipe(recipe_id):
     from_scratch = mongo.db.recipes
-    recipes.update( {'_id': ObjectId(recipe_id)},
+    from_scratch.update( {'_id': ObjectId(recipe_id)},
     {
         'recipe_name':request.form.get('recipe_name'),
         'recipe_type':request.form.get('recipe_type'),
-        'ingredoents0': request.form.get('ingredients0'),
+        'ingredients0': request.form.get('ingredients0'),
         'directions0': request.form.get('directions0'),
         'nutrition0':request.form.get('nutrition0'),
         'serves':request.form.get('serves'),
         'recipe_by':request.form.get('recipe_by'),
         'recipe_image':request.form.get('recipe_image')
     })
-    return redirect(url_for('get_tasks'))
+    return redirect(url_for('get_recipes'))
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),

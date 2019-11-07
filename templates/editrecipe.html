@@ -2,7 +2,7 @@
 <div class="container">
 <h3>Edit Recipe</h3>
 <div class="row">
-    <form class="col s12" action="{{ url_for('update_recipe', recipe_id=recipes._id) }}" method='POST' onSubmit="alert('Thank You for Sharing your Recipe. View Below')">
+    <form class="col s12" action="{{ url_for('update_recipe', recipe_id=recipes._id) }}" method='POST' onSubmit="alert('Thank You for Updating the Recipe. View Changes Below')">
         <div class="row">
             <div class="input-field col s6">
                 <input id="recipe_name" name="recipe_name" value="{{recipes.recipe_name}}" type="text" class="validate" required="" aria-required="true">
