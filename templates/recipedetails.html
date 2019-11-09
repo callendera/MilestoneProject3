@@ -38,16 +38,16 @@
       <li><a href="#modal1" class="modal-trigger btn-floating green"><i class="material-icons">add</i></a></li>
     </ul>
   </div>
-  {% endfor %}
-</div>
-    <div id="modal2" class="modal">
+  <div id="modal2" class="modal">
         <div class="modal-content">
             <h4>...</h4>
             <p>Are you sure you'd like to delete this Recipe?</p>
         </div>
         <div class="modal-footer">
-            <a href="{{url_for('delete_recipe', recipe_id=recipe_id)}}" class="modal-close waves-effect waves-red btn-flat">Delete</a>
+            <a href="{{url_for('delete_recipe', recipe_id=recipes._id)}}" onClick="alert('Recipe has been deleted! Please browse more recipes below')" class="waves-effect waves-red btn-flat">Delete</a>
             <a class="modal-close waves-effect waves-blue btn-flat">Cancel</a>
         </div>
     </div>
+  {% endfor %}
+
 {% endblock %}

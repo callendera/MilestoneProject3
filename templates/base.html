@@ -30,7 +30,7 @@
 
     <ul class="sidenav" id="mobile-nav">
         <li><a href="{{ url_for('get_recipes') }}">Home</a></li>
-        <li><a href="#all-recipes">All Recipes</a></li>
+        <li><a href="">All Recipes</a></li>
         <li><a class="modal-trigger" href="#modal1">Add Recipes</a></li>
         <li><a href="mobile.html">About</a></li>
     </ul>
@@ -107,16 +107,6 @@
          </button>
                 </form>
             </div>
-        </div>
-    </div>
-    <div id="modal2" class="modal">
-        <div class="modal-content">
-            <h4>...</h4>
-            <p>Are you sure you'd like to delete this Recipe?</p>
-        </div>
-        <div class="modal-footer">
-            <a href="{{url_for('delete_recipe', recipe_id=recipe_id)}}" class="modal-close waves-effect waves-red btn-flat">Delete</a>
-            <a class="modal-close waves-effect waves-blue btn-flat">Cancel</a>
         </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
