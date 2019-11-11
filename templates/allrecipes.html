@@ -5,9 +5,9 @@
         <div class="col s12">
             <nav class="my-search-bar-margin center">
                 <div class="nav-wrapper my-btn-color">
-                    <form action="{{url_for('search_box')}}" method="POST">
+                    <form action="{{url_for('search_box')}}" method="POST, GET">
                         <div class="input-field">
-                            <input id="search" type="search" name="search_text" required>
+                            <input id="search_text" type="search" name="search_text" required>
                             <label class="label-icon" for="search"><i class="material-icons">search</i></label>
                             <i class="material-icons">close</i>
                         </div>

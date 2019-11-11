@@ -68,13 +68,16 @@ def delete_recipe(recipe_id):
     mongo.db.recipes.remove({'_id': ObjectId(recipe_id)})
     return redirect(url_for('get_recipes'))
 
-@app.route('/search_box/', methods=['POST'])
+@app.route('/search_box/', methods=['POST', 'GET'])
 def search_box():
     search_term = request.form['search_text']
+    print(search_term)
     if (search_term != ''):
-        return redirect(url_for('search_results', search_text=search_term))
+         return redirect(url_for('search_results', search_text=search_term))
     else:
         return render_template('allrecipes.html', from_scratch=mongo.db.recipes.find())
+       
+        
 
 
 @app.route('/search_results<search_text>')
@@ -82,6 +85,7 @@ def search_results(search_text):
     mongo.db.recipes.create_index([("$**", 'text')])
     search_results = mongo.db.recipes.find({'$text': {'$search': search_text}})
     return render_template('searchrecipe.html', recipes=search_results)
+    print(search_term)
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),

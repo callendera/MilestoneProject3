@@ -21,7 +21,6 @@
                     <li><a href="{{ url_for('get_recipes') }}">Home</a></li>
                     <li><a href="{{ url_for('all_recipes') }}">All Recipes</a></li>
                     <li><a class="modal-trigger" href="#modal1">Add Recipes</a></li>
-                    <li><a href="mobile.html">About</a></li>
                 </ul>
             </div>
         </nav>
@@ -30,9 +29,8 @@
 
     <ul class="sidenav" id="mobile-nav">
         <li><a href="{{ url_for('get_recipes') }}">Home</a></li>
-        <li><a href="allrecipes.html">All Recipes</a></li>
+        <li><a href="{{ url_for('all_recipes') }}">All Recipes</a></li>
         <li><a class="modal-trigger" href="#modal1">Add Recipes</a></li>
-        <li><a href="mobile.html">About</a></li>
     </ul>
 
 
@@ -40,6 +38,7 @@
     {% block content %}
     <!--contains any content needed for each page, this give a template for such-->
     {% endblock %}
+       
     <div id="modal1" class="modal scale-transition scale-out">
         <div class="modal-content">
             <h3>Add Recipe</h3>
@@ -109,6 +108,8 @@
             </div>
         </div>
     </div>
+    
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
