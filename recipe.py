@@ -2,45 +2,48 @@ import os
 from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId 
-#sets up application for use with PyMongo, Flask
+#sets up application for use with PyMongo, Flask, Bson file, and OS for the underlying operating system python is running on
 
 app = Flask(__name__)
 app.config["MONGO_DBNAME"] = 'from_scratch'
 #creates link between Database and application
 app.config["MONGO_URI"] = os.getenv("MONGO_URI")
 
-#creates application to be tested
-
 mongo = PyMongo(app)
 
 @app.route('/')
 
+#from_scratch is my database, recipes is my collection within the database
+
 @app.route('/get_recipes')
-#Display text as proof of concept
+#function used to display recipes on home page
 def get_recipes():
     from_scratch = mongo.db.recipes.find()
     return render_template( "recipehome.html", from_scratch=from_scratch)
 
 @app.route('/all_recipes')
-#Display text as proof of concept
+#function used to display all recipes on All recipes page
 def all_recipes():
     from_scratch = mongo.db.recipes.find()
     return render_template( "allrecipes.html", from_scratch=from_scratch)
 
 @app.route('/add_recipes')
+#function that triggers the modal and insert_recipe function
 def add_recipes():
     from_scratch = mongo.db.recipes.find()
     return render_template("recipehome.html")
-
-@app.route('/view_recipe/<recipe_id>')
-def view_recipe(recipe_id):
-    return render_template('recipedetails.html', from_scratch=mongo.db.recipes.find({'_id': ObjectId(recipe_id)}))
     
 @app.route('/insert_recipe', methods=['POST'])
 def insert_recipe():
     from_scratch = mongo.db.recipes
     recipes = from_scratch.insert(request.form.to_dict())
     return redirect(url_for('view_recipe', recipe_id=recipes))
+
+@app.route('/view_recipe/<recipe_id>')
+#function allows user to view the recipe details page, displays full recipe
+def view_recipe(recipe_id):
+    return render_template('recipedetails.html', from_scratch=mongo.db.recipes.find({'_id': ObjectId(recipe_id)}))
+    
 
 @app.route('/edit_recipe/<recipe_id>')
 def edit_recipe(recipe_id):
