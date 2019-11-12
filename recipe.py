@@ -37,6 +37,7 @@ def add_recipes():
 def insert_recipe():
     from_scratch = mongo.db.recipes
     recipes = from_scratch.insert(request.form.to_dict())
+    #after adding the recipe to the database it redirects the user to the newly added recipe to view the full recipe
     return redirect(url_for('view_recipe', recipe_id=recipes))
 
 @app.route('/view_recipe/<recipe_id>')
@@ -46,15 +47,18 @@ def view_recipe(recipe_id):
     
 
 @app.route('/edit_recipe/<recipe_id>')
+#function that triggers the edit recipe page, must call on particular Object id to trigger specific item in database
 def edit_recipe(recipe_id):
     the_recipe =  mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
     return render_template('editrecipe.html', recipes=the_recipe)     
 
 @app.route('/update_recipe/<recipe_id>', methods=["POST"])
+#function that allows the user to update the recipe in the database, must call on particular Object id to trigger specific item in database
 def update_recipe(recipe_id):
     from_scratch = mongo.db.recipes
     recipes = from_scratch.update( {'_id': ObjectId(recipe_id)},
     {
+        #gives the specifics of what is being updated below
         'recipe_name':request.form.get('recipe_name'),
         'recipe_type':request.form.get('recipe_type'),
         'ingredients0': request.form.get('ingredients0'),
@@ -64,9 +68,11 @@ def update_recipe(recipe_id):
         'recipe_by':request.form.get('recipe_by'),
         'recipe_image':request.form.get('recipe_image')
     })
+    #after updating the recipe it redirects the user to the now updated recipe
     return redirect(url_for('view_recipe', recipe_id=recipe_id))
     
 @app.route('/delete_recipe/<recipe_id>')
+#function located in the modal to delete the recipe
 def delete_recipe(recipe_id):
     mongo.db.recipes.remove({'_id': ObjectId(recipe_id)})
     return redirect(url_for('get_recipes'))
@@ -74,7 +80,7 @@ def delete_recipe(recipe_id):
 @app.route('/search_box/', methods=['POST', 'GET'])
 def search_box():
     search_term = request.form['search_text']
-    print(search_term)
+    print("def search_box | var search term = " + search_term)
     if (search_term != ''):
          return redirect(url_for('search_results', search_text=search_term))
     else:
@@ -87,8 +93,9 @@ def search_box():
 def search_results(search_text):
     mongo.db.recipes.create_index([("$**", 'text')])
     search_results = mongo.db.recipes.find({'$text': {'$search': search_text}})
+    print("def search_results | var search_results = " + search_term)
     return render_template('searchrecipe.html', recipes=search_results)
-    print(search_term)
+    
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
