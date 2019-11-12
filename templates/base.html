@@ -8,14 +8,17 @@
     <!--JQuery needs to be active before Materialize can render its' data-->
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!--link to CSS in a static folder-->
     <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}" type="text/css" />
 </head>
 
 <body>
+    <!--navbar is fixed at the top for UX-->
     <div class="navbar-fixed ">
         <nav class="transparent">
+            <!--Unique class names are named based on their purpose-->
             <div class="nav-wrapper my-navbar-margin">
-                <a href="index.html" class="brand-logo">From Scratch</a>
+                <a href="{{ url_for('get_recipes') }}" class="brand-logo">From Scratch</a>
                 <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
                     <li><a href="{{ url_for('get_recipes') }}">Home</a></li>
@@ -38,14 +41,17 @@
     {% block content %}
     <!--contains any content needed for each page, this give a template for such-->
     {% endblock %}
-       
+    <!-- modal is used to add recipes-->
     <div id="modal1" class="modal scale-transition scale-out">
         <div class="modal-content">
             <h3>Add Recipe</h3>
             <div class="row">
+                <!--action triggers insert recipe function to insert completed form into MongoDB-->
                 <form class="col s12" action="{{ url_for('insert_recipe') }}" method='POST' onSubmit="alert('Thank You for Sharing your Recipe. View Below')">
+                    <!--gives alert to confirm to the user that the recipe was added-->
                     <div class="row">
                         <div class="input-field col s6">
+                            <!--ALL NAMES AND IDS MATCH THE MONGO DATABASE NAMES FOR CERTAIN ITEMS TO TRIGGER ITS PLACEMENT INTO THE DATABASE-->
                             <input id="recipe_name" name="recipe_name" type="text" class="validate" required="" aria-required="true">
                             <label for="recipe_name">Recipe Name</label>
                         </div>
@@ -101,6 +107,7 @@
                             <label for="recipe_image">Recipe Image</label>
                         </div>
                     </div>
+                    <!--button triggers the insert function, and inserts new recipe to the database-->
                     <button class="btn waves-effect waves-light modal-close right my-btn-color" type="submit" name="action">Add Recipe
             <i class="material-icons right">add</i>
          </button>
@@ -108,41 +115,41 @@
             </div>
         </div>
     </div>
-    
-    
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <!-- Script for JQuery dom manipulation-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- Script to use Materialize functionality-->
 
     <script src='http://code.jquery.com/jquery-3.3.1.min.js'></script>
     <script src='/javascripts/register.js'></script>
-    <!-- Script to use Materialize functionality-->
+    <!-- Scripts to use Materialize functionality-->
+    <!--scroll bar category picker in form script-->
     <script type="text/javascript">
         $(document).ready(function() {
             $('select').formSelect();
+            
         });
     </script>
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $('.collapsible').collapsible();
-        });
-    </script>
+        <!--script to use side nav in mobile view-->
     <script type="text/javascript">
         $(document).ready(function() {
             $('.sidenav').sidenav();
         });
     </script>
+    <!--for action button on view recipe page-->
     <script type="text/javascript">
         $(document).ready(function() {
             $('.fixed-action-btn').floatingActionButton();
         });
     </script>
+    <!--to trigger modal-->
     <script type="text/javascript">
         $(document).ready(function() {
             $('.modal').modal();
         });
     </script>
-
-    <!-- script for the collapsibles-->
 </body>
 
 </html>
