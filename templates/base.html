@@ -18,11 +18,16 @@
         <nav class="transparent">
             <!--Unique class names are named based on their purpose-->
             <div class="nav-wrapper my-navbar-margin">
+                <!--links to home page-->
                 <a href="{{ url_for('get_recipes') }}" class="brand-logo">From Scratch</a>
-                <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <!--triggers sidenav in mobile view-->
+                <a data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
+                    <!--links to home page-->
                     <li><a href="{{ url_for('get_recipes') }}">Home</a></li>
+                    <!--links to all recipes page-->
                     <li><a href="{{ url_for('all_recipes') }}">All Recipes</a></li>
+                    <!--links to mdal to add recipe, triggers add_recipe function-->
                     <li><a class="modal-trigger" href="#modal1">Add Recipes</a></li>
                 </ul>
             </div>
@@ -31,8 +36,11 @@
 
 
     <ul class="sidenav" id="mobile-nav">
+        <!--links to home page-->
         <li><a href="{{ url_for('get_recipes') }}">Home</a></li>
+        <!--links to all recipes page-->
         <li><a href="{{ url_for('all_recipes') }}">All Recipes</a></li>
+        <!--links to modal to add recipes, triggers add_recipe function-->
         <li><a class="modal-trigger" href="#modal1">Add Recipes</a></li>
     </ul>
 
