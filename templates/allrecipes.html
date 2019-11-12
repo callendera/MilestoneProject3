@@ -1,22 +1,14 @@
 {% extends 'base.html' %} {% block content %}
+<!--Above calls for information from base.html page-->
+<!--Unique class names are named based on their purpose-->
 <div class="container flow-text">
     <h4 class="center">Browse Our Recipes</h4>
     <div class="row recipe-row-margin">
-        <div class="col s12">
-            <nav class="my-search-bar-margin center">
-                <div class="nav-wrapper my-btn-color">
-                    <form action="{{url_for('search_box')}}" method="POST">
-                        <div class="input-field">
-                            <input id="search_text" type="search" name="search_text" required>
-                            <label class="label-icon" for="search_text"><i class="material-icons">search</i></label>
-                            <i class="material-icons">close</i>
-                        </div>
-                    </form>
-                </div>
-            </nav>
-        </div>
+        
         {% for recipes in from_scratch %}
+        <!--For loop to iterate through the selected recipe-->
         <div class="col s6">
+            <!--Triggers full view of recipe details, must target specific id of the selected recipe-->
             <a href="{{url_for('view_recipe', recipe_id=recipes._id)}}"><img class="materialboxed recipe-image" data-caption="{{recipes.recipe_name}}" src="{{recipes.recipe_image}}" alt="No Image Available"></a>
             <p class="recipe-name-margin"><strong>{{recipes.recipe_name}}</strong></p>
         </div>

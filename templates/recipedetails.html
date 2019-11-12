@@ -1,6 +1,8 @@
 {% extends 'base.html' %} {% block content %}
-
+<!--Above calls for information from base.html page-->
+<!--Unique class names are named based on their purpose-->
 <div class="container view-recipe-container-margin flow-text">
+  <!--For loop shows selected recipe details-->
   {% for recipes in from_scratch %}
   <div class="row view-recipe-image">
     <div class="col s6 recipe-title-top-margin">
@@ -28,22 +30,28 @@
     <p>{{recipes.nutrition0}}</p>
   </div>
   <h6>Recipe By: {{recipes.recipe_by}}</h6>
+  <!--Edit button to perform CRUD, can edit, delete, and add a recipe from this button-->
   <div class="fixed-action-btn">
     <a class="btn-floating pulse btn-large my-btn-color">
     <i class="large material-icons">mode_edit</i>
   </a>
     <ul>
+      <!--Triggers modal to confirm deletion-->
       <li><a href="#modal2" class="modal-trigger btn-floating red"><i class="material-icons">delete</i></a></li>
+      <!--triggers edit function-->
       <li><a href="{{url_for('edit_recipe', recipe_id=recipes._id)}}" class="btn-floating yellow darken-1"><i class="material-icons">edit</i></a></li>
+      <!--triggers modal to add recipe-->
       <li><a href="#modal1" class="modal-trigger btn-floating green"><i class="material-icons">add</i></a></li>
     </ul>
   </div>
+  <!--Confirms deletion of the recipe-->
   <div id="modal2" class="modal">
         <div class="modal-content">
             <h4>...</h4>
             <p>Are you sure you'd like to delete this Recipe?</p>
         </div>
         <div class="modal-footer">
+          <!--Triggers delete function-->
             <a href="{{url_for('delete_recipe', recipe_id=recipes._id)}}" onClick="alert('Recipe has been deleted! Please browse more recipes below')" class="waves-effect waves-red btn-flat">Delete</a>
             <a class="modal-close waves-effect waves-blue btn-flat">Cancel</a>
         </div>
