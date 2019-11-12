@@ -134,14 +134,8 @@ All features were tested on Google Chrome, Internet Explorer, and Firefox. Mobil
 
 ## Deployment
 
-1. I logged into my GitHub
-2. Navigated to my GitHub repository
-3. Clicked on my 'Milestone Project 2' 
-4. Beneath the repository name click the 'Settings' button
-5. I scrolled down to the 'GitHub Pages' section 
-6. I then selected the 'Master Branch' located under the 'Source' section
-7. Finally I hit save
-8. My site was published at https://callendera.github.io/Milestone-Project-2/
+1. 
+
 
 ## Credits
 
