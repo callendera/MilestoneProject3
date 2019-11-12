@@ -93,7 +93,6 @@ def search_box():
 def search_results(search_text):
     mongo.db.recipes.create_index([("$**", 'text')])
     search_results = mongo.db.recipes.find({'$text': {'$search': search_text}})
-    print("def search_results | var search_results = " + search_term)
     return render_template('searchrecipe.html', recipes=search_results)
     
 
