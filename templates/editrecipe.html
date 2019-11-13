@@ -13,20 +13,10 @@
                     <label for="recipe_name">Recipe Name</label>
                 </div>
 
-                <!--<div class="input-field col s6">-->
-                <!--    <select id="recipe_type" name="recipe_type" required="" aria-required="true">-->
-                <!--        <option value="" disabled selected>Choose your option</option>-->
-                <!--        {% for type in recipe_type %}-->
-                <!--        {% if type == recipes.recipe_type %}-->
-                <!--        <option value="{{ type }}" selected>{{ type }}</option>-->
-                <!--        {% else %}-->
-                <!--        <option value="{{ type }}">{{ type }}</option>-->
-                <!--        {% endif %}-->
-                <!--        {% endfor %}-->
-                  
-                <!--    </select>-->
-                <!--    <label>What is your recipe?</label>-->
-                <!--</div>-->
+                <div class="input-field col s6">
+                    <input id="recipe_name" name="recipe_name" placeholder="Vegetarian? Vegan? Chicken? Fish? Etc." value="{{recipes.recipe_type}}" type="text" class="validate" required="" aria-required="true">
+                    <label for="recipe_name">What is Your Recipe?</label>
+                </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
