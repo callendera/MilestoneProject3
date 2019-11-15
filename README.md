@@ -107,7 +107,7 @@ All features were tested on Google Chrome, Internet Explorer, and Firefox. Mobil
         * While viewing full recipe, hover over pulsating button (bottom right hand corner) to reveal the add recipe option
         * Each of the above options triggers the add_recipe function, opens modal
             * The Modal that opens contains the form needed to add the recipe and for the user to give all the appropriate information.
-            * Each form input is required, except for the recipe image. (while the ability for the user to upload the image still needs to be implemented, the user must use a URL and to promote good UX I decided to leave this as an optional field.)
+            * Each form input is required.
             * Input fields: Recipe Name | Recipe Type(with select scroll bar options) | Ingredients | Directions | Serves how many people? | Nutrition Facts | Recipe by; | and the Recipe Image input 
             * The user then submits the form triggering the insert_recipe function. This function inserts the new recipe into the mongodb database. A message appears that tells the user they can now view the recipe below, after hitting okay, the user is directed to the view recipe page of the newly added recipe.
             
