@@ -137,7 +137,20 @@ All features were tested on Google Chrome, Internet Explorer, and Firefox. Mobil
 
 ## Deployment
 
-1. 
+1. Created Heroku profile and new app in Heroku
+2. Made App name from-scratch-recipe-app, and chose North America as the edge server
+3. Log on through the terminal in workspace
+    * Enter: heroku login 
+    * Enter credentials(email and password)
+    * From there you the AWS Cloud9 environment and the Heroku App are connected
+4. Create new git repository: git init
+5. Then: git add .
+6. Then commit that
+7. Then go to the Heroku app dashboard, 
+    * Go to Deploy
+    * Under Deployment Method select Connect GitHub
+    * The two will connect to eachother
+8. From there you can push your existing content to GitHub and it will automatically connect to the Heroku deployment of the app.
 
 
 ## Credits
