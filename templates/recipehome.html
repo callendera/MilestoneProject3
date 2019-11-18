@@ -2,7 +2,7 @@
 <!--Above calls for information from base.html page-->
 <!--Unique class names are named based on their purpose-->
 <div class="callout background-callout">
-    <div class="container callout-text-background-color">
+    <div class="container callout-text-background">
         <!--Unique class names are named based on their purpose-->
 
         <h2>Family is everything</h2>
@@ -17,14 +17,16 @@
 
 <div class="container flow-text">
     <h4 class="center">Featured Recipes</h4>
-    <div class="row recipe-row-margin">
+    <div class="row recipe-row">
         <!--For loop to display all recipes in the database-->
         {% for recipes in from_scratch %}
-        <div class="col s6">
-            <!--triggers full view of the recipe details-->
-            <a href="{{url_for('view_recipe', recipe_id=recipes._id)}}"><img class="materialboxed recipe-image" data-caption="{{recipes.recipe_name}}" src="{{recipes.recipe_image}}" alt="No Image Available"></a>
-            <p class="recipe-name-margin"><strong>{{recipes.recipe_name}}</strong></p>
-        </div>
+        <a href="{{url_for('view_recipe', recipe_id=recipes._id)}}">
+            <div class="col s6">
+                <!--triggers full view of the recipe details-->
+                <img class="recipe-image view-recipe-link" data-caption="{{recipes.recipe_name}}" src="{{recipes.recipe_image}}" alt="No Image Available">
+                <p class="recipe-name black-text"><strong>{{recipes.recipe_name}}</strong></p>
+            </div>
+        </a>
         {% endfor %}
     </div>
 </div>

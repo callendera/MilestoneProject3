@@ -1,26 +1,4 @@
-.recipe-image {
-     /*---gives the div surrounding the image style as to not stretch the image---*/
-    height: 300px;
-    width: 400px;
-    padding: 20px;
-    padding-bottom: 0px;
-    margin-top: 20px;
-}
-
-.recipe-title-top-margin {
-    /*--- pushes the recipe title down in view full recipe image page ---*/
-    margin-top: 100px;
-}
-
-.recipe-name-margin {
-     /*--- adjusts space around recipe name on recipe home page ---*/
-    margin-top: 0px;
-}
-
-.view-recipe-container-margin {
-     /*--- Puts space between bottom of page and end of full recipe on view recipe page ---*/
-    margin-bottom: 60px;
-}
+/*--- IMAGES ---*/
 
 .background-callout {
     /*--- FOR ALL BACKGROUND CONTAINERS sets background image for callout container. 
@@ -37,34 +15,69 @@
     height: 40vh;
 }
 
+.view-recipe-image {
+    /*--- pushes the image for the selected recipe down from navbar on view recipe page ---*/
+    padding-top: 50px;
+}
 
-.callout-text-background-color {
+.recipe-image {
+     /*---gives the div surrounding the image style as to not stretch the image---*/
+    height: 300px;
+    width: 400px;
+    padding: 20px;
+    padding-bottom: 0px;
+    margin-top: 20px;
+}
+
+/*--- FONT STYLES ---*/
+
+.recipe-title {
+    /*--- pushes the recipe title down in view full recipe image page ---*/
+    margin-top: 100px;
+}
+
+.recipe-name {
+     /*--- adjusts space around recipe name on recipe home page ---*/
+    margin-top: 0px;
+}
+
+.callout-text-background {
     /*--- gives slightly transparent background for text in callout on home page, also provides spacing for words ---*/
     text-align: center;
     background-color: #7c1a50a3;
     color: white;
     height: 300px;
     margin-top: 400px;
-
-
 }
 
-.view-recipe-image {
-    /*--- pushes the image for the selected recipe down from navbar on view recipe page ---*/
-    padding-top: 50px;
+.my-link-color {
+    color: #3384d8;
 }
 
-.recipe-row-margin {
+.font-color {
+    color: white;
+}
+
+/*--- CONTAINERS, ROWS, NAVBAR ---*/
+
+.view-recipe-container {
+     /*--- Puts space between bottom of page and end of full recipe on view recipe page ---*/
+    margin-bottom: 60px;
+}
+
+.recipe-row {
     /*--- centers the for-loop of recipes on home page and on the all recipes page ---*/
     margin-left: 80px;
 }
 
-.my-navbar-padding {
+.my-navbar {
     /*--- gives padding to the navbar so it is not right on the border of the screen ---*/
     padding-left: 40px;
     padding-right: 40px;
     background-color: #7c1a50ed;
 }
+
+/*--- BUTTONS, HOVER ---*/
 
 .my-btn-color {
     background-color: #2870a8;
@@ -81,27 +94,24 @@
     /*--- adjustments for each web browser ---*/
 }
 
-
-.my-link-color {
-    color: #3384d8;
+.view-recipe-link:hover {
+    background-color: #2870a8cf;
+    /*--- when mouse is hovered the button will transition for 
+    .40seconds the color will gradually ease in and then ease out. ---*/
+    transition: all 0.40s ease-in-out;
+    -moz-transition: all 0.40s ease-in-out;
+    -webkit-transition: all 0.40s ease-in-out;
+    -o-transition: all 0.40s ease-in-out;
+    /*--- adjustments for each web browser ---*/
 }
 
-.font-color {
-    color: white;
-}
-
-.my-search-bar-margin {
-    /*--- adjusts size of the search bar ---*/
-    margin-top: 20px;
-}
-
-/*---Media Queries---*/
+/*---MEDIA QUERIES---*/
 
 /*--- adjustemnts for different screensizes, 
     small-->big all features tested on google chrome inspect ---*/
 
 @media (min-width: 576px) {
-    .callout-text-background-color {
+    .callout-text-background {
         /*--- provides adjusted spacing for words ---*/
         margin-top: 200px;
         ;
@@ -128,18 +138,13 @@
         /*--- the height that container will take up in the viewport ---*/
         height: 60vh;
     }
-    .callout-text-background-color {
+    .callout-text-background {
         /*--- provides adjusted spacing for words ---*/
         margin-top: 50px;
         ;
     }
-    
-     .my-search-bar-margin {
-         /*--- adjusts length of search bar ---*/
-    width: 840px;
-    }
-    
-     .recipe-row-margin {
+  
+     .recipe-row {
          /*--- adjusts centering of the for-loop of recipes to have no left-margin ---*/
     margin-left: 0px;
     }
@@ -165,16 +170,12 @@
         /*--- the height that container will take up in the viewport ---*/
         height: 60vh;
     }
-    .callout-text-background-color {
+    .callout-text-background {
         /*--- provides adjusted spacing for words ---*/
         margin-top: 90px;
         ;
     }
-    .my-search-bar-margin {
-        /*--- adjusts length of search bar ---*/
-    width: 850px;
-    }
-    .recipe-row-margin {
+    .recipe-row {
       /*--- adjusts centering of the for-loop of recipes to have no left-margin ---*/  
     margin-left: 0px;
     }
@@ -201,17 +202,14 @@
         /*--- the height that container will take up in the viewport ---*/
         height: 70vh;
     }
-    .callout-text-background-color {
+    
+    .callout-text-background {
         /*--- provides adjusted spacing for words ---*/
         margin-top: 70px;
         ;
     }
     
-    .my-search-bar-margin {
-        /*--- adjusts length of search bar ---*/
-    width: 900px;
-    }
-    .recipe-row-margin {
+    .recipe-row {
         /*--- adjusts centering of the for-loop of recipes to have no left-margin ---*/
     margin-left: 80px;
 }

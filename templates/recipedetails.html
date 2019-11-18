@@ -1,11 +1,11 @@
 {% extends 'base.html' %} {% block content %}
 <!--Above calls for information from base.html page-->
 <!--Unique class names are named based on their purpose-->
-<div class="container view-recipe-container-margin flow-text">
+<div class="container view-recipe-container flow-text">
   <!--For loop shows selected recipe details-->
   {% for recipes in from_scratch %}
   <div class="row view-recipe-image">
-    <div class="col s6 recipe-title-top-margin">
+    <div class="col s6 recipe-title">
       <h2>{{recipes.recipe_name}}</h2>
       <h6>{{recipes.recipe_type}}</h6>
       <h6>Serves: {{recipes.serves}}</h6>

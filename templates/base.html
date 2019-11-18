@@ -16,10 +16,10 @@
 
 <body>
     <!--navbar is fixed at the top for UX-->
-    <div class="navbar-fixed ">
+    <div class="navbar-fixed flow-text">
         <nav class="transparent">
             <!--Unique class names are named based on their purpose-->
-            <div class="nav-wrapper my-navbar-padding">
+            <div class="nav-wrapper my-navbar">
                 <!--links to home page-->
                 <a href="{{ url_for('get_recipes') }}" class="brand-logo">From Scratch</a>
                 <!--triggers sidenav in mobile view-->
@@ -37,7 +37,7 @@
     </div>
 
 
-    <ul class="sidenav" id="mobile-nav">
+    <ul class="sidenav flow-text" id="mobile-nav">
         <!--links to home page-->
         <li><a href="{{ url_for('get_recipes') }}">Home</a></li>
         <!--links to all recipes page-->

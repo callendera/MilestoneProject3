@@ -15,8 +15,8 @@ The goal of this app is to provide a place where users can:
 The app is fully functional on all screen sizes with extensive testing for each feature.
 
 * User Stories:
-    * As a Family member interested in browsing the recipes, I visit the app and on the home page all of the recipes are displayed. 
-    If I would like to use the Navbar and select the All Recipes option, I am directed to the page That also has all of the recipes listed on it. 
+    * As a Family member interested in browsing the recipes, I visit the app and on the home page 4 featured recipes are displayed. 
+    If I would like to use the Navbar and select the All Recipes option, I am directed to the page That has all of the recipes listed on it. 
     * If I am a user that is browsing the recipes and I find a recipe I am interested in, if I click on that recipe image, The app directs me to View the Full recipe. That recipe is displayed with all of the appropriate Information to make that recipe. 
     * If I am browsing a recipe and view the full recipe, In the bottom right hand cornner is a button that allows me to hover it to get all the options for that recipe. Within the button I can delete the recipe, add a recipe, or edit the recipe.
         * Delete: The user who would like to delete the recipe can do so by clicking the trashcan option in the View recipe page. From there a modal opens to ask the user if they are sure They would like to delete. After the user selects yes, to delete the user is redirected to the home page.
@@ -93,8 +93,8 @@ All features were tested on Google Chrome, Internet Explorer, and Firefox. Mobil
     * Browse Recipes:
         * After coming to the home page,
         * click the all recipes button in navbar or scroll down the page 
-        * On the home page the get_recipes is triggered to show the for loop of the recipes on the home page. 
-        * On the All recipes page the all_recipes functions allows the for loop to display all of the recipes there as well. 
+        * On the home page the get_recipes is triggered to show the for loop of the 4 featured recipes on the home page. 
+        * On the All recipes page the all_recipes function allows the for loop to display all of the recipes there as well. 
     * View Recipe details:
         * Upon browsing all the recipes,
         * click the recipe image
