@@ -75,7 +75,7 @@ def update_recipe(recipe_id):
 #function located in the modal to delete the recipe
 def delete_recipe(recipe_id):
     mongo.db.recipes.remove({'_id': ObjectId(recipe_id)})
-    return redirect(url_for('get_recipes'))
+    return redirect(url_for('all_recipes'))
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
