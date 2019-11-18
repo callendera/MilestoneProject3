@@ -26,13 +26,13 @@ The app is fully functional on all screen sizes with extensive testing for each 
         After the user submits the completed form the recipe is immediatly displayed in the View recipe page. This allows the user to look at the recipe just added.
 
 ### Original Mockup
-##### Everything changed tramendously from the original Mockup, I relied mostly on the Site Map 
+##### Everything changed tramendously from the original Mockup, I relied mostly on the Site Map (mockup images also available in static folder) 
 
-![Original Mockup](https://i.ibb.co/DfNy93C/thumbnail-private-var-mobile-Containers-Data-Application-EFC929-DA-8312-406-F-8-FE7-25-D56-F9915-F4-tmp-865-C6-E67-868-F-45-F9-9-CC2-8-CEA498-C9-FF3-Image-1.jpg)
+![Original Mockup](https://i.ibb.co/TvMd9RG/thumbnail-private-var-mobile-Containers-Data-Application-EFC929-DA-8312-406-F-8-FE7-25-D56-F9915-F4-tmp-865-C6-E67-868-F-45-F9-9-CC2-8-CEA498-C9-FF3-Image.jpg)
  
 ### Site Map
  
- ![Revamped Mockup](https://i.ibb.co/VqvQGGH/thumbnail-private-var-mobile-Containers-Data-Application-EFC929-DA-8312-406-F-8-FE7-25-D56-F9915-F4-tmp-B82-EA8-F2-A798-47-F6-91-A4-1-D2-DDB07952-D-Image.jpg) 
+ ![Site Map/Web](https://i.ibb.co/VqvQGGH/thumbnail-private-var-mobile-Containers-Data-Application-EFC929-DA-8312-406-F-8-FE7-25-D56-F9915-F4-tmp-B82-EA8-F2-A798-47-F6-91-A4-1-D2-DDB07952-D-Image.jpg) 
  
 ## Features
 
