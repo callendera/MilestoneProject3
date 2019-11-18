@@ -86,6 +86,7 @@ The app is fully functional on all screen sizes with extensive testing for each 
 * Validation Services
     * [W3C Markup Validator](https://validator.w3.org/) was used to validate my HTML code.
     * [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) was used to validate my CSS code.
+    * [JSHint](https://jshint.com/) was used to test JS code.
 
 ### UX stories testing / Manual Testing
 All features were tested on Google Chrome, Internet Explorer, and Firefox. Mobile/Tablet features were tested on Apple and Samsung devices. Everything was tested using a wide range of screensizes.
