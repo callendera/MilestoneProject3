@@ -18,7 +18,7 @@ mongo = PyMongo(app)
 @app.route('/get_recipes')
 #function used to display recipes on home page
 def get_recipes():
-    from_scratch = mongo.db.recipes.find()
+    from_scratch = mongo.db.recipes.aggregate([{ "$sample": { "size": 4 } }])
     return render_template( "recipehome.html", from_scratch=from_scratch)
 
 @app.route('/all_recipes')
