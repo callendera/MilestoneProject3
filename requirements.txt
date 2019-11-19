@@ -1,3 +1,4 @@
+<<<<<<<<< saved version
 astroid==1.6.6
 awscli==1.16.247
 botocore==1.12.237
@@ -44,3 +45,7 @@ virtualenv-clone==0.5.3
 virtualenvwrapper==4.8.4
 Werkzeug==0.16.0
 wrapt==1.11.2
+WTForms==2.2.1
+=========
+
+>>>>>>>>> local version
