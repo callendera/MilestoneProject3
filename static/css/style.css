@@ -21,12 +21,13 @@
 }
 
 .recipe-image {
-     /*---gives the div surrounding the image style as to not stretch the image---*/
+    /*---gives the div surrounding the image style as to not stretch the image---*/
     height: 300px;
     width: 400px;
     padding: 20px;
     padding-bottom: 0px;
     margin-top: 20px;
+
 }
 
 /*--- FONT STYLES ---*/
@@ -37,7 +38,7 @@
 }
 
 .recipe-name {
-     /*--- adjusts space around recipe name on recipe home page ---*/
+    /*--- adjusts space around recipe name on recipe home page ---*/
     margin-top: 0px;
 }
 
@@ -46,7 +47,7 @@
     text-align: center;
     background-color: #7c1a50a3;
     color: white;
-    height: 300px;
+    height: 400px;
     margin-top: 400px;
 }
 
@@ -58,10 +59,14 @@
     color: white;
 }
 
-/*--- CONTAINERS, ROWS, NAVBAR ---*/
+/*--- CONTAINERS, ROWS, SPANS, NAVBAR ---*/
+
+.callout-text-div {
+    padding: 20px;
+}
 
 .view-recipe-container {
-     /*--- Puts space between bottom of page and end of full recipe on view recipe page ---*/
+    /*--- Puts space between bottom of page and end of full recipe on view recipe page ---*/
     margin-bottom: 60px;
 }
 
@@ -143,10 +148,10 @@
         margin-top: 50px;
         ;
     }
-  
-     .recipe-row {
-         /*--- adjusts centering of the for-loop of recipes to have no left-margin ---*/
-    margin-left: 0px;
+
+    .recipe-row {
+        /*--- adjusts centering of the for-loop of recipes to have no left-margin ---*/
+        margin-left: 0px;
     }
 
 }
@@ -172,15 +177,15 @@
     }
     .callout-text-background {
         /*--- provides adjusted spacing for words ---*/
-        margin-top: 90px;
+        margin-top: 60px;
         ;
     }
     .recipe-row {
-      /*--- adjusts centering of the for-loop of recipes to have no left-margin ---*/  
-    margin-left: 0px;
+        /*--- adjusts centering of the for-loop of recipes to have no left-margin ---*/
+        margin-left: 0px;
     }
-    
-   
+
+
 }
 
 @media (min-width: 1200px) {
@@ -202,16 +207,20 @@
         /*--- the height that container will take up in the viewport ---*/
         height: 70vh;
     }
-    
+
     .callout-text-background {
         /*--- provides adjusted spacing for words ---*/
-        margin-top: 70px;
-        ;
+        margin: 15;
     }
-    
+
     .recipe-row {
         /*--- adjusts centering of the for-loop of recipes to have no left-margin ---*/
-    margin-left: 80px;
-}
-   
-}
+        margin-left: 0;
+    }
+
+    @media (min-width: 1400px) {
+        .recipe-row {
+            margin: 80px;
+        }
+
+    }
