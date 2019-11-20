@@ -131,7 +131,8 @@ All features were tested on Google Chrome, Internet Explorer, and Firefox. Mobil
     * Modal not rendering from delete recipe option. Modal was not inside of For-Loop to be connected to database
     * View Recipe details: page was appearing with no recipe as if one was not triggered. used href="{{url_for('view_recipe', recipe_id=recipes._id)}}" to trigger specific id for that recipe
     * Same issue above basically to direct user to view recipe just added/updated. needed to adjust the href and the render_template in the function to direct the user to the new or updated recipe based on specific ID of that recipe.
-    * User able to submit a blank recipe with empty strings,
+* Unsolved Bugs
+    * User able to submit recipe using " " or null values, still exploring and researching the issue.
 
 ### Further Testing
 

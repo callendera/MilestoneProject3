@@ -59,7 +59,7 @@
             <h2>Add Recipe</h2>
             <div class="row">
                 <!--action triggers insert recipe function to insert completed form into MongoDB-->
-                <form class="col s12" action="{{ url_for('insert_recipe') }}" method='POST' onSubmit="alert('Thank You for Sharing your Recipe. View Below')">
+                <form class="col s12" id="addRecipe" action="{{ url_for('insert_recipe') }}" method='POST' onSubmit="alert('Thank You for Sharing your Recipe. View Below')">
                     <!--gives alert to confirm to the user that the recipe was added-->
                     <div class="row">
                         <div class="input-field col s6">
@@ -107,7 +107,7 @@
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
-                            <input placeholder="Please give the URL of your recipe image" id="recipe_image" name="recipe_image" type="text" class="validate" required="" aria-required="true">
+                            <input minlength="1" placeholder="Please give the URL of your recipe image" id="recipe_image" name="recipe_image" type="url" class="validate" required="" aria-required="true">
                             <label class="my-font-adjust" for="recipe_image">Recipe Image</label>
                         </div>
                     </div>
@@ -146,6 +146,7 @@
             $('.modal').modal();
         });
     </script>
+
 </body>
 
 </html>
