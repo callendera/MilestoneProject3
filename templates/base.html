@@ -2,10 +2,7 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
+
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--link for Icons in Materialize-->
 
@@ -14,21 +11,22 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <!--link to CSS in a static folder-->
     <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}" type="text/css" />
-    
+    <link href="https://fonts.googleapis.com/css?family=Gudea|Rancho&display=swap" rel="stylesheet">
+    <!--Link to fonts-->
     <title>From Scratch</title>
 </head>
 
-<body class="">
+<body>
     <!--navbar is fixed at the top for UX-->
     <div class="navbar-fixed ">
         <nav class="transparent">
             <!--Unique class names are named based on their purpose-->
             <div class="nav-wrapper my-navbar">
                 <!--links to home page-->
-                <a href="{{ url_for('get_recipes') }}" class="brand-logo">From Scratch</a>
+                <a href="{{ url_for('get_recipes') }}" class="brand-logo my-brand-logo">From Scratch</a>
                 <!--triggers sidenav in mobile view-->
-                <a data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-                <ul class="right hide-on-med-and-down my-font">
+                <a data-target="mobile-nav" class="sidenav-trigger my-sidenav-trigger"><i class="material-icons">menu</i></a>
+                <ul class="right hide-on-med-and-down my-nav-links">
                     <!--links to home page-->
                     <li><a href="{{ url_for('get_recipes') }}">Home</a></li>
                     <!--links to all recipes page-->
@@ -41,7 +39,7 @@
     </div>
 
 
-    <ul class="sidenav" id="mobile-nav">
+    <ul class="sidenav my-sidenav" id="mobile-nav">
         <!--links to home page-->
         <li><a href="{{ url_for('get_recipes') }}">Home</a></li>
         <!--links to all recipes page-->
@@ -58,7 +56,7 @@
     <!-- modal is used to add recipes-->
     <div id="modal1" class="modal scale-transition scale-out">
         <div class="modal-content">
-            <h3>Add Recipe</h3>
+            <h2>Add Recipe</h2>
             <div class="row">
                 <!--action triggers insert recipe function to insert completed form into MongoDB-->
                 <form class="col s12" action="{{ url_for('insert_recipe') }}" method='POST' onSubmit="alert('Thank You for Sharing your Recipe. View Below')">
@@ -67,34 +65,34 @@
                         <div class="input-field col s6">
                             <!--ALL NAMES AND IDS MATCH THE MONGO DATABASE NAMES FOR CERTAIN ITEMS TO TRIGGER ITS PLACEMENT INTO THE DATABASE-->
                             <input id="recipe_name" name="recipe_name" type="text" class="validate" required="" aria-required="true">
-                            <label for="recipe_name">Recipe Name</label>
+                            <label class="my-font-adjust" for="recipe_name">Recipe Name</label>
                         </div>
 
                         <div class="input-field col s6">
                             <input id="recipe_type" name="recipe_type" placeholder="Vegetarian? Vegan? Chicken? Fish? Etc." type="text" class="validate" required="" aria-required="true">
-                    <label for="recipe_name">What is Your Recipe?</label>
+                            <label class="my-font-adjust" for="recipe_name">What is Your Recipe?</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
                             <input placeholder="List all Ingredients and Special Instructions" name="ingredients0" id="ingredients0" type="text" class="validate" required="" aria-required="true">
-                            <label for="ingredients0">Ingredients</label>
+                            <label class="my-font-adjust" for="ingredients0">Ingredients</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
                             <input id="directions0" name="directions0" type="text" class="validate" required="" aria-required="true">
-                            <label for="directions0">Directions</label>
+                            <label class="my-font-adjust" for="directions0">Directions</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
                             <input id="nutrition0" name="nutrition0" type="text" class="validate" required="" aria-required="true">
-                            <label for="nutrition0">Nutrition Facts</label>
+                            <label class="my-font-adjust" for="nutrition0">Nutrition Facts</label>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col s6">
+                        <div class="col s6 my-font-adjust">
                             Serves:
                             <div class="input-field inline">
                                 <input id="serves" name="serves" type="number" class="validate" required="" aria-required="true">
@@ -104,13 +102,13 @@
                         </div>
                         <div class="input-field col s6">
                             <input placeholder="Your Name" id="recipe_by" name="recipe_by" type="text" class="validate" required="" aria-required="true">
-                            <label for="recipe_by">Recipe by:</label>
+                            <label class="my-font-adjust" for="recipe_by">Recipe by:</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
                             <input placeholder="Please give the URL of your recipe image" id="recipe_image" name="recipe_image" type="text" class="validate" required="" aria-required="true">
-                            <label for="recipe_image">Recipe Image</label>
+                            <label class="my-font-adjust" for="recipe_image">Recipe Image</label>
                         </div>
                     </div>
                     <!--button triggers the insert function, and inserts new recipe to the database-->
@@ -129,7 +127,7 @@
     <!-- Script to use Materialize functionality-->
 
     <!-- Scripts to use Materialize functionality-->
-    
+
     <!--script to use side nav in mobile view-->
     <script type="text/javascript">
         $(document).ready(function() {

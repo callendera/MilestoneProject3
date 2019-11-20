@@ -6,9 +6,9 @@
   {% for recipes in from_scratch %}
   <div class="row view-recipe-image">
     <div class="col s6 recipe-title">
-      <h2>{{recipes.recipe_name}}</h2>
-      <h6>{{recipes.recipe_type}}</h6>
-      <h6>Serves: {{recipes.serves}}</h6>
+      <h1 class="my-font-name">{{recipes.recipe_name}}</h1>
+      <h3>{{recipes.recipe_type}}</h3>
+      <h3>Serves: {{recipes.serves}}</h3>
     </div>
     <div class="col s6">
       <img class="responsive-img" data-caption="{{recipes.recipe_name}}" src="{{recipes.recipe_image}}">
@@ -16,20 +16,20 @@
   </div>
   <div class="divider"></div>
   <div class="section">
-    <h5>Ingredients</h5>
-    <p>{{recipes.ingredients0}}</p>
+    <h2>Ingredients</h2>
+    <p class="my-font-adjust">{{recipes.ingredients0}}</p>
   </div>
   <div class="divider"></div>
   <div class="section">
-    <h5>Directions</h5>
-    <p>{{recipes.directions0}}</p>
+    <h2>Directions</h2>
+    <p class="my-font-adjust">{{recipes.directions0}}</p>
   </div>
   <div class="divider"></div>
   <div class="section">
-    <h5>Nutrition Facts</h5>
-    <p>{{recipes.nutrition0}}</p>
+    <h2>Nutrition Facts</h2>
+    <p class="my-font-adjust">{{recipes.nutrition0}}</p>
   </div>
-  <h6>Recipe By: {{recipes.recipe_by}}</h6>
+  <h3>Recipe By: {{recipes.recipe_by}}</h3>
   <!--Edit button to perform CRUD, can edit, delete, and add a recipe from this button-->
   <div class="fixed-action-btn">
     <a class="btn-floating pulse btn-large my-btn-color">
@@ -45,15 +45,15 @@
     </ul>
   </div>
   <!--Confirms deletion of the recipe-->
-  <div id="modal2" class="modal">
+  <div id="modal2" class="modal my-font-adjust">
         <div class="modal-content">
             <h4>...</h4>
             <p>Are you sure you'd like to delete this Recipe?</p>
         </div>
         <div class="modal-footer">
           <!--Triggers delete function-->
-            <a href="{{url_for('delete_recipe', recipe_id=recipes._id)}}" onClick="alert('Recipe has been deleted! Please browse more recipes below')" class="waves-effect waves-red btn-flat">Delete</a>
-            <a class="modal-close waves-effect waves-blue btn-flat">Cancel</a>
+            <a href="{{url_for('delete_recipe', recipe_id=recipes._id)}}" onClick="alert('Recipe has been deleted! Please browse more recipes below')" class="waves-effect waves-red btn-flat my-font-adjust">Delete</a>
+            <a class="modal-close waves-effect waves-blue btn-flat my-font-adjust">Cancel</a>
         </div>
     </div>
   {% endfor %}

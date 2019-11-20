@@ -32,6 +32,39 @@
 
 /*--- FONT STYLES ---*/
 
+.my-font-adjust-edit {
+    font-size: 3rem !important;
+}
+
+nav ul a {
+    font-size: 1.5rem !important;
+}
+
+.my-sidenav li>a {
+    font-size: 3rem;
+    margin-top: 40px;
+}
+
+nav a.sidenav-trigger i {
+    font-size: 55px;
+    padding: 5px;
+}
+
+.my-font-name {
+    font-size: 6rem;
+    font-family: 'Rancho', cursive;
+}
+
+.my-brand-logo, .my-font {
+    font-size: 4rem !important;
+    font-family: 'Rancho', cursive;
+}
+
+body, .recipe-name, .my-font-adjust {
+    font-size: 2.5rem !important;
+    font-family: 'Gudea', sans-serif;
+}
+
 .recipe-title {
     /*--- pushes the recipe title down in view full recipe image page ---*/
     margin-top: 100px;
@@ -80,12 +113,18 @@
     padding-left: 40px;
     padding-right: 40px;
     background-color: #7c1a50ed;
+    height: 65px !important;
+    
 }
 
 /*--- BUTTONS, HOVER ---*/
+.btn-large i {
+  font-size: 2.25rem;  
+}
 
 .my-btn-color {
     background-color: #2870a8;
+    font-size: 2.25rem;
 }
 
 .my-btn-color:hover {

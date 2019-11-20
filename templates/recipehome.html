@@ -6,17 +6,17 @@
         <!--Unique class names are named based on their purpose-->
         <div class="callout-text-div">
             <h2>Family is everything</h2>
-            <h3>Welcome to the Callender's From Scratch recipe forum</h3>
-            <h4>Share and Discover our family recipes</h4>
+            <h3>Welcome to the From Scratch family recipe forum</h3>
+            <h3 class="my-font">Share and Discover recipes</h3>
             <!--triggers Modal from base.html to add recipe, triggers add recipe function-->
-            <a href="#modal1" class="font-color modal-trigger"><button class="btn waves-effect waves-light center my-btn-color">Add Recipe
+            <a href="#modal1" class="font-color modal-trigger"><button class="btn btn-large waves-effect waves-light center my-btn-color">Add Recipe
             <i class="material-icons right">add</i></a>
         </div>
     </div>
 </div>
 
-<div class="container flow-text">
-    <h4 class="center">Featured Recipes</h4>
+<div class="container">
+    <h3 class="center">Featured Recipes</h3>
     <div class="row recipe-row">
         <!--For loop to display all recipes in the database-->
         {% for recipes in from_scratch %}
