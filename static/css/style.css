@@ -59,7 +59,11 @@ nav a.sidenav-trigger i {
     font-family: 'Rancho', cursive;
 }
 
-body, .recipe-name, .my-font-adjust {
+.my-font-adjust {
+    font-size: 1.75rem !important;
+}
+
+body, .recipe-name {
     font-size: 2.5rem !important;
     font-family: 'Gudea', sans-serif;
 }
