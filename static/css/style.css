@@ -32,7 +32,7 @@
 /*--- FONT STYLES ---*/
 
 .my-font-adjust-edit {
-    font-size: 2.5rem !important;
+    font-size: 2rem !important;
 }
 
 nav ul a {
@@ -64,7 +64,7 @@ nav a.sidenav-trigger i {
 }
 
 body, .recipe-name {
-    font-size: 2.5rem !important;
+    font-size: 2rem;
     font-family: 'Gudea', sans-serif;
 }
 
