@@ -69,10 +69,11 @@
                         </div>
 
                         <div class="input-field col s6">
-                            <select id="type" name="type">
+                            <select id="recipe_types" name="type">
+                                
                                 <option value="" disabled selected>Choose your option</option>
-                                {% for recipe_types in from_scratch %}
-                                <option value="1">{{recipe_types.type}}</option>
+                                {% for x in recipe_types %}
+                                <option value="1">{{x.type}}</option>
                                 {% endfor %}
                             </select>
                             <label>What is your Recipe?</label>
@@ -114,7 +115,7 @@
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
-                            <input minlength="1" placeholder="Please give the URL of your recipe image" id="recipe_image" name="recipe_image" type="url" class="validate" required="" aria-required="true">
+                            <input minlength="1" placeholder="Please give the URL of your recipe image" id="recipe_image" name="recipe_image" type="url" class="validate">
                             <label class="my-font-adjust" for="recipe_image">Recipe Image</label>
                         </div>
                     </div>
