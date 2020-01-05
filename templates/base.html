@@ -73,7 +73,7 @@
                                 
                                 <option value="" disabled selected>Choose your option</option>
                                 {% for x in recipe_types %}
-                                <option value="1">{{x.type}}</option>
+                                <option value="1">{{x['type']}}</option>
                                 {% endfor %}
                             </select>
                             <label>What is your Recipe?</label>
