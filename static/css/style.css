@@ -102,6 +102,10 @@ body, .recipe-name {
     padding: 20px;
 }
 
+.modal-marginbottom {
+    margin-bottom: 30px;
+}
+
 .view-recipe-container {
     /*--- Puts space between bottom of page and end of full recipe on view recipe page ---*/
     margin-bottom: 60px;
@@ -152,6 +156,17 @@ body, .recipe-name {
     -o-transition: all 0.40s ease-in-out;
     /*--- adjustments for each web browser ---*/
 }
+
+.deletemodal-btn:hover {
+    background-color: #2870a8cf;
+    /*--- when mouse is hovered the button will transition for 
+    .40seconds the color will gradually ease in and then ease out. ---*/
+    transition: all 0.40s ease-in-out;
+    -moz-transition: all 0.40s ease-in-out;
+    -webkit-transition: all 0.40s ease-in-out;
+    -o-transition: all 0.40s ease-in-out;
+    /*--- adjustments for each web browser ---*/
+} 
 
 /*---MEDIA QUERIES---*/
 

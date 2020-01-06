@@ -47,13 +47,12 @@
   <!--Confirms deletion of the recipe-->
   <div id="modal2" class="modal my-font-adjust">
         <div class="modal-content">
-            <h4>...</h4>
             <p>Are you sure you'd like to delete this Recipe?</p>
         </div>
-        <div class="modal-footer">
+        <div class="modal-footer modal-marginbottom">
           <!--Triggers delete function-->
-            <a href="{{url_for('delete_recipe', recipe_id=recipes._id)}}" onClick="alert('Recipe has been deleted! Please browse more recipes below')" class="waves-effect waves-red btn-flat my-font-adjust">Delete</a>
-            <a class="modal-close waves-effect waves-blue btn-flat my-font-adjust">Cancel</a>
+            <a href="{{url_for('delete_recipe', recipe_id=recipes._id)}}" onClick="alert('Recipe has been deleted! Please browse more recipes below')" class="deletemodal-btn waves-effect waves-red btn-flat my-font-adjust">Yes</a>
+            <a class="modal-close waves-effect waves-blue btn-flat my-font-adjust deletemodal-btn">No</a>
         </div>
     </div>
   {% endfor %}
