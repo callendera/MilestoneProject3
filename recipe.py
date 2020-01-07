@@ -19,18 +19,17 @@ mongo = PyMongo(app)
 #function used to display recipes on home page
 def get_recipes():
     from_scratch = mongo.db.recipes.aggregate([{ "$sample": { "size": 4 } }])
-    return render_template( "recipehome.html", from_scratch=from_scratch)
+    return render_template( "recipehome.html", from_scratch=from_scratch, types=mongo.db.types.find())
 
 @app.route('/all_recipes')
 #function used to display all recipes on All recipes page
 def all_recipes():
     from_scratch = mongo.db.recipes.find()
-    return render_template( "allrecipes.html", from_scratch=from_scratch)
+    return render_template( "allrecipes.html", from_scratch=from_scratch, types=mongo.db.types.find())
 
 @app.route('/add_recipes')
 #function that triggers the modal and insert_recipe function
 def add_recipes():
-    print(types=mongo.db.types.find())
     return render_template("recipehome.html", types=mongo.db.types.find())
     
     
@@ -44,14 +43,14 @@ def insert_recipe():
 @app.route('/view_recipe/<recipe_id>')
 #function allows user to view the recipe details page, displays full recipe
 def view_recipe(recipe_id):
-    return render_template('recipedetails.html', from_scratch=mongo.db.recipes.find({'_id': ObjectId(recipe_id)}))
+    return render_template('recipedetails.html', types=mongo.db.types.find(), from_scratch=mongo.db.recipes.find({'_id': ObjectId(recipe_id)}))
     
 
 @app.route('/edit_recipe/<recipe_id>')
 #function that triggers the edit recipe page, must call on particular Object id to trigger specific item in database
 def edit_recipe(recipe_id):
     the_recipe =  mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
-    return render_template('editrecipe.html', recipes=the_recipe)     
+    return render_template('editrecipe.html', recipes=the_recipe, types=mongo.db.types.find())     
 
 @app.route('/update_recipe/<recipe_id>', methods=["POST"])
 #function that allows the user to update the recipe in the database, must call on particular Object id to trigger specific item in database
