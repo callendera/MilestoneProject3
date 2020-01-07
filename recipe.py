@@ -30,7 +30,9 @@ def all_recipes():
 @app.route('/add_recipes')
 #function that triggers the modal and insert_recipe function
 def add_recipes():
-    return render_template("recipehome.html", recipe_types=mongo.db.recipe_types.find())
+    print(types=mongo.db.types.find())
+    return render_template("recipehome.html", types=mongo.db.types.find())
+    
     
 @app.route('/insert_recipe', methods=['POST'])
 def insert_recipe():

@@ -72,9 +72,10 @@
                             <select id="recipe_types" name="type">
                                 
                                 <option value="" disabled selected>Choose your option</option>
-                                {% for x in recipe_types %}
+                                 {% for x in types %}
                                 <option value="1">{{x['type']}}</option>
                                 {% endfor %}
+                            </select>
                             </select>
                             <label>What is your Recipe?</label>
                         </div>
@@ -133,7 +134,7 @@
     <!-- Script for JQuery dom manipulation-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <!-- Script to use Materialize functionality-->
-    
+
     <script type="text/javascript">
         $(document).ready(function() {
             $('.sidenav').sidenav();
@@ -141,7 +142,7 @@
             $('select').formSelect();
             // for action button on view recipe page
             $('.fixed-action-btn').floatingActionButton();
-            
+
             $('.modal').modal();
         });
     </script>
