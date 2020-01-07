@@ -5,7 +5,7 @@
     <h2>Edit Recipe</h2>
     <div class="row">
         <!-- action tells the form what to do with the updated information, triggers function-->
-        <form class="col s12" action="{{ url_for('update_recipe', recipe_id=recipes._id) }}" method='POST' onSubmit="alert('Thank You for Updating the Recipe. View Changes Below')">
+        <form class="col s12" action="{{ url_for('update_recipe', recipe_id=recipes._id) }}" method='POST' onSubmit="alert('Thank You for Updating the Recipe')">
             <div class="row">
                 <div class="input-field col s6">
                     <!--ALL NAMES AND IDS MATCH THE MONGO DATABASE NAMES FOR CERTAIN ITEMS TO TRIGGER ITS PLACEMENT INTO THE DATABASE-->
@@ -14,9 +14,16 @@
                 </div>
 
                 <div class="input-field col s6">
-                    <input id="recipe_type" name="recipe_type" placeholder="Vegetarian? Vegan? Chicken? Fish? Etc." value="{{recipes.recipe_type}}" type="text" class="validate" required="" aria-required="true">
-                    <label class="my-font-adjust-edit" for="recipe_name">What is Your Recipe?</label>
-                </div>
+                            <select id="recipe_types" name="type">
+                                
+                                <option value="" disabled selected>Choose your option</option>
+                                 {% for x in types %}
+                                <option selected value="{{recipes.type}}">{{x['type']}}</option>
+                                {% endfor %}
+                            </select>
+                            </select>
+                            <label>What is your Recipe?</label>
+                        </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
