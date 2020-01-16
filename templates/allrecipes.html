@@ -4,15 +4,15 @@
 <!--PAGE IS TO DISPLAY ALL RECIPES ON A PAGE WITH NO CALLOUT-->
 <div class="container flow-text">
     <h3 class="center">Browse Our Recipes</h3>
-    <div class="row recipe-row">
+    <div class="row recipe-row-center">
 
         {% for recipes in from_scratch %}
         <!--For loop to iterate through the selected recipe-->
         <a href="{{url_for('view_recipe', recipe_id=recipes._id)}}">
             <div class="col s6">
                 <!--Triggers full view of recipe details, must target specific id of the selected recipe-->
-                <img class="recipe-image view-recipe-link" data-caption="{{recipes.recipe_name}}" src="{{recipes.recipe_image}}" alt="No Image Available" onerror=this.src="http://d3e1m60ptf1oym.cloudfront.net/7a85598b-913f-4090-8ed8-aa3ea995ba58/AI070918-70_xlarge.jpg">
-                <p class="recipe-name black-text"><strong>{{recipes.recipe_name}}</strong></p>
+                <img class="recipe-image-sizing-spacing view-recipe-link" data-caption="{{recipes.recipe_name}}" src="{{recipes.recipe_image}}" alt="No Image Available" onerror=this.src="http://d3e1m60ptf1oym.cloudfront.net/7a85598b-913f-4090-8ed8-aa3ea995ba58/AI070918-70_xlarge.jpg">
+                <p class="recipe-name-spacing black-text"><strong>{{recipes.recipe_name}}</strong></p>
             </div>
         </a>
         {% endfor %}

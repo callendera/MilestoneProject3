@@ -1,9 +1,7 @@
 /*--- IMAGES ---*/
 
 .background-callout {
-    /*--- FOR ALL BACKGROUND CONTAINERS sets background image for callout container. 
-    it is set to not repeat, so the image doesnt stretch, and the image will be centered horizontally and 
-    pushed to the top of the container. the background will also not scroll, but remained positioned so things will scroll past it---*/
+    
     background: url(../images/home.jpg)no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -15,72 +13,33 @@
     height: 40vh;
 }
 
-.view-recipe-image {
-    /*--- pushes the image for the selected recipe down from navbar on view recipe page ---*/
-    padding-top: 50px;
-}
-
-.recipe-image {
-    /*---gives the div surrounding the image style as to not stretch the image---*/
+.recipe-image-sizing-spacing {
+    /*---Class name can be found in recipehome.html and allrecipes.html for those recipe images to be displayed--*/
+    /*---gives the div surrounding the image size as to not stretch the image---*/
     height: 300px;
     width: 400px;
-    padding-bottom: 0px;
     margin-top: 20px;
 
 }
 
+.spacing-from-navbar {
+    /*--- pushes entire div away from Navbar to give appropriate space. Located in editrecipe.html ---*/
+    padding-top: 50px;
+}
+
+
+
 
 /*--- FONT STYLES ---*/
 
-.my-font-adjust-edit {
-    font-size: 2rem !important;
-}
-
-nav ul a {
-    font-size: 1.5rem !important;
-}
-
-.my-sidenav li>a {
-    font-size: 3rem;
-    margin-top: 40px;
-}
-
-nav a.sidenav-trigger i {
-    font-size: 55px;
-    padding: 5px;
-}
-
-.my-font-name {
-    font-size: 6rem;
-    font-family: 'Rancho', cursive;
-}
-
-.my-brand-logo, .my-font {
-    font-size: 4rem !important;
-    font-family: 'Rancho', cursive;
-}
-
-.my-font-adjust {
-    font-size: 1.75rem !important;
-}
-
-body, .recipe-name {
+body {
+    /*--- Sets general font specifications for entire webpage with edits/adjustments listed below---*/
     font-size: 2rem;
     font-family: 'Gudea', sans-serif;
 }
 
-.recipe-title {
-    /*--- pushes the recipe title down in view full recipe image page ---*/
-    margin-top: 100px;
-}
-
-.recipe-name {
-    /*--- adjusts space around recipe name on recipe home page ---*/
-    margin-top: 0px;
-}
-
 .callout-text-background {
-    /*--- gives slightly transparent background for text in callout on home page, also provides spacing for words ---*/
+
     text-align: center;
     background-color: #7c1a50a3;
     color: white;
@@ -88,13 +47,67 @@ body, .recipe-name {
     margin-top: 400px;
 }
 
+.font-color-white {
+    /*---button in callout ---*/
+    color: white;
+}
+
+.my-font {
+    /*--- used several times across the html, the my-font class gives the distinguished font with a size difference---*/
+    font-size: 4rem !important;
+    font-family: 'Rancho', cursive;
+}
+
+.my-font-adjust-edit {
+    /*--- Class used in editrecipe.html to fix size of text that overlaps my placeholders/inputs---*/
+    font-size: 2rem !important;
+}
+
+.my-font-size-adjust {
+    /*--- used several times across html, gives smaller font size for texts that are in the certain forms and things within the site---*/
+    font-size: 1.75rem !important;
+}
+
 .my-link-color {
+    /*--- used on specific buttons that are attached to links ---*/
     color: #3384d8;
 }
 
-.font-color {
-    color: white;
+.my-sidenav li>a {
+    font-size: 3rem;
+    margin-top: 40px;
 }
+
+nav ul a {
+    font-size: 1.5rem !important;
+}
+
+
+
+nav a.sidenav-trigger i {
+    font-size: 55px;
+    padding: 5px;
+}
+
+.recipe-details-name-font {
+    /*--- In recipedetails.html the Recipe name has a distinguished font from the other txts ---*/
+    font-size: 6rem;
+    font-family: 'Rancho', cursive;
+}
+
+
+.recipe-name-spacing {
+    /*--- can be found on the recipe home and all recipes page ---*/
+    margin-top: 0;
+}
+
+
+.recipe-title-spacing {
+    /*--- used in recipedetails.html, provides spacing for entire div containing name, serves, and type of recipe ---*/
+    margin-top: 100px;
+}
+
+
 
 /*--- CONTAINERS, ROWS, SPANS, NAVBAR ---*/
 
@@ -106,28 +119,38 @@ body, .recipe-name {
     margin-bottom: 30px;
 }
 
-.view-recipe-container {
-    /*--- Puts space between bottom of page and end of full recipe on view recipe page ---*/
-    margin-bottom: 60px;
-}
-
-.recipe-row {
-    /*--- centers the for-loop of recipes on home page and on the all recipes page ---*/
-    margin-left: 80px;
-}
-
 .my-navbar {
-    /*--- gives padding to the navbar so it is not right on the border of the screen ---*/
     padding-left: 40px;
     padding-right: 40px;
     background-color: #7c1a50ed;
     height: 65px !important;
-    
+
 }
 
+
+.recipe-row-center {
+    margin-left: 80px;
+}
+
+.view-recipe-container {
+
+    margin-bottom: 60px;
+}
+
+
+
 /*--- BUTTONS, HOVER ---*/
+
 .btn-large i {
-  font-size: 2.25rem;  
+    font-size: 2.25rem;
+}
+
+.deletemodal-btn:hover {
+    background-color: #2870a8cf;
+    transition: all 0.40s ease-in-out;
+    -moz-transition: all 0.40s ease-in-out;
+    -webkit-transition: all 0.40s ease-in-out;
+    -o-transition: all 0.40s ease-in-out;
 }
 
 .my-btn-color {
@@ -137,45 +160,30 @@ body, .recipe-name {
 
 .my-btn-color:hover {
     background-color: #2870a8cf;
-    /*--- when mouse is hovered the button will transition for 
-    .40seconds the color will gradually ease in and then ease out. ---*/
+    
     transition: all 0.40s ease-in-out;
     -moz-transition: all 0.40s ease-in-out;
     -webkit-transition: all 0.40s ease-in-out;
     -o-transition: all 0.40s ease-in-out;
-    /*--- adjustments for each web browser ---*/
 }
 
 .view-recipe-link:hover {
     background-color: #2870a8cf;
-    /*--- when mouse is hovered the button will transition for 
-    .40seconds the color will gradually ease in and then ease out. ---*/
+    
     transition: all 0.40s ease-in-out;
     -moz-transition: all 0.40s ease-in-out;
     -webkit-transition: all 0.40s ease-in-out;
     -o-transition: all 0.40s ease-in-out;
-    /*--- adjustments for each web browser ---*/
 }
 
-.deletemodal-btn:hover {
-    background-color: #2870a8cf;
-    /*--- when mouse is hovered the button will transition for 
-    .40seconds the color will gradually ease in and then ease out. ---*/
-    transition: all 0.40s ease-in-out;
-    -moz-transition: all 0.40s ease-in-out;
-    -webkit-transition: all 0.40s ease-in-out;
-    -o-transition: all 0.40s ease-in-out;
-    /*--- adjustments for each web browser ---*/
-} 
+
 
 /*---MEDIA QUERIES---*/
 
-/*--- adjustemnts for different screensizes, 
-    small-->big all features tested on google chrome inspect ---*/
+/*--- adjustemnts for different screensizes, small-->big ---*/
 
 @media (min-width: 576px) {
     .callout-text-background {
-        /*--- provides adjusted spacing for words ---*/
         margin-top: 200px;
         ;
     }
@@ -186,30 +194,24 @@ body, .recipe-name {
     .background-callout {
 
         background: url("../images/home.jpg")no-repeat center center fixed;
-        /*--- adjusts background for different browsers ---*/
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
 
-        /*--- makes the background fit to the container ---*/
         overflow: hidden;
 
-        /*--- aligns and justifies text in container ---*/
         align-items: center;
         justify-content: center;
-        /*--- the height that container will take up in the viewport ---*/
         height: 60vh;
     }
     .callout-text-background {
-        /*--- provides adjusted spacing for words ---*/
         margin-top: 50px;
         ;
     }
 
     .recipe-row {
-        /*--- adjusts centering of the for-loop of recipes to have no left-margin ---*/
-        margin-left: 0px;
+        margin-left: 0;
     }
 
 }
@@ -218,29 +220,23 @@ body, .recipe-name {
     .background-callout {
 
         background: url("../images/home.jpg")no-repeat center center fixed;
-        /*--- adjusts background for different browsers ---*/
+        
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
-
         /*--- makes the background fit to the container ---*/
         overflow: hidden;
-
-        /*--- aligns and justifies text in container ---*/
         align-items: center;
         justify-content: center;
-        /*--- the height that container will take up in the viewport ---*/
         height: 60vh;
     }
     .callout-text-background {
-        /*--- provides adjusted spacing for words ---*/
         margin-top: 60px;
         ;
     }
-    .recipe-row {
-        /*--- adjusts centering of the for-loop of recipes to have no left-margin ---*/
-        margin-left: 0px;
+    .recipe-row-center {
+        margin-left: 0;
     }
 
 
@@ -250,34 +246,24 @@ body, .recipe-name {
     .background-callout {
 
         background: url("../images/foods.jpg")no-repeat center center fixed;
-        /*--- adjusts background for different browsers ---*/
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
 
-        /*--- makes the background fit to the container ---*/
         overflow: hidden;
 
-        /*--- aligns and justifies text in container ---*/
         align-items: center;
         justify-content: center;
-        /*--- the height that container will take up in the viewport ---*/
         height: 70vh;
     }
 
-    .callout-text-background {
-        /*--- provides adjusted spacing for words ---*/
-        margin: 15;
-    }
-
-    .recipe-row {
-        /*--- adjusts centering of the for-loop of recipes to have no left-margin ---*/
+    .recipe-row-center {
         margin-left: 0;
     }
-
+}
     @media (min-width: 1400px) {
-        .recipe-row {
+        .recipe-row-center {
             margin: 80px;
         }
 

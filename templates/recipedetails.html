@@ -4,9 +4,9 @@
 <div class="container view-recipe-container flow-text">
   <!--For loop shows selected recipe details-->
   {% for recipes in from_scratch %}
-  <div class="row view-recipe-image">
-    <div class="col s6 recipe-title">
-      <h1 class="my-font-name">{{recipes.recipe_name}}</h1>
+  <div class="row spacing-from-navbar">
+    <div class="col s6 recipe-title-spacing">
+      <h1 class="recipe-details-name-font">{{recipes.recipe_name}}</h1>
       <h3>{{recipes.type}}</h3>
       <h3>Serves: {{recipes.serves}}</h3>
     </div>
