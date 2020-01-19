@@ -111,7 +111,6 @@ All features were tested on Google Chrome, Internet Explorer, and Firefox. Mobil
     * Add a Recipe
         * Come to the home page, use the add recipe option in the Navbar
         * Use the Add Recipe button on homepage callout
-        * While viewing full recipe, hover over pulsating button (bottom right hand corner) to reveal the add recipe option
         * Each of the above options triggers the add_recipe function, opens modal
             * The Modal that opens contains the form needed to add the recipe and for the user to give all the appropriate information.
             * Each form input is required.
@@ -146,20 +145,46 @@ All features were tested on Google Chrome, Internet Explorer, and Firefox. Mobil
 
 ## Deployment
 
-1. Created Heroku profile and new app in Heroku
-2. Made App name from-scratch-recipe-app, and chose North America as the edge server
-3. Log on through the terminal in workspace
-    * Enter: heroku login 
-    * Enter credentials(email and password)
-    * From there you the AWS Cloud9 environment and the Heroku App are connected
-4. Create new git repository: git init
-5. Then: git add .
-6. Then commit that
-7. Then go to the Heroku app dashboard, 
-    * Go to Deploy
-    * Under Deployment Method select Connect GitHub
-    * The two will connect to eachother
-8. From there you can push your existing content to GitHub and it will automatically connect to the Heroku deployment of the app.
+1. Go to heroku.com dashboard
+2. Click "Create New App"
+3. Make app name: from-scratch-recipe-app
+4. Chose region: United States
+5. Click "Create App"
+6. Upon app being created, click the "Deploy" tab
+7. Scroll down to "Deploy using Heroku Git"
+8. Use the following commands as instructed below:
+    ``` 
+    heroku login
+    Enter your Heroku credentials:
+    Email: [Enter email hit enter]
+    Password: [Enter password]
+    Logged in as acallender@live.sscc.edu
+    git init
+    git add .
+    git commit -m "Initial Commit"
+    heroku git:remote -a from-scratch-recipe-app
+    set git remote heroku to URL for heroku app
+    sudo pip3 freeze --local > requirements.txt
+    git add .
+    git commit -m "Added requirements.txt file"
+    git push heroku master
+    echo web: python recipe.py > Procfile
+    git add .
+    git commit -m "Added Procfile"
+    git push heroku master
+    heroku ps:scale web=1
+    scaling dynos.. done, now running web at 1:Free
+    ```
+9. To explain the above: in the command line you enter your heroku login and it prompts you for your credentials. After your credentials are verified, 
+it tells you you're logged in. You then add the heroku login and info into your github repo with the git init, git add, and git commit commands. 
+Then, you link the in the heroku master with the git:remote command. this sets the url for heroku app. Create the requirements.txt file and Procfile 
+so the app will deploy correctly. After that you push to heroku nmaster.
+10. Go back to heroku.com
+11. In open view of the app, Click settings
+12. Scroll to config variables
+13. Set IP to 0.0.0.0 and click add
+14. Set PORT to 5000 and click add
+15. Open App and the app opens in the browser
 
 
 ## Credits
