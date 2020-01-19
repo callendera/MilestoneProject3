@@ -1,3 +1,16 @@
+"""This program is used to complete CRUD and display recipes within the site.
+
+All function names outline the particular usage of the each function. Whereas, 
+all_recipes will display all of the recipes within the database. The insert_recipe 
+function inserts the recipe into the database. Each function also has comments 
+to describe what the specific functionality is. The functions are used to Create (add and insert functions) recipes,
+Read recipes (view and all recipe functions), Update recipes (edit and update recipe functions), and Delete recipes(delete recipe function). 
+The function get_recipes then displays recipehome.html. 
+
+The use of render_template is used to trigger specific functions to display those html files.
+Redirect helps to show the user the recipe they just add, updated, or sends user to home page after deleting a recipe.
+"""
+
 import os
 from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo
@@ -11,9 +24,9 @@ app.config["MONGO_URI"] = os.getenv("MONGO_URI")
 
 mongo = PyMongo(app)
 
-@app.route('/')
 
-#from_scratch is my database, recipes is my collection within the database
+
+#from_scratch is my database, recipes and types are my collections within the database
 
 @app.route('/get_recipes')
 #function used to display recipes on home page
