@@ -24,7 +24,7 @@ app.config["MONGO_URI"] = os.getenv("MONGO_URI")
 
 mongo = PyMongo(app)
 
-
+@app.route('/')
 
 #from_scratch is my database, recipes and types are my collections within the database
 
