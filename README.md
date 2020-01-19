@@ -1,6 +1,9 @@
 # Milestone Project 3: Data Centric Developement
 ## Check out App Deployed on Heroku [here](https://from-scratch-recipe-app.herokuapp.com/)
 ## Objective
+The From Scratch app was designed to connect my extended family by shareing recipes. Our family is grounded and built, not only on shareing meals, but shareing memories. The 
+importance within my family to share recipes is less of a way to simply share recipes, it is a way for us to connect. From our family to all families, 
+food is a great way to connect with eachother.
 My 3rd Milestone Project is an app for my family to share old family recipes. This project displays the skills learned in the modules leading up to this project including:
 HTML Fundamentals, CSS Fundamentals, JavaScript, Interactive Frontend Developement, Python, and Data Centric Developement.
 By adding Python and Data Centric Developement to my skill set, I have added to the ability for the user to Create, Update, Edit, and Delete recipes within the app. 
@@ -11,6 +14,9 @@ The goal of this app is to provide a place where users can:
 * Add Recipes
 * Edit/Update Recipes
 * Delete recipes
+
+The UX of the app was designed in a way to provide easy access and simplicity. While keeping in mind the older generations within my family, 
+I wanted to develop an app that made it easy and simple for those generation to access on any device.
 
 The app is fully functional on all screen sizes with extensive testing for each feature.
 
@@ -28,11 +34,11 @@ The app is fully functional on all screen sizes with extensive testing for each 
 ### Original Mockup
 ##### Everything changed tramendously from the original Mockup, I relied mostly on the Site Map (mockup images also available in static folder) 
 
-![Original Mockup](https://i.ibb.co/TvMd9RG/thumbnail-private-var-mobile-Containers-Data-Application-EFC929-DA-8312-406-F-8-FE7-25-D56-F9915-F4-tmp-865-C6-E67-868-F-45-F9-9-CC2-8-CEA498-C9-FF3-Image.jpg)
+![Original Mockup](https://i.ibb.co/4Vzkv17/thumbnail-private-var-mobile-Containers-Data-Application-EFC929-DA-8312-406-F-8-FE7-25-D56-F9915-F4-tmp-865-C6-E67-868-F-45-F9-9-CC2-8-CEA498-C9-FF3-Image-1.jpg)
  
 ### Site Map
  
- ![Site Map/Web](https://i.ibb.co/VqvQGGH/thumbnail-private-var-mobile-Containers-Data-Application-EFC929-DA-8312-406-F-8-FE7-25-D56-F9915-F4-tmp-B82-EA8-F2-A798-47-F6-91-A4-1-D2-DDB07952-D-Image.jpg) 
+ ![Site Map/Web](https://i.ibb.co/txb47BZ/thumbnail-private-var-mobile-Containers-Data-Application-EFC929-DA-8312-406-F-8-FE7-25-D56-F9915-F4-tmp-B82-EA8-F2-A798-47-F6-91-A4-1-D2-DDB07952-D-Image.jpg) 
  
 ## Features
 
@@ -61,7 +67,7 @@ The app is fully functional on all screen sizes with extensive testing for each 
 * Search Box
     * A feature I would like to implement with more time to gain the skills to use this feature. 
 * Upload Recipe Images
-    * Will learn in future modules, for now the user must upload a URL for the image
+    * Will learn in future modules, for now the user must copy and paste a URL for the image
 
 ## Tools/Technologies
 * [AWS Cloud9](https://c9.io/login)
