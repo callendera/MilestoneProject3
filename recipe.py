@@ -81,7 +81,6 @@ def update_recipe(recipe_id):
         'recipe_by':request.form.get('recipe_by'),
         'recipe_image':request.form.get('recipe_image')
     })
-    print(request.form)
     #after updating the recipe it redirects the user to the now updated recipe
     return redirect(url_for('view_recipe', recipe_id=recipe_id))
     

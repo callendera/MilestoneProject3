@@ -20,7 +20,7 @@
                                 
                                 {% for x in types %}
                                 
-                                <option {% if x.type == recipes.type %}selected{% endif %} value="{{recipes.type}}">{{x['type']}}</option>
+                                <option {% if x.type == recipes.type %}selected{% endif %} value="{{x['type']}}">{{x['type']}}</option>
                                 
                                 {% endfor %}
                                
