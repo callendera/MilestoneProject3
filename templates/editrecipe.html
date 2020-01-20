@@ -17,9 +17,14 @@
                             <select id="recipe_types" name="type">
                                 
                                 <option value="" disabled selected>Choose your option</option>
-                                 {% for x in types %}
-                                <option selected value="{{recipes.type}}">{{x['type']}}</option>
+                                
+                                {% for x in types %}
+                                
+                                <option {% if x.type == recipes.type %}selected{% endif %} value="{{recipes.type}}">{{x['type']}}</option>
+                                
                                 {% endfor %}
+                               
+                                
                             </select>
                             </select>
                             <label>What is your Recipe?</label>
