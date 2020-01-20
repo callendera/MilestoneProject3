@@ -73,7 +73,7 @@ def update_recipe(recipe_id):
     {
         #gives the specifics of what is being updated below
         'recipe_name':request.form.get('recipe_name'),
-        'recipe_type':request.form.get('recipe_type'),
+        'type':request.form.get('type'),
         'ingredients0': request.form.get('ingredients0'),
         'directions0': request.form.get('directions0'),
         'nutrition0':request.form.get('nutrition0'),
@@ -81,6 +81,7 @@ def update_recipe(recipe_id):
         'recipe_by':request.form.get('recipe_by'),
         'recipe_image':request.form.get('recipe_image')
     })
+    print(request.form)
     #after updating the recipe it redirects the user to the now updated recipe
     return redirect(url_for('view_recipe', recipe_id=recipe_id))
     
