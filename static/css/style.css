@@ -36,26 +36,33 @@ body {
     /*--- Sets general font specifications for entire webpage with edits/adjustments listed below---*/
     font-size: 2rem;
     font-family: 'Gudea', sans-serif;
+    background-color: #F9F8F5;
 }
+
+
 
 .callout-text-background {
 
     text-align: center;
-    background-color: #7c1a50a3;
+    background-color: #0000009e;
     color: white;
     height: 400px;
     margin-top: 400px;
 }
 
-.font-color-white {
-    /*---button in callout ---*/
-    color: white;
+.my-font-color {
+    color: #D54D03;
 }
 
 .my-font {
     /*--- used several times across the html, the my-font class gives the distinguished font with a size difference---*/
     font-size: 4rem !important;
     font-family: 'Rancho', cursive;
+    color: #D54D03;
+}
+
+nav .brand-logo {
+    color: #D54D03;
 }
 
 .my-font-adjust-edit {
@@ -80,13 +87,13 @@ body {
 
 nav ul a {
     font-size: 1.5rem !important;
+    color: black;
 }
-
-
 
 nav a.sidenav-trigger i {
     font-size: 55px;
     padding: 5px;
+    color: #D54D03;
 }
 
 .recipe-details-name-font {
@@ -112,18 +119,23 @@ nav a.sidenav-trigger i {
 /*--- CONTAINERS, ROWS, SPANS, NAVBAR ---*/
 
 .callout-text-div {
-    padding: 20px;
+    padding: 40px;
 }
 
 .modal-marginbottom {
     margin-bottom: 30px;
 }
 
+.my-sidenav {
+    background-color: #F9F8F5;
+}
+
 .my-navbar {
     padding-left: 40px;
     padding-right: 40px;
-    background-color: #7c1a50ed;
+    background-color: #F9F8F5;
     height: 65px !important;
+    
 
 }
 
@@ -146,7 +158,7 @@ nav a.sidenav-trigger i {
 }
 
 .deletemodal-btn:hover {
-    background-color: #2870a8cf;
+    background-color: #D54D03;
     transition: all 0.40s ease-in-out;
     -moz-transition: all 0.40s ease-in-out;
     -webkit-transition: all 0.40s ease-in-out;
@@ -154,21 +166,12 @@ nav a.sidenav-trigger i {
 }
 
 .my-btn-color {
-    background-color: #2870a8;
+    background-color: #D54D03;
     font-size: 1.75rem;
 }
 
 .my-btn-color:hover {
-    background-color: #2870a8cf;
-    
-    transition: all 0.40s ease-in-out;
-    -moz-transition: all 0.40s ease-in-out;
-    -webkit-transition: all 0.40s ease-in-out;
-    -o-transition: all 0.40s ease-in-out;
-}
-
-.view-recipe-link:hover {
-    background-color: #2870a8cf;
+    background-color: #de7d49;
     
     transition: all 0.40s ease-in-out;
     -moz-transition: all 0.40s ease-in-out;
@@ -255,7 +258,7 @@ nav a.sidenav-trigger i {
 
         align-items: center;
         justify-content: center;
-        height: 70vh;
+        height: 90vh;
     }
 
     .recipe-row-center {

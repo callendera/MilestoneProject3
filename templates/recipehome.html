@@ -1,6 +1,7 @@
 {% extends 'base.html' %} {% block content %}
 <!--Above calls for information from base.html page-->
 <!--Unique class names are named based on their purpose-->
+
 <div class="callout background-callout">
     <div class="container callout-text-background">
         <!--Unique class names are named based on their purpose-->
@@ -8,9 +9,6 @@
             <h2>Family is everything</h2>
             <h3>Welcome to the From Scratch family recipe forum</h3>
             <h3 class="my-font">Share and Discover recipes</h3>
-            <!--triggers Modal from base.html to add recipe, triggers add recipe function-->
-            <a href="#modal1" class="font-color-white modal-trigger"><button class="btn btn-large waves-effect waves-light center my-btn-color">Add Recipe
-            <i class="material-icons right">add</i></a>
         </div>
     </div>
 </div>
@@ -24,7 +22,7 @@
             <div class="col s6">
                 <!--triggers full view of the recipe details-->
                 <img class="recipe-image-sizing-spacing view-recipe-link" data-caption="{{recipes.recipe_name}}" src="{{recipes.recipe_image}}" alt="No Image available" onerror=this.src="http://d3e1m60ptf1oym.cloudfront.net/7a85598b-913f-4090-8ed8-aa3ea995ba58/AI070918-70_xlarge.jpg">
-                
+
                 <p class="recipe-name-spacing black-text"><strong>{{recipes.recipe_name}}</strong></p>
             </div>
         </a>
