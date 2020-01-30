@@ -43,15 +43,39 @@ def all_recipes():
 @app.route('/add_recipes')
 #function that triggers the modal and insert_recipe function
 def add_recipes():
+    
     return render_template("recipehome.html", types=mongo.db.types.find())
     
     
-@app.route('/insert_recipe', methods=['POST'])
-def insert_recipe():
+@app.route('/insert_recipe/<recipe_id>', methods=['POST'])
+def insert_recipe(recipe_id):
+    the_recipe =  mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
+    recipe_name = request.form.to_dict('recipe_name')
+    ingredients = request.form.to_dict('ingredients0')
+    directions = request.form.to_dict('directions0')
+    nutrition = request.form.to_dict('nutrition0')
+    recipe_by = request.form.to_dict('recipe_by')
+    recipe_image = request.form.to_dict('recipe_image')
+    if recipe_name.isspace() == True:
+        return render_template("recipehome.html", recipes=the_recipe, types=mongo.db.types.find())
+    if ingredients.isspace() == True:
+        return render_template("recipehome.html", recipes=the_recipe, types=mongo.db.types.find())
+    if directions.isspace() == True:
+        return render_template("recipehome.html", recipes=the_recipe, types=mongo.db.types.find())
+    if nutrition.isspace() == True:
+        return render_template("recipehome.html", recipes=the_recipe, types=mongo.db.types.find())
+    if recipe_by.isspace() == True:
+        return render_template("recipehome.html", recipes=the_recipe, types=mongo.db.types.find())
+    if recipe_image.isspace() == True:
+        return render_template("recipehome.html", recipes=the_recipe, types=mongo.db.types.find())
     from_scratch = mongo.db.recipes
+    
+    
     recipes = from_scratch.insert(request.form.to_dict())
+
     #after adding the recipe to the database it redirects the user to the newly added recipe to view the full recipe
     return redirect(url_for('view_recipe', recipe_id=recipes))
+
 
 @app.route('/view_recipe/<recipe_id>')
 #function allows user to view the recipe details page, displays full recipe
@@ -69,19 +93,35 @@ def edit_recipe(recipe_id):
 #function that allows the user to update the recipe in the database, must call on particular Object id to trigger specific item in database
 def update_recipe(recipe_id):
     from_scratch = mongo.db.recipes
+    the_recipe =  mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
     recipe_name = request.form.get('recipe_name')
+    ingredients = request.form.get('ingredients0')
+    directions = request.form.get('directions0')
+    nutrition = request.form.get('nutrition0')
+    recipe_by = request.form.get('recipe_by')
+    recipe_image = request.form.get('recipe_image')
+    # The following IF statements run a check on the following inputs to not allow the user to enter a blank space, tab space, or any space characters
+    if recipe_name.isspace() == True:
+        return render_template('editrecipe.html', recipes=the_recipe, types=mongo.db.types.find())
+    if ingredients.isspace() == True:
+        return render_template('editrecipe.html', recipes=the_recipe, types=mongo.db.types.find())
+    if directions.isspace() == True:
+        return render_template('editrecipe.html', recipes=the_recipe, types=mongo.db.types.find())
+    if nutrition.isspace() == True:
+        return render_template('editrecipe.html', recipes=the_recipe, types=mongo.db.types.find())
+    if recipe_by.isspace() == True:
+        return render_template('editrecipe.html', recipes=the_recipe, types=mongo.db.types.find())
+    if recipe_image.isspace() == True:
+        return render_template('editrecipe.html', recipes=the_recipe, types=mongo.db.types.find())
     recipes = from_scratch.update( {'_id': ObjectId(recipe_id)},
     { #gives the specifics of what is being updated below
-       
-        if recipe_name.isspace() == True:
-            return redirect(url_for('edit_recipe', recipe_id=recipe_id)),
-        else 'recipe_name':request.form.get('recipe_name'),
+        'recipe_name':request.form.get('recipe_name'),
         'type':request.form.get('type'),
-        'ingredients0': request.form.get('ingredients0'),
-        'directions0': request.form.get('directions0'),
+        'ingredients0':request.form.get('ingredients0'),
+        'directions0':request.form.get('directions0'),
         'nutrition0':request.form.get('nutrition0'),
         'serves':request.form.get('serves'),
-        'recipe_by':request.form.get('recipe_by'),
+        'recipe_by':request.form.get('recipe_by'),  
         'recipe_image':request.form.get('recipe_image')
     })
     #after updating the recipe it redirects the user to the now updated recipe
