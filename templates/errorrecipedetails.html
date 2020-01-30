@@ -1,0 +1,77 @@
+{% extends 'base.html' %} {% block content %}
+<!--Above calls for information from base.html page-->
+<!--Unique class names are named based on their purpose-->
+<div class="container view-recipe-container flow-text">
+    <div class="col s6">
+        <div class="card-panel grey lighten-5 z-depth-1">
+            <div class="row valign-wrapper">
+                <div class="col s4">
+                    <div class="video-container">
+                        <iframe src="https://giphy.com/embed/5YugfCB066dhqUNtkf" frameBorder="0"></iframe>
+                    </div>
+                </div>
+                <div class="col s8">
+                    <span class="red-text center">
+                <h4>Uh Oh!</h4> 
+                <h5>Recipes created by the Admin can not be deleted.</h5>
+              </span>
+                </div>
+            </div>
+        </div>
+    </div>
+  <!--For loop shows selected recipe details-->
+  {% for recipes in from_scratch %}
+  <div class="row spacing-from-navbar">
+    <div class="col s6 recipe-title-spacing">
+      <h1 class="recipe-details-name-font">{{recipes.recipe_name}}</h1>
+      <h3>{{recipes.type}}</h3>
+      <h3>Serves: {{recipes.serves}}</h3>
+    </div>
+    <div class="col s6">
+      <img class="responsive-img" data-caption="{{recipes.recipe_name}}" src="{{recipes.recipe_image}}" onerror=this.src="http://d3e1m60ptf1oym.cloudfront.net/7a85598b-913f-4090-8ed8-aa3ea995ba58/AI070918-70_xlarge.jpg">
+    </div>
+  </div>
+  <div class="divider"></div>
+  <div class="section">
+    <h2>Ingredients</h2>
+    <p class="my-font-adjust">{{recipes.ingredients0}}</p>
+  </div>
+  <div class="divider"></div>
+  <div class="section">
+    <h2>Directions</h2>
+    <p class="my-font-adjust">{{recipes.directions0}}</p>
+  </div>
+  <div class="divider"></div>
+  <div class="section">
+    <h2>Nutrition Facts</h2>
+    <p class="my-font-adjust">{{recipes.nutrition0}}</p>
+  </div>
+  <h3>Recipe By: {{recipes.recipe_by}}</h3>
+  <!--Edit button to perform CRUD, can edit, delete, and add a recipe from this button-->
+  <div class="fixed-action-btn FAB-size">
+    <a class="btn-floating pulse btn-large my-btn-color">
+    <i class="large material-icons">mode_edit</i>
+  </a>
+    <ul>
+      <!--Triggers modal to confirm deletion-->
+      <li><a href="#modal2" class="modal-trigger btn-floating red"><i class="material-icons">delete</i></a></li>
+      <!--triggers edit function-->
+      <li><a href="{{url_for('edit_recipe', recipe_id=recipes._id)}}" class="btn-floating yellow darken-1"><i class="material-icons">edit</i></a></li>
+      <!--triggers modal to add recipe-->
+      
+    </ul>
+  </div>
+  <!--Confirms deletion of the recipe-->
+  <div id="modal2" class="modal my-font-adjust">
+        <div class="modal-content">
+            <p>Are you sure you'd like to delete this Recipe?</p>
+        </div>
+        <div class="modal-footer modal-marginbottom">
+          <!--Triggers delete function-->
+            <a href="{{url_for('delete_recipe', recipe_id=recipes._id)}}" onClick="alert('Recipe has been deleted! Please browse more recipes below')" class="deletemodal-btn waves-effect waves-red btn-flat my-font-adjust">Yes</a>
+            <a class="modal-close waves-effect waves-blue btn-flat my-font-adjust deletemodal-btn">No</a>
+        </div>
+    </div>
+  {% endfor %}
+
+{% endblock %}

@@ -113,10 +113,10 @@ def update_recipe(recipe_id):
 @app.route('/delete_recipe/<recipe_id>')
 #function located in the modal to delete the recipe
 def delete_recipe(recipe_id):
-    the_recipe =  mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
-    recipe_by = request.form.get('recipe_by')
-    if recipe_by == "Admin":
-        return render_template('editrecipe.html', recipes=the_recipe, types=mongo.db.types.find()) 
+    recipes =  mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
+    recipe_by = request.form.to_dict()
+    if recipe_by != 'admin': 
+        return render_template('errorrecipedetails.html', types=mongo.db.types.find(), from_scratch=mongo.db.recipes.find({'_id': ObjectId(recipe_id)})) 
     mongo.db.recipes.remove({'_id': ObjectId(recipe_id)})
     return redirect(url_for('all_recipes'))
 
