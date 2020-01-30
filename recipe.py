@@ -53,10 +53,10 @@ def insert_recipe():
     # for loop with if statement prevents user from submitting a blank form with only space characters
     for field in new_recipe:
         if new_recipe[field].isspace() == True:
-            return redirect(url_for('get_recipes'))
-    recipe = mongo.db.recipes.insert_one(new_recipe)
+            return render_template('erroraddrecipe.html', types=mongo.db.types.find())
+    recipes = mongo.db.recipes.insert(new_recipe)
     #after adding the recipe to the database it redirects the user to the newly added recipe to view the full recipe
-    return redirect(url_for('view_recipe', recipe_id=recipe._id))
+    return redirect(url_for('view_recipe', recipe_id=recipes))
 
 
 @app.route('/view_recipe/<recipe_id>')
@@ -113,6 +113,10 @@ def update_recipe(recipe_id):
 @app.route('/delete_recipe/<recipe_id>')
 #function located in the modal to delete the recipe
 def delete_recipe(recipe_id):
+    the_recipe =  mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
+    recipe_by = request.form.get('recipe_by')
+    if recipe_by == "Admin":
+        return render_template('editrecipe.html', recipes=the_recipe, types=mongo.db.types.find()) 
     mongo.db.recipes.remove({'_id': ObjectId(recipe_id)})
     return redirect(url_for('all_recipes'))
 
