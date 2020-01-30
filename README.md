@@ -16,9 +16,9 @@ The goal of this app is to provide a place where users can:
 * Delete recipes
 
 The UX of the app was designed in a way to provide easy access and simplicity. While keeping in mind the older generations within my family, 
-I wanted to develop an app that made it easy and simple for those generation to access on any device.
+I wanted to develop an app that made it easy and simple for those generations to access on any device.
 
-The app is fully functional on all screen sizes with extensive testing for each feature.
+The app is fully functional on all screen sizes with extensive testing for each feature on 1400px, 1200px, 992px, 768px, and 576px screensizes.
 
 * User Stories:
     * As a Family member interested in browsing the recipes, I visit the app and on the home page 4 featured recipes are displayed. 
@@ -134,12 +134,9 @@ All features were tested on Google Chrome, Internet Explorer, and Firefox. Mobil
 ### Bugs Discovered
 * Solved Bugs:
     * When editing a recipe, the recipe type appears automatically as beef and then does not save the recipe type after editing. To fix this, I needed to edit the name attribute in the function to be 'type'. 
-Also the value attribute needed to be changed to
-```
-value="{{x['type']}}"
-```
+    * Also the value attribute needed to be changed to `value="{{x['type']}}"`
     * Modal not rendering from delete recipe option. Modal was not inside of For-Loop to be connected to database
-    * View Recipe details: page was appearing with no recipe as if one was not triggered. used href="{{url_for('view_recipe', recipe_id=recipes._id)}}" to trigger specific id for that recipe
+    * View Recipe details: page was appearing with no recipe as if one was not triggered. used `href="{{url_for('view_recipe', recipe_id=recipes._id)}}"` to trigger specific id for that recipe
     * Same issue above basically to direct user to view recipe just added/updated. needed to adjust the href and the render_template in the function to direct the user to the new or updated recipe based on specific ID of that recipe.
 * Unsolved Bugs
     * User able to submit recipe using " " or null values, still exploring and researching the issue.

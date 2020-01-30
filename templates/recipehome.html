@@ -14,12 +14,12 @@
 </div>
 
 <div class="container">
-    <h3 class="center">Featured Recipes</h3>
+    <h2 class="center">Featured Recipes</h2>
     <div class="row recipe-row-center">
         <!--For loop to display all recipes in the database-->
         {% for recipes in from_scratch %}
         <a href="{{url_for('view_recipe', recipe_id=recipes._id)}}">
-            <div class="col s6">
+            <div class="col s6 featured-font-size">
                 <!--triggers full view of the recipe details-->
                 <img class="recipe-image-sizing-spacing view-recipe-link" data-caption="{{recipes.recipe_name}}" src="{{recipes.recipe_image}}" alt="No Image available" onerror=this.src="http://d3e1m60ptf1oym.cloudfront.net/7a85598b-913f-4090-8ed8-aa3ea995ba58/AI070918-70_xlarge.jpg">
 

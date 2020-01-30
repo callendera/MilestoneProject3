@@ -55,52 +55,51 @@
     {% endblock %}
     <!-- modal is used to add recipes-->
     <div id="modal1" class="modal scale-transition scale-out">
-        <div class="modal-content">
+        <div class="modal-content addrecipe-modal-height">
             <h2>Add Recipe</h2>
             <div class="row">
                 <!--action triggers insert recipe function to insert completed form into MongoDB-->
                 <form class="col s12" id="addRecipe" action="{{ url_for('insert_recipe') }}" method='POST' onSubmit="alert('Thank You for Sharing your Recipe. View Below')">
                     <!--gives alert to confirm to the user that the recipe was added-->
-                    <div class="row">
-                        <div class="input-field col s6">
+                    <div class="row margin-addrecipe-modal">
+                        <div class="input-field col s6 my-font-size-adjus">
                             <!--ALL NAMES AND IDS MATCH THE MONGO DATABASE NAMES FOR CERTAIN ITEMS TO TRIGGER ITS PLACEMENT INTO THE DATABASE-->
-                            <input id="recipe_name" name="recipe_name" type="text" class="validate" required="" aria-required="true">
-                            <label class="my-font-adjust" for="recipe_name">Recipe Name</label>
+                            <input id="recipe_name" name="recipe_name" type="text" class="validate input-margin" required="" aria-required="true">
+                            <label class="my-font-size-adjust" for="recipe_name">Recipe Name</label>
                         </div>
 
                         <div class="input-field col s6">
-                            <select id="recipe_types" name="type">
+                            <select id="recipe_types" class="input-margin" name="type">
                                 
-                                <option value="" disabled selected>Choose your option</option>
+                                <option class="my-font-size-adjust" value="" disabled selected>Choose your option</option>
                                  {% for x in types %}
-                                <option value="{{x['type']}}">{{x['type']}}</option>
+                                <option class="my-font-size-adjust" value="{{x['type']}}">{{x['type']}}</option>
                                 {% endfor %}
                             </select>
-                            </select>
-                            <label>What is your Recipe?</label>
+                            <label class="my-font-size-adjust-selector-modal">What is your Recipe?</label>
                         </div>
 
                     </div>
-                    <div class="row">
+                    <div class="row margin-addrecipe-modal">
                         <div class="input-field col s12">
                             <input placeholder="List all Ingredients and Special Instructions" name="ingredients0" id="ingredients0" type="text" class="validate" required="" aria-required="true">
-                            <label class="my-font-adjust" for="ingredients0">Ingredients</label>
+                            <label class="my-font-size-adjust" for="ingredients0">Ingredients</label>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row margin-addrecipe-modal">
                         <div class="input-field col s12">
                             <input id="directions0" name="directions0" type="text" class="validate" required="" aria-required="true">
-                            <label class="my-font-adjust" for="directions0">Directions</label>
+                            <label class="my-font-size-adjust" for="directions0">Directions</label>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row margin-addrecipe-modal">
                         <div class="input-field col s12">
                             <input id="nutrition0" name="nutrition0" type="text" class="validate" required="" aria-required="true">
-                            <label class="my-font-adjust" for="nutrition0">Nutrition Facts</label>
+                            <label class="my-font-size-adjust" for="nutrition0">Nutrition Facts</label>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col s6 my-font-adjust">
+                    <div class="row margin-addrecipe-modal">
+                        <div class="col s6 my-font-size-adjust">
                             Serves:
                             <div class="input-field inline">
 
@@ -111,13 +110,13 @@
                         </div>
                         <div class="input-field col s6">
                             <input placeholder="Your Name" id="recipe_by" name="recipe_by" type="text" class="validate" required="" aria-required="true">
-                            <label class="my-font-adjust" for="recipe_by">Recipe by:</label>
+                            <label class="my-font-size-adjust" for="recipe_by">Recipe by:</label>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row margin-addrecipe-modal">
                         <div class="input-field col s12">
                             <input minlength="1" placeholder="Please give the URL of your recipe image, images 500x500 preferred" id="recipe_image" name="recipe_image" type="url" class="validate">
-                            <label class="my-font-adjust" for="recipe_image">Recipe Image</label>
+                            <label class="my-font-size-adjust" for="recipe_image">Recipe Image</label>
                         </div>
                     </div>
                     <!--button triggers the insert function, and inserts new recipe to the database-->

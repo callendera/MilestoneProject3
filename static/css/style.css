@@ -72,7 +72,19 @@ nav .brand-logo {
 
 .my-font-size-adjust {
     /*--- used several times across html, gives smaller font size for texts that are in the certain forms and things within the site---*/
-    font-size: 1.75rem !important;
+    font-size: 3rem !important;
+}
+
+.my-font-size-adjust-selector-modal {
+    font-size: 2.5rem !important;
+}
+
+#recipe_name.input-margin {
+    margin-top: 40px;
+}
+
+.select-wrapper {
+   margin-top: 40px; 
 }
 
 .my-link-color {
@@ -114,12 +126,26 @@ nav a.sidenav-trigger i {
     margin-top: 100px;
 }
 
+.featured-font-size {
+    font-size: 40px;
+}
 
+ul.dropdown-content {
+    font-size: 2rem !important;
+}
 
 /*--- CONTAINERS, ROWS, SPANS, NAVBAR ---*/
 
 .callout-text-div {
     padding: 40px;
+}
+
+.addrecipe-modal-height {
+    height: 1300px;
+}
+
+.margin-addrecipe-modal {
+    margin-bottom: 90px;
 }
 
 .modal-marginbottom {
@@ -140,9 +166,9 @@ nav a.sidenav-trigger i {
 }
 
 
-.recipe-row-center {
-    margin-left: 80px;
-}
+/*.recipe-row-center {*/
+/*    margin-left: 80px;*/
+/*}*/
 
 .view-recipe-container {
 
