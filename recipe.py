@@ -47,34 +47,16 @@ def add_recipes():
     return render_template("recipehome.html", types=mongo.db.types.find())
     
     
-@app.route('/insert_recipe/<recipe_id>', methods=['POST'])
-def insert_recipe(recipe_id):
-    the_recipe =  mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
-    recipe_name = request.form.to_dict('recipe_name')
-    ingredients = request.form.to_dict('ingredients0')
-    directions = request.form.to_dict('directions0')
-    nutrition = request.form.to_dict('nutrition0')
-    recipe_by = request.form.to_dict('recipe_by')
-    recipe_image = request.form.to_dict('recipe_image')
-    if recipe_name.isspace() == True:
-        return render_template("recipehome.html", recipes=the_recipe, types=mongo.db.types.find())
-    if ingredients.isspace() == True:
-        return render_template("recipehome.html", recipes=the_recipe, types=mongo.db.types.find())
-    if directions.isspace() == True:
-        return render_template("recipehome.html", recipes=the_recipe, types=mongo.db.types.find())
-    if nutrition.isspace() == True:
-        return render_template("recipehome.html", recipes=the_recipe, types=mongo.db.types.find())
-    if recipe_by.isspace() == True:
-        return render_template("recipehome.html", recipes=the_recipe, types=mongo.db.types.find())
-    if recipe_image.isspace() == True:
-        return render_template("recipehome.html", recipes=the_recipe, types=mongo.db.types.find())
-    from_scratch = mongo.db.recipes
-    
-    
-    recipes = from_scratch.insert(request.form.to_dict())
-
+@app.route('/insert_recipe', methods=['POST'])
+def insert_recipe():
+    new_recipe = request.form.to_dict()
+    # for loop with if statement prevents user from submitting a blank form with only space characters
+    for field in new_recipe:
+        if new_recipe[field].isspace() == True:
+            return redirect(url_for('get_recipes'))
+    recipe = mongo.db.recipes.insert_one(new_recipe)
     #after adding the recipe to the database it redirects the user to the newly added recipe to view the full recipe
-    return redirect(url_for('view_recipe', recipe_id=recipes))
+    return redirect(url_for('view_recipe', recipe_id=recipe._id))
 
 
 @app.route('/view_recipe/<recipe_id>')
@@ -113,6 +95,7 @@ def update_recipe(recipe_id):
         return render_template('editrecipe.html', recipes=the_recipe, types=mongo.db.types.find())
     if recipe_image.isspace() == True:
         return render_template('editrecipe.html', recipes=the_recipe, types=mongo.db.types.find())
+
     recipes = from_scratch.update( {'_id': ObjectId(recipe_id)},
     { #gives the specifics of what is being updated below
         'recipe_name':request.form.get('recipe_name'),
