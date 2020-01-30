@@ -84,17 +84,17 @@ def update_recipe(recipe_id):
     recipe_image = request.form.get('recipe_image')
     # The following IF statements run a check on the following inputs to not allow the user to enter a blank space, tab space, or any space characters
     if recipe_name.isspace() == True:
-        return render_template('editrecipe.html', recipes=the_recipe, types=mongo.db.types.find())
+        return render_template('erroreditrecipe.html', recipes=the_recipe, types=mongo.db.types.find())
     if ingredients.isspace() == True:
-        return render_template('editrecipe.html', recipes=the_recipe, types=mongo.db.types.find())
+        return render_template('erroreditrecipe.html', recipes=the_recipe, types=mongo.db.types.find())
     if directions.isspace() == True:
-        return render_template('editrecipe.html', recipes=the_recipe, types=mongo.db.types.find())
+        return render_template('erroreditrecipe.html', recipes=the_recipe, types=mongo.db.types.find())
     if nutrition.isspace() == True:
-        return render_template('editrecipe.html', recipes=the_recipe, types=mongo.db.types.find())
+        return render_template('erroreditrecipe.html', recipes=the_recipe, types=mongo.db.types.find())
     if recipe_by.isspace() == True:
-        return render_template('editrecipe.html', recipes=the_recipe, types=mongo.db.types.find())
+        return render_template('erroreditrecipe.html', recipes=the_recipe, types=mongo.db.types.find())
     if recipe_image.isspace() == True:
-        return render_template('editrecipe.html', recipes=the_recipe, types=mongo.db.types.find())
+        return render_template('erroreditrecipe.html', recipes=the_recipe, types=mongo.db.types.find())
 
     recipes = from_scratch.update( {'_id': ObjectId(recipe_id)},
     { #gives the specifics of what is being updated below

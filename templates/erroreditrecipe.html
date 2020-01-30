@@ -1,0 +1,94 @@
+{% extends 'base.html' %} {% block content %}
+<!--Above calls for information from base.html page-->
+<!--Unique class names are named based on their purpose-->
+<div class="container">
+    <div class="col s6">
+        <div class="card-panel grey lighten-5 z-depth-1">
+            <div class="row valign-wrapper">
+                <div class="col s4">
+                    <div class="video-container">
+                        <iframe src="https://giphy.com/embed/5YugfCB066dhqUNtkf" frameBorder="0" ></iframe>
+                    </div>
+                </div>
+                <div class="col s8">
+                    <span class="red-text center">
+                <h4>Uh Oh!</h4> 
+                <h5>Looks like you entered input with no content, Please try again.</h5>
+              </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h2>Edit Recipe</h2>
+    <div class="row">
+        <!-- action tells the form what to do with the updated information, triggers function-->
+        <form class="col s12" action="{{ url_for('update_recipe', recipe_id=recipes._id) }}" method='POST' onSubmit="alert('Thank You for Updating the Recipe')">
+            <div class="row">
+                <div class="input-field col s6">
+                    <!--ALL NAMES AND IDS MATCH THE MONGO DATABASE NAMES FOR CERTAIN ITEMS TO TRIGGER ITS PLACEMENT INTO THE DATABASE-->
+                    <input id="recipe_name" name="recipe_name" value="{{recipes.recipe_name}}" type="text" class="validate" required="" aria-required="true">
+                    <label class="my-font-adjust-edit" for="recipe_name">Recipe Name</label>
+                </div>
+
+                <div class="input-field col s6">
+                    <select id="recipe_types" name="type">
+                                
+                                <option value="" disabled selected>Choose your option</option>
+                                
+                                {% for x in types %}
+                                
+                                <option {% if x.type == recipes.type %}selected{% endif %} value="{{x['type']}}">{{x['type']}}</option>
+                                
+                                {% endfor %}
+                               
+                                
+                            </select>
+                    </select>
+                    <label>What is your Recipe?</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input placeholder="List all Ingredients and Special Instructions" value="{{recipes.ingredients0}}" name="ingredients0" id="ingredients0" type="text" class="validate" required="" aria-required="true">
+                    <label class="my-font-adjust-edit" for="ingredients0">Ingredients</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="directions0" name="directions0" type="text" class="validate" value="{{recipes.directions0}}" required="" aria-required="true">
+                    <label class="my-font-adjust-edit" for="directions0">Directions</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="nutrition0" name="nutrition0" type="text" class="validate" value="{{recipes.nutrition0}}" required="" aria-required="true">
+                    <label class="my-font-adjust-edit" for="nutrition0">Nutrition Facts</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s6 my-font-adjust-edit">
+                    Serves:
+                    <div class="input-field inline">
+                        <input id="serves" name="serves" type="number" min="1" class="validate" value="{{recipes.serves}}" required="" aria-required="true">
+                        <label for="serves">How Many People? </label>
+
+                    </div>
+                </div>
+                <div class="input-field col s6">
+                    <input placeholder="Your Name" id="recipe_by" name="recipe_by" type="text" value="{{recipes.recipe_by}}" class="validate" required="" aria-required="true">
+                    <label class="my-font-adjust-edit" for="recipe_by">Recipe by:</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input placeholder="Please give the URL of your recipe image" id="recipe_image" value="{{recipes.recipe_image}}" name="recipe_image" type="text" class="validate">
+                    <label class="my-font-adjust-edit" for="recipe_image">Recipe Image</label>
+                </div>
+            </div>
+            <!--button triggers the update function, and updates existing recipe in the database-->
+            <button class="btn waves-effect waves-light modal-close right my-btn-color" type="submit" name="action">Save
+            <i class="material-icons right">edit</i>
+         </button>
+        </form>
+    </div>
+    {% endblock %}
