@@ -69,10 +69,13 @@ def edit_recipe(recipe_id):
 #function that allows the user to update the recipe in the database, must call on particular Object id to trigger specific item in database
 def update_recipe(recipe_id):
     from_scratch = mongo.db.recipes
+    recipe_name = request.form.get('recipe_name')
     recipes = from_scratch.update( {'_id': ObjectId(recipe_id)},
-    {
-        #gives the specifics of what is being updated below
-        'recipe_name':request.form.get('recipe_name'),
+    { #gives the specifics of what is being updated below
+       
+        if recipe_name.isspace() == True:
+            return redirect(url_for('edit_recipe', recipe_id=recipe_id)),
+        else 'recipe_name':request.form.get('recipe_name'),
         'type':request.form.get('type'),
         'ingredients0': request.form.get('ingredients0'),
         'directions0': request.form.get('directions0'),
