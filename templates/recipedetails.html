@@ -6,9 +6,9 @@
   {% for recipes in from_scratch %}
   <div class="row spacing-from-navbar">
     <div class="col s6 recipe-title-spacing">
-      <h1 class="recipe-details-name-font">{{recipes.recipe_name}}</h1>
-      <h3>{{recipes.type}}</h3>
-      <h3>Serves: {{recipes.serves}}</h3>
+      <h2 class="recipe-details-name-font">{{recipes.recipe_name}}</h2>
+      <h3 class="my-font-size-adjust">{{recipes.type}}</h3>
+      <h3 class="my-font-size-adjust">Serves: {{recipes.serves}}</h3>
     </div>
     <div class="col s6">
       <img class="responsive-img" data-caption="{{recipes.recipe_name}}" src="{{recipes.recipe_image}}" onerror=this.src="http://d3e1m60ptf1oym.cloudfront.net/7a85598b-913f-4090-8ed8-aa3ea995ba58/AI070918-70_xlarge.jpg">
@@ -16,17 +16,17 @@
   </div>
   <div class="divider"></div>
   <div class="section">
-    <h1>Ingredients</h1>
+    <h3>Ingredients</h3>
     <p class="my-font-size-adjust">{{recipes.ingredients0}}</p>
   </div>
   <div class="divider"></div>
   <div class="section">
-    <h1>Directions</h1>
+    <h3>Directions</h3>
     <p class="my-font-size-adjust">{{recipes.directions0}}</p>
   </div>
   <div class="divider"></div>
   <div class="section">
-    <h2>Nutrition Facts</h2>
+    <h3>Nutrition Facts</h3>
     <p class="my-font-size-adjust">{{recipes.nutrition0}}</p>
   </div>
   <h3>Recipe By: {{recipes.recipe_by}}</h3>

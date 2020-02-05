@@ -1,7 +1,7 @@
 /*--- IMAGES ---*/
 
 .background-callout {
-    
+
     background: url(../images/home.jpg)no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -88,7 +88,7 @@ nav .brand-logo {
 }
 
 .select-wrapper {
-   margin-top: 40px; 
+    margin-top: 40px;
 }
 
 .my-link-color {
@@ -133,23 +133,35 @@ nav a.sidenav-trigger i {
 .featured-font-size {
     font-size: 40px;
 }
+
 /*--- The following class names/identifiers target very specific items in the add recipe modal.
 all of the field's font sizes can be manipulated with the following classes and styles. 
 .recipe-name-spacing is used in recipedetails and recipehome pages to adjust font-size. ---*/
-select-wrapper input.select-dropdown, #recipe_name.input-margin, content li>a, 
-.dropdown-content li>span, ul.dropdown-content, .placeholder-text, 
-input[type=text]:not(.browser-default), input[type=number]:not(.browser-default).validate+label, 
-input.valid[type=number]:not(.browser-default), .recipe-name-spacing, .edit-recipe-font-size{
+
+select-wrapper input.select-dropdown,
+#recipe_name.input-margin,
+content li>a,
+.dropdown-content li>span,
+ul.dropdown-content,
+.placeholder-text,
+input[type=text]:not(.browser-default),
+input[type=number]:not(.browser-default).validate+label,
+input.valid[type=number]:not(.browser-default),
+.recipe-name-spacing,
+.edit-recipe-font-size {
     font-size: 2.5rem !important;
 }
 
 /*--- Identifier is over qualified to target the placeholder in the input for image url ---*/
+
 input[type=url]:not(.browser-default) {
     font-size: 2rem;
 }
 
 /*--- Identifier is over qualified to target the label over the 'Serves:' input. this gives the margin space in the bottom, when the margin-bottom style was applied, it did not work correctly --*/
-input[type=text]:not(.browser-default).validate+label, input[type=url]:not(.browser-default).validate+label {
+
+input[type=text]:not(.browser-default).validate+label,
+input[type=url]:not(.browser-default).validate+label {
     margin-top: -30px;
 }
 
@@ -175,7 +187,8 @@ input[type=text]:not(.browser-default).validate+label, input[type=url]:not(.brow
     margin-top: 60px;
 }
 
-.margin-addrecipe-modal, .edit-recipe-margin {
+.margin-addrecipe-modal,
+.edit-recipe-margin {
     margin-bottom: 90px;
 }
 
@@ -192,7 +205,7 @@ input[type=text]:not(.browser-default).validate+label, input[type=url]:not(.brow
     padding-right: 40px;
     background-color: #F9F8F5;
     height: 65px !important;
-    
+
 
 }
 
@@ -202,7 +215,9 @@ input[type=text]:not(.browser-default).validate+label, input[type=url]:not(.brow
 }
 
 /*.recipe-row-center {*/
+
 /*    margin-left: 80px;*/
+
 /*}*/
 
 .view-recipe-container {
@@ -233,7 +248,7 @@ input[type=text]:not(.browser-default).validate+label, input[type=url]:not(.brow
 
 .my-btn-color:hover {
     background-color: #de7d49;
-    
+
     transition: all 0.40s ease-in-out;
     -moz-transition: all 0.40s ease-in-out;
     -webkit-transition: all 0.40s ease-in-out;
@@ -284,7 +299,7 @@ input[type=text]:not(.browser-default).validate+label, input[type=url]:not(.brow
     .background-callout {
 
         background: url("../images/home.jpg")no-repeat center center fixed;
-        
+
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
@@ -325,10 +340,41 @@ input[type=text]:not(.browser-default).validate+label, input[type=url]:not(.brow
     .recipe-row-center {
         margin-left: 0;
     }
-}
-    @media (min-width: 1400px) {
-        .recipe-row-center {
-            margin: 80px;
-        }
 
+    /*--- The following class names/identifiers target very specific items in the add recipe modal.
+all of the field's font sizes can be manipulated with the following classes and styles. 
+.recipe-name-spacing is used in recipedetails and recipehome pages to adjust font-size. ---*/
+    select-wrapper input.select-dropdown,
+    #recipe_name.input-margin,
+    content li>a,
+    .dropdown-content li>span,
+    ul.dropdown-content,
+    .placeholder-text,
+    input[type=text]:not(.browser-default),
+    input[type=number]:not(.browser-default).validate+label,
+    input.valid[type=number]:not(.browser-default),
+    .recipe-name-spacing,
+    .edit-recipe-font-size {
+        font-size: 2rem !important;
     }
+    
+    .my-font-size-adjust {
+    /*--- used several times across html, gives smaller font size for texts that are in the certain forms and things within the site---*/
+    font-size: 2rem !important;
+    }
+    .margin-addrecipe-modal, .edit-recipe-margin {
+    margin-bottom: 40px;
+    }
+    .addrecipe-modal-height {
+    height: 850px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .recipe-row-center {
+        margin: 80px;
+    }
+    .browser-font-adjust {
+        font-size: 1rem;
+    }
+}
