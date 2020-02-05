@@ -54,6 +54,10 @@ body {
     color: #D54D03;
 }
 
+.my-font-white {
+    color: white !important;
+}
+
 .my-font {
     /*--- used several times across the html, the my-font class gives the distinguished font with a size difference---*/
     font-size: 4rem !important;
@@ -129,8 +133,11 @@ nav a.sidenav-trigger i {
 .featured-font-size {
     font-size: 40px;
 }
-
-.select-wrapper input.select-dropdown, #recipe_name.input-margin, content li>a, .dropdown-content li>span, ul.dropdown-content, .placeholder-text, input[type=text]:not(.browser-default), input[type=number]:not(.browser-default).validate+label, input.valid[type=number]:not(.browser-default){
+/*--- The following class names/identifiers target very specific items in the modal. all of the fields font sizes can be manipulated with the following classes and styles ---*/
+select-wrapper input.select-dropdown, #recipe_name.input-margin, content li>a, 
+.dropdown-content li>span, ul.dropdown-content, .placeholder-text, 
+input[type=text]:not(.browser-default), input[type=number]:not(.browser-default).validate+label, 
+input.valid[type=number]:not(.browser-default){
     font-size: 2.5rem !important;
 }
 
