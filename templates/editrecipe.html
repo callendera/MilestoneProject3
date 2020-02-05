@@ -2,15 +2,15 @@
 <!--Above calls for information from base.html page-->
 <!--Unique class names are named based on their purpose-->
 <div class="container">
-    <h2>Edit Recipe</h2>
+    <h2 class="my-font">Edit Recipe</h2>
     <div class="row">
         <!-- action tells the form what to do with the updated information, triggers function-->
         <form class="col s12" action="{{ url_for('update_recipe', recipe_id=recipes._id) }}" method='POST' onSubmit="alert('Thank You for Updating the Recipe')">
-            <div class="row">
-                <div class="input-field col s6">
+            <div class="row edit-recipe-margin top-margin-edit-recipe-form">
+                <div class="input-field col s6 margin-recipe-name-edit-form">
                     <!--ALL NAMES AND IDS MATCH THE MONGO DATABASE NAMES FOR CERTAIN ITEMS TO TRIGGER ITS PLACEMENT INTO THE DATABASE-->
                     <input id="recipe_name" name="recipe_name" value="{{recipes.recipe_name}}" type="text" class="validate" required="" aria-required="true">
-                    <label class="my-font-adjust-edit" for="recipe_name">Recipe Name</label>
+                    <label class="my-font-adjust-edit" for="recipe_name"><span class="edit-recipe-font-size">Recipe Name</span></label>
                 </div>
 
                 <div class="input-field col s6">
@@ -27,45 +27,45 @@
                                 
                             </select>
                             </select>
-                            <label>What is your Recipe?</label>
+                            <label><span class="edit-recipe-font-size">What is your Recipe?</span></label>
                         </div>
             </div>
-            <div class="row">
+            <div class="row edit-recipe-margin">
                 <div class="input-field col s12">
                     <input placeholder="List all Ingredients and Special Instructions" value="{{recipes.ingredients0}}" name="ingredients0" id="ingredients0" type="text" class="validate" required="" aria-required="true">
-                    <label class="my-font-adjust-edit" for="ingredients0">Ingredients</label>
+                    <label class="my-font-adjust-edit" for="ingredients0"><span class="edit-recipe-font-size">Ingredients</span></label>
                 </div>
             </div>
-            <div class="row">
+            <div class="row edit-recipe-margin">
                 <div class="input-field col s12">
                     <input id="directions0" name="directions0" type="text" class="validate" value="{{recipes.directions0}}" required="" aria-required="true">
-                    <label class="my-font-adjust-edit" for="directions0">Directions</label>
+                    <label class="my-font-adjust-edit" for="directions0"><span class="edit-recipe-font-size">Directions</span></label>
                 </div>
             </div>
-            <div class="row">
+            <div class="row edit-recipe-margin">
                 <div class="input-field col s12">
                     <input id="nutrition0" name="nutrition0" type="text" class="validate" value="{{recipes.nutrition0}}" required="" aria-required="true">
-                    <label class="my-font-adjust-edit" for="nutrition0">Nutrition Facts</label>
+                    <label class="my-font-adjust-edit" for="nutrition0"><span class="edit-recipe-font-size">Nutrition Facts</span></label>
                 </div>
             </div>
-            <div class="row">
+            <div class="row edit-recipe-margin">
                 <div class="col s6 my-font-adjust-edit">
                     Serves:
                     <div class="input-field inline">
                         <input id="serves" name="serves" type="number" min="1" class="validate" value="{{recipes.serves}}" required="" aria-required="true">
-                        <label for="serves">How Many People? </label>
+                        <label for="serves"><span class="edit-recipe-font-size">How Many People?</span> </label>
 
                     </div>
                 </div>
                 <div class="input-field col s6">
                     <input placeholder="Your Name" id="recipe_by" name="recipe_by" type="text" value="{{recipes.recipe_by}}" class="validate" required="" aria-required="true">
-                    <label class="my-font-adjust-edit" for="recipe_by">Recipe by:</label>
+                    <label class="my-font-adjust-edit" for="recipe_by"><span class="edit-recipe-font-size">Recipe by:</span></label>
                 </div>
             </div>
-            <div class="row">
+            <div class="row edit-recipe-margin">
                 <div class="input-field col s12">
                     <input placeholder="Please give the URL of your recipe image" id="recipe_image" value="{{recipes.recipe_image}}" name="recipe_image" type="text" class="validate" >
-                    <label class="my-font-adjust-edit" for="recipe_image">Recipe Image</label>
+                    <label class="my-font-adjust-edit" for="recipe_image"><span class="edit-recipe-font-size">Recipe Image</span></label>
                 </div>
             </div>
             <!--button triggers the update function, and updates existing recipe in the database-->

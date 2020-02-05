@@ -133,19 +133,22 @@ nav a.sidenav-trigger i {
 .featured-font-size {
     font-size: 40px;
 }
-/*--- The following class names/identifiers target very specific items in the modal. all of the fields font sizes can be manipulated with the following classes and styles ---*/
+/*--- The following class names/identifiers target very specific items in the add recipe modal.
+all of the field's font sizes can be manipulated with the following classes and styles. 
+.recipe-name-spacing is used in recipedetails and recipehome pages to adjust font-size. ---*/
 select-wrapper input.select-dropdown, #recipe_name.input-margin, content li>a, 
 .dropdown-content li>span, ul.dropdown-content, .placeholder-text, 
 input[type=text]:not(.browser-default), input[type=number]:not(.browser-default).validate+label, 
-input.valid[type=number]:not(.browser-default){
+input.valid[type=number]:not(.browser-default), .recipe-name-spacing, .edit-recipe-font-size{
     font-size: 2.5rem !important;
 }
 
+/*--- Identifier is over qualified to target the placeholder in the input for image url ---*/
 input[type=url]:not(.browser-default) {
     font-size: 2rem;
 }
 
-
+/*--- Identifier is over qualified to target the label over the 'Serves:' input. this gives the margin space in the bottom, when the margin-bottom style was applied, it did not work correctly --*/
 input[type=text]:not(.browser-default).validate+label, input[type=url]:not(.browser-default).validate+label {
     margin-top: -30px;
 }
@@ -156,11 +159,23 @@ input[type=text]:not(.browser-default).validate+label, input[type=url]:not(.brow
     padding: 40px;
 }
 
+#serves.validate.valid {
+    margin-top: 25px;
+}
+
 .addrecipe-modal-height {
     height: 1425px;
 }
 
-.margin-addrecipe-modal {
+.margin-recipe-name-edit-form {
+    margin-top: 55px;
+}
+
+.top-margin-edit-recipe-form {
+    margin-top: 60px;
+}
+
+.margin-addrecipe-modal, .edit-recipe-margin {
     margin-bottom: 90px;
 }
 
