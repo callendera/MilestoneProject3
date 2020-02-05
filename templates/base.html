@@ -45,7 +45,7 @@
         <!--links to all recipes page-->
         <li><a href="{{ url_for('all_recipes') }}">All Recipes</a></li>
         <!--links to modal to add recipes, triggers add_recipe function-->
-        <li><a class="modal-trigger" href="#modal1">Add Recipe</a></li>
+        <li><a class="modal-trigger my-font-color" href="#modal1">Add Recipe</a></li>
     </ul>
 
 
@@ -82,8 +82,8 @@
                     </div>
                     <div class="row margin-addrecipe-modal">
                         <div class="input-field col s12">
-                            <input placeholder="List all Ingredients and Special Instructions" name="ingredients0" id="ingredients0" type="text" class="validate" required="" aria-required="true">
-                            <label class="my-font-size-adjust" for="ingredients0">Ingredients</label>
+                            <input placeholder="List all Ingredients and Special Instructions" name="ingredients0" id="ingredients0" type="text" class="validate placeholder-text" required="" aria-required="true">
+                            <label class="my-font-size-adjust ingredients-label-spacing" for="ingredients0">Ingredients</label>
                         </div>
                     </div>
                     <div class="row margin-addrecipe-modal">
@@ -99,7 +99,7 @@
                         </div>
                     </div>
                     <div class="row margin-addrecipe-modal">
-                        <div class="col s6 my-font-size-adjust">
+                        <div class="col s12 my-font-size-adjust">
                             Serves:
                             <div class="input-field inline">
 
@@ -108,15 +108,17 @@
 
                             </div>
                         </div>
-                        <div class="input-field col s6">
+                    </div>
+                    <div class="row margin-addrecipe-modal">
+                        <div class="input-field col s12">
                             <input placeholder="Your Name" id="recipe_by" name="recipe_by" type="text" class="validate" required="" aria-required="true">
                             <label class="my-font-size-adjust" for="recipe_by">Recipe by:</label>
                         </div>
                     </div>
                     <div class="row margin-addrecipe-modal">
                         <div class="input-field col s12">
-                            <input minlength="1" placeholder="Please give the URL of your recipe image, images 500x500 preferred" id="recipe_image" name="recipe_image" type="url" class="validate">
-                            <label class="my-font-size-adjust" for="recipe_image">Recipe Image</label>
+                            <input minlength="1" placeholder="Please use images size 500x500" id="recipe_image" name="recipe_image" type="url" class="validate">
+                            <label class="my-font-size-adjust" for="recipe_image">Recipe Image URL</label>
                         </div>
                     </div>
                     <!--button triggers the insert function, and inserts new recipe to the database-->

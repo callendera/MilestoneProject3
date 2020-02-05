@@ -130,8 +130,17 @@ nav a.sidenav-trigger i {
     font-size: 40px;
 }
 
-ul.dropdown-content {
-    font-size: 2rem !important;
+.select-wrapper input.select-dropdown, #recipe_name.input-margin, content li>a, .dropdown-content li>span, ul.dropdown-content, .placeholder-text, input[type=text]:not(.browser-default), input[type=number]:not(.browser-default).validate+label, input.valid[type=number]:not(.browser-default){
+    font-size: 2.5rem !important;
+}
+
+input[type=url]:not(.browser-default) {
+    font-size: 2rem;
+}
+
+
+input[type=text]:not(.browser-default).validate+label, input[type=url]:not(.browser-default).validate+label {
+    margin-top: -30px;
 }
 
 /*--- CONTAINERS, ROWS, SPANS, NAVBAR ---*/
@@ -141,7 +150,7 @@ ul.dropdown-content {
 }
 
 .addrecipe-modal-height {
-    height: 1300px;
+    height: 1425px;
 }
 
 .margin-addrecipe-modal {
@@ -165,6 +174,10 @@ ul.dropdown-content {
 
 }
 
+
+.input-field.inline {
+    width: 300px;
+}
 
 /*.recipe-row-center {*/
 /*    margin-left: 80px;*/
