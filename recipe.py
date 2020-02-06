@@ -68,6 +68,9 @@ def view_recipe(recipe_id):
 @app.route('/edit_recipe/<recipe_id>')
 #function that triggers the edit recipe page, must call on particular Object id to trigger specific item in database
 def edit_recipe(recipe_id):
+    recipes =  mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
+    if recipes['recipe_by'].lower() == 'admin':
+        return render_template('errorrecipeeditdetails.html', types=mongo.db.types.find(), from_scratch=mongo.db.recipes.find({'_id': ObjectId(recipe_id)})) 
     the_recipe =  mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
     return render_template('editrecipe.html', recipes=the_recipe, types=mongo.db.types.find())     
 
@@ -114,8 +117,7 @@ def update_recipe(recipe_id):
 #function located in the modal to delete the recipe
 def delete_recipe(recipe_id):
     recipes =  mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
-    recipe_by = request.form.to_dict()
-    if recipe_by != 'admin': 
+    if recipes['recipe_by'].lower() == 'admin':
         return render_template('errorrecipedetails.html', types=mongo.db.types.find(), from_scratch=mongo.db.recipes.find({'_id': ObjectId(recipe_id)})) 
     mongo.db.recipes.remove({'_id': ObjectId(recipe_id)})
     return redirect(url_for('all_recipes'))
