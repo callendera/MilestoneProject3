@@ -22,14 +22,24 @@ The app is fully functional on all screen sizes with extensive testing for each 
 
 * User Stories:
     * As a Family member interested in browsing the recipes, I visit the app and on the home page 4 featured recipes are displayed. 
-    If I would like to use the Navbar and select the All Recipes option, I am directed to the page That has all of the recipes listed on it. 
-    * If I am a user that is browsing the recipes and I find a recipe I am interested in, if I click on that recipe image, The app directs me to View the Full recipe. That recipe is displayed with all of the appropriate Information to make that recipe. 
-    * If I am browsing a recipe and view the full recipe, In the bottom right hand cornner is a button that allows me to hover it to get all the options for that recipe. Within the button I can delete the recipe, add a recipe, or edit the recipe.
-        * Delete: The user who would like to delete the recipe can do so by clicking the trashcan option in the View recipe page. From there a modal opens to ask the user if they are sure They would like to delete. After the user selects yes, to delete the user is redirected to the home page.
-        * Edit: The user who would like to edit the recipe can do so by clicking the pencil option in the View recipe page. From there, a new page is opened that allows the user to make edits to the Recipe. Each field in the edit recipe form Is prefilled with the deatails of that particular 
+    I use the Navbar and select the All Recipes option, I am directed to the page That has all of the recipes listed on it. 
+    * If I am a user that is browsing the recipes and I find a recipe I am interested in, if I click on that recipe image, The app directs me to View the Full recipe. 
+    That recipe is displayed with all of the appropriate Information about that recipe. 
+    * If I am browsing a recipe and I view the full recipe, In the bottom right hand cornner is a button that allows me to hover it to get all the options for that recipe. 
+    Within the button I can delete the recipe or edit the recipe.
+        * Delete: The user who would like to delete the recipe can do so by clicking the trashcan option in the View recipe page. 
+        From there a modal opens to ask the user if they are sure They would like to delete. After the user selects yes, to delete the user is redirected to the home page.
+        If the recipe is one added by an 'Admin', the user is directed to an error page. The message at the top of the page reads: "recipes created by admin can not be deleted"
+        * Edit: The user who would like to edit the recipe can do so by clicking the pencil option in the View recipe page. 
+        From there, a new page is opened that allows the user to make edits to the Recipe.
+        (If the recipe is created by the admin, the user is directed to an error page that reads "recipes created by admin can not be edited")
+        Each field in the edit recipe form Is prefilled with the deatails of that particular 
         recipe to be edited. When the user has made the edits they would like to make, they will submit the form and be directed to view the recipe that was just edited in the View recipe page as an updated recipe.
-        * Add: The user who would like to add a recipe may do so from the home page in the callout, from the button discussed above, or at anytime in the Navbar. If the user selects any of these buttons a modal is triggered that give the user all of the appropriate fields to submit the recipe to the app. 
+        * Add: The user who would like to add a recipe may do so from the home page in the Navbar. If the user selects this option, 
+        a modal is triggered that give the user all of the appropriate fields to submit the recipe to the app. 
         After the user submits the completed form the recipe is immediatly displayed in the View recipe page. This allows the user to look at the recipe just added.
+        If the user inputs a value that is solely a space character, or not content, an error page will appear with a new form telling the user "You entered input with no content, please try again". 
+        From there, the user can reenter the form in the correct manner. 
 
 ### Original Mockup
 ##### Everything changed tramendously from the original Mockup, I relied mostly on the Site Map (mockup images also available in static folder) 
