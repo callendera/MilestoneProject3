@@ -275,11 +275,11 @@ input[type=url]:not(.browser-default).validate+label {
         margin-top: 200px;
         ;
     }
-    
+
     .fixed-action-btn {
-    transform: scale(1.7);
+        transform: scale(1.7);
     }
-    
+
     .my-font-size-adjust {
         font-size: 2.5rem !important;
     }
@@ -333,9 +333,9 @@ input[type=url]:not(.browser-default).validate+label {
     .recipe-row-center {
         margin-left: 0;
     }
-    
+
     .fixed-action-btn {
-    transform: scale(1.3);
+        transform: scale(1.3);
     }
 
 }
@@ -376,16 +376,17 @@ all of the field's font sizes can be manipulated with the following classes and 
     .edit-recipe-font-size {
         font-size: 2rem !important;
     }
-    
+
     .my-font-size-adjust {
-    /*--- used several times across html, gives smaller font size for texts that are in the certain forms and things within the site---*/
-    font-size: 2rem !important;
+        /*--- used several times across html, gives smaller font size for texts that are in the certain forms and things within the site---*/
+        font-size: 2rem !important;
     }
-    .margin-addrecipe-modal, .edit-recipe-margin {
-    margin-bottom: 40px;
+    .margin-addrecipe-modal,
+    .edit-recipe-margin {
+        margin-bottom: 40px;
     }
     .addrecipe-modal-height {
-    height: 850px;
+        height: 850px;
     }
 }
 
@@ -396,8 +397,8 @@ all of the field's font sizes can be manipulated with the following classes and 
     .browser-font-adjust {
         font-size: 1rem;
     }
-    
+
     .fixed-action-btn {
-    transform: scale(1);
+        transform: scale(1);
     }
 }

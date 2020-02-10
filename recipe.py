@@ -53,7 +53,7 @@ def insert_recipe():
     # for loop with if statement prevents user from submitting a blank form with only space characters
     for field in new_recipe:
         if new_recipe[field].isspace() == True:
-            return render_template('erroraddrecipe.html', types=mongo.db.types.find())
+            return render_template('error_addrecipe.html', types=mongo.db.types.find())
     recipes = mongo.db.recipes.insert(new_recipe)
     #after adding the recipe to the database it redirects the user to the newly added recipe to view the full recipe
     return redirect(url_for('view_recipe', recipe_id=recipes))
@@ -70,7 +70,7 @@ def view_recipe(recipe_id):
 def edit_recipe(recipe_id):
     recipes =  mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
     if recipes['recipe_by'].lower() == 'admin':
-        return render_template('errorrecipeeditdetails.html', types=mongo.db.types.find(), from_scratch=mongo.db.recipes.find({'_id': ObjectId(recipe_id)})) 
+        return render_template('error_recipedetails.html', types=mongo.db.types.find(), from_scratch=mongo.db.recipes.find({'_id': ObjectId(recipe_id)})) 
     the_recipe =  mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
     return render_template('editrecipe.html', recipes=the_recipe, types=mongo.db.types.find())     
 
@@ -87,17 +87,17 @@ def update_recipe(recipe_id):
     recipe_image = request.form.get('recipe_image')
     # The following IF statements run a check on the following inputs to not allow the user to enter a blank space, tab space, or any space characters
     if recipe_name.isspace() == True:
-        return render_template('erroreditrecipe.html', recipes=the_recipe, types=mongo.db.types.find())
+        return render_template('error_editrecipe.html', recipes=the_recipe, types=mongo.db.types.find())
     if ingredients.isspace() == True:
-        return render_template('erroreditrecipe.html', recipes=the_recipe, types=mongo.db.types.find())
+        return render_template('error_editrecipe.html', recipes=the_recipe, types=mongo.db.types.find())
     if directions.isspace() == True:
-        return render_template('erroreditrecipe.html', recipes=the_recipe, types=mongo.db.types.find())
+        return render_template('error_editrecipe.html', recipes=the_recipe, types=mongo.db.types.find())
     if nutrition.isspace() == True:
-        return render_template('erroreditrecipe.html', recipes=the_recipe, types=mongo.db.types.find())
+        return render_template('error_editrecipe.html', recipes=the_recipe, types=mongo.db.types.find())
     if recipe_by.isspace() == True:
-        return render_template('erroreditrecipe.html', recipes=the_recipe, types=mongo.db.types.find())
+        return render_template('error_editrecipe.html', recipes=the_recipe, types=mongo.db.types.find())
     if recipe_image.isspace() == True:
-        return render_template('erroreditrecipe.html', recipes=the_recipe, types=mongo.db.types.find())
+        return render_template('error_editrecipe.html', recipes=the_recipe, types=mongo.db.types.find())
 
     recipes = from_scratch.update( {'_id': ObjectId(recipe_id)},
     { #gives the specifics of what is being updated below
@@ -118,7 +118,7 @@ def update_recipe(recipe_id):
 def delete_recipe(recipe_id):
     recipes =  mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
     if recipes['recipe_by'].lower() == 'admin':
-        return render_template('errorrecipedetails.html', types=mongo.db.types.find(), from_scratch=mongo.db.recipes.find({'_id': ObjectId(recipe_id)})) 
+        return render_template('error_recipedetails.html', types=mongo.db.types.find(), from_scratch=mongo.db.recipes.find({'_id': ObjectId(recipe_id)})) 
     mongo.db.recipes.remove({'_id': ObjectId(recipe_id)})
     return redirect(url_for('all_recipes'))
 
