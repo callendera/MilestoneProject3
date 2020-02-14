@@ -301,16 +301,17 @@ def delete_recipe(recipe_id):
 * If the recipe_by key is equal to 'admin', then it renders the template `error_recipedetails.html` to take the user back to the page that will display the error message with an explanation for the error. 
 * `.lower()` is used to check for the lower case version of Admin so neither uppercase or lowercase Admin will be deleted either.
 * `.remove({'_id': ObjectId(recipe_id)})` is then able to remove any recipe that is not created by admin. 
-* `return redirect(url_for('all_recipes'))` then redirects to the all recipes page for the user to browse more recipes.  
+* `return redirect(url_for('all_recipes'))` then redirects to the all recipes page for the user to browse more recipes. 
+
+
 ### Bugs Discovered
 * Solved Bugs:
     * When editing a recipe, the recipe type appears automatically as beef and then does not save the recipe type after editing. To fix this, I needed to edit the name attribute in the function to be 'type'. 
-    * Also the value attribute needed to be changed to `value="{{x['type']}}"`
+        * Also the value attribute needed to be changed to `value="{{x['type']}}"`
     * Modal not rendering from delete recipe option. Modal was not inside of For-Loop to be connected to database
     * View Recipe details: page was appearing with no recipe as if one was not triggered. used `href="{{url_for('view_recipe', recipe_id=recipes._id)}}"` to trigger specific id for that recipe
     * Same issue above basically to direct user to view recipe just added/updated. needed to adjust the href and the render_template in the function to direct the user to the new or updated recipe based on specific ID of that recipe.
-* Unsolved Bugs
-    * User able to submit recipe using " " or null values, still exploring and researching the issue.
+    * User able to submit recipe using " " or null values, still exploring and researching the issue. used the `.isspace()` method to check the fields in the database to look for space characters. will not submit form with only space characters for any field.
 
 ### Further Testing
 
@@ -364,7 +365,7 @@ so the app will deploy correctly. After that you push to heroku nmaster.
 
 ### Content
 * All info about recipes was derived directly from [Allrecipes](https://www.allrecipes.com/recipes/)
-* Code was derrived from myself, Studying the Modules in the previous sections, Tutor support, and from exploring various web entities
+* Code was derrived from myself, Studying the Modules in the previous sections, Tutor support, and from exploring various web entities with forums, such as: [W3Schools](https://www.w3schools.com/), [Stack Overflow](https://stackoverflow.com/), and [Slack](https://slack.com/).
 
 ### Media
 * The photos used in my webpage were from Google Images
