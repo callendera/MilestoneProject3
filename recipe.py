@@ -55,7 +55,7 @@ def insert_recipe():
             return render_template('error_addrecipe.html', types=mongo.db.types.find())
     for recipe_by in new_recipe:
         if new_recipe[recipe_by].lower() == "admin":
-            return render_template('error_addrecipe.html', types=mongo.db.types.find())
+            return render_template('error_adminaddrecipe.html', types=mongo.db.types.find())
     recipes = mongo.db.recipes.insert(new_recipe)
     #after adding the recipe to the database it redirects the user to the newly added recipe to view the full recipe
     return redirect(url_for('view_recipe', recipe_id=recipes))
