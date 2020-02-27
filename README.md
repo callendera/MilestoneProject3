@@ -139,6 +139,7 @@ All features were tested on Google Chrome, Internet Explorer, and Firefox. Mobil
             * Input fields: Recipe Name | Recipe Type(with select scroll bar options) | Ingredients | Directions | Serves how many people? | Nutrition Facts | Recipe by; | and the Recipe Image URL input 
             * The user then submits the form triggering the insert_recipe function. This function inserts the new recipe into the mongodb database. A message appears that tells the user they can now view the recipe below, after hitting okay, the user is directed to the view recipe page of the newly added recipe.
             * If the user inputs all space charaters/empty content, The error page error_addrecipe.html is triggered through the insert_recipe function when it checks the input fields. This page displays an error message and provides a new form for the user to try again on. 
+            * If the user inputs "Admin" or "admin" in the Recipe By: input The error page error_adminaddrecipe.html is triggered through the insert_recipe function when it checks the Recipe By: input. This page displays an error message and provides a new form for the user to try again on. 
             
     * Edit a Recipe
         * While viewing the details of a recipe the user can update the recipe, if it is not a recipe created by an Admin.
